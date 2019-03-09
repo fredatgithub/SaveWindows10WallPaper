@@ -653,7 +653,7 @@ namespace SaveWindows10WallPaper
       AdjustControls(); // insert here all labels, textboxes and buttons, one method per line of controls
     }
 
-    private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+    private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
     {
       FormOptions frmOptions = new FormOptions(_configurationOptions);
 
@@ -699,12 +699,27 @@ namespace SaveWindows10WallPaper
       button.Enabled = result;
     }
 
-    private void textBoxName_KeyDown(object sender, KeyEventArgs e)
+    private void TextBoxName_KeyDown(object sender, KeyEventArgs e)
     {
       if (e.KeyCode == Keys.Enter)
       {
         // do something
       }
+    }
+
+    private void ButtonCopy_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonCommit_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonGetDestinationPath_Click(object sender, EventArgs e)
+    {
+      
     }
   }
 }
