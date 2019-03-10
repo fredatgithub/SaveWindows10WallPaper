@@ -709,6 +709,11 @@ namespace SaveWindows10WallPaper
 
     private void ButtonCopy_Click(object sender, EventArgs e)
     {
+      if (listBoxExistingPicture.Items.Count == 0)
+      {
+        return;
+      }
+
 
     }
 
