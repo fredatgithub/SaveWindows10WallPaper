@@ -284,7 +284,13 @@ namespace SaveWindows10WallPaper
       Top = Settings.Default.WindowTop < 0 ? 0 : Settings.Default.WindowTop;
       Left = Settings.Default.WindowLeft < 0 ? 0 : Settings.Default.WindowLeft;
       SetDisplayOption(Settings.Default.DisplayToolStripMenuItem);
+      textBoxDestinationPath.Text = Settings.Default.textBoxDestinationPath == "" ? GetPicturePath() : Settings.Default.textBoxDestinationPath;
       LoadConfigurationOptions();
+    }
+
+    private string GetPicturePath()
+    {
+      return "my pictures path";
     }
 
     private void SaveWindowValue()
@@ -295,6 +301,7 @@ namespace SaveWindows10WallPaper
       Settings.Default.WindowTop = Top;
       Settings.Default.LastLanguageUsed = frenchToolStripMenuItem.Checked ? "French" : "English";
       Settings.Default.DisplayToolStripMenuItem = GetDisplayOption();
+      Settings.Default.textBoxDestinationPath = textBoxDestinationPath.Text;
       SaveConfigurationOptions();
       Settings.Default.Save();
     }
