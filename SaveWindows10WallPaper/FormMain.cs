@@ -1,4 +1,5 @@
 ﻿#define DEBUG
+using SaveWindows10WallPaper.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using SaveWindows10WallPaper.Properties;
 
 namespace SaveWindows10WallPaper
 {
@@ -721,12 +721,33 @@ namespace SaveWindows10WallPaper
         return;
       }
 
-
+      foreach (var item in listBoxExistingPicture.SelectedItems)
+      {
+        listBoxToBeCopied.Items.Add(item.ToString());
+      }
     }
 
     private void ButtonCommit_Click(object sender, EventArgs e)
     {
+      if (listBoxToBeCopied.Items.Count == 0)
+      {
+        return;
+      }
 
+      try
+      {
+        bool overwirte = false;
+        for (int i = 0; i < listBoxToBeCopied.Items.Count; i++)
+        {
+          string source = listBoxToBeCopied.Items[i].ToString();
+          string destination = Path.Combine(textBoxDestinationPath.Text, source) + ".jpg";
+          File.Copy(source, destination, overwirte);
+        }
+      }
+      catch (Exception)
+      {
+        // do nothing and continue to next file
+      }
     }
 
     private void ButtonGetDestinationPath_Click(object sender, EventArgs e)
@@ -755,12 +776,55 @@ namespace SaveWindows10WallPaper
       listBoxExistingPicture.Items.Clear();
       // ImagePath
       //     string ImagePath = @"%AppData%\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
-      string userName = "user";
-      foreach (string file in Directory.GetFiles($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"))
+      string userName = "fjuhel";
+      
+      foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
       {
         listBoxExistingPicture.Items.Add(file);
       }
+    }
 
+    public static List<string> GetFilesFileteredBySize(DirectoryInfo directoryInfo, long sizeGreaterOrEqualTo)
+    {
+      List<string> result = new List<string>();
+      foreach (FileInfo fileInfo in directoryInfo.GetFiles())
+      {
+        if (fileInfo.Length >= sizeGreaterOrEqualTo)
+        {
+          result.Add(fileInfo.FullName);
+        }
+      }
+
+      return result;
+    }
+
+    private void ButtonSelectAll_Click(object sender, EventArgs e)
+    {
+      if (listBoxExistingPicture.Items.Count == 0)
+      {
+        return;
+      }
+
+      for (int i = 0; i < listBoxExistingPicture.Items.Count; i++)
+      {
+        listBoxExistingPicture.SelectedIndex = i;
+      }
+      
+    }
+
+    private void ButtonRenameFileName_Click(object sender, EventArgs e)
+    {
+      List<string> backupFiles = new List<string>();
+      foreach (var item in listBoxToBeCopied.Items)
+      {
+        backupFiles.Add($"{item}.jpg");
+      }
+
+      listBoxToBeCopied.Items.Clear();
+      foreach (string file in backupFiles)
+      {
+        listBoxToBeCopied.Items.Add(file);
+      }
     }
   }
 }

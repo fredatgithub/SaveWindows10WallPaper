@@ -67,6 +67,9 @@
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageList = new System.Windows.Forms.TabPage();
+      this.buttonRenameFileName = new System.Windows.Forms.Button();
+      this.buttonSelectAll = new System.Windows.Forms.Button();
+      this.buttonLoadPictures = new System.Windows.Forms.Button();
       this.buttonGetDestinationPath = new System.Windows.Forms.Button();
       this.textBoxDestinationPath = new System.Windows.Forms.TextBox();
       this.buttonCommit = new System.Windows.Forms.Button();
@@ -74,7 +77,6 @@
       this.listBoxToBeCopied = new System.Windows.Forms.ListBox();
       this.listBoxExistingPicture = new System.Windows.Forms.ListBox();
       this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.buttonLoadPictures = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageList.SuspendLayout();
@@ -389,6 +391,8 @@
       // 
       // tabPageList
       // 
+      this.tabPageList.Controls.Add(this.buttonRenameFileName);
+      this.tabPageList.Controls.Add(this.buttonSelectAll);
       this.tabPageList.Controls.Add(this.buttonLoadPictures);
       this.tabPageList.Controls.Add(this.buttonGetDestinationPath);
       this.tabPageList.Controls.Add(this.textBoxDestinationPath);
@@ -403,6 +407,40 @@
       this.tabPageList.TabIndex = 0;
       this.tabPageList.Text = "List";
       this.tabPageList.UseVisualStyleBackColor = true;
+      // 
+      // buttonRenameFileName
+      // 
+      this.buttonRenameFileName.Enabled = false;
+      this.buttonRenameFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonRenameFileName.Location = new System.Drawing.Point(441, 278);
+      this.buttonRenameFileName.Name = "buttonRenameFileName";
+      this.buttonRenameFileName.Size = new System.Drawing.Size(135, 45);
+      this.buttonRenameFileName.TabIndex = 8;
+      this.buttonRenameFileName.Text = "Rename";
+      this.buttonRenameFileName.UseVisualStyleBackColor = true;
+      this.buttonRenameFileName.Click += new System.EventHandler(this.ButtonRenameFileName_Click);
+      // 
+      // buttonSelectAll
+      // 
+      this.buttonSelectAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonSelectAll.Location = new System.Drawing.Point(440, 124);
+      this.buttonSelectAll.Name = "buttonSelectAll";
+      this.buttonSelectAll.Size = new System.Drawing.Size(135, 45);
+      this.buttonSelectAll.TabIndex = 7;
+      this.buttonSelectAll.Text = "Select all";
+      this.buttonSelectAll.UseVisualStyleBackColor = true;
+      this.buttonSelectAll.Click += new System.EventHandler(this.ButtonSelectAll_Click);
+      // 
+      // buttonLoadPictures
+      // 
+      this.buttonLoadPictures.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonLoadPictures.Location = new System.Drawing.Point(440, 54);
+      this.buttonLoadPictures.Name = "buttonLoadPictures";
+      this.buttonLoadPictures.Size = new System.Drawing.Size(135, 45);
+      this.buttonLoadPictures.TabIndex = 6;
+      this.buttonLoadPictures.Text = "<-- Load";
+      this.buttonLoadPictures.UseVisualStyleBackColor = true;
+      this.buttonLoadPictures.Click += new System.EventHandler(this.ButtonLoadPictures_Click);
       // 
       // buttonGetDestinationPath
       // 
@@ -425,7 +463,7 @@
       // buttonCommit
       // 
       this.buttonCommit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonCommit.Location = new System.Drawing.Point(451, 352);
+      this.buttonCommit.Location = new System.Drawing.Point(440, 351);
       this.buttonCommit.Name = "buttonCommit";
       this.buttonCommit.Size = new System.Drawing.Size(135, 45);
       this.buttonCommit.TabIndex = 3;
@@ -436,7 +474,7 @@
       // buttonCopy
       // 
       this.buttonCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonCopy.Location = new System.Drawing.Point(451, 248);
+      this.buttonCopy.Location = new System.Drawing.Point(440, 198);
       this.buttonCopy.Name = "buttonCopy";
       this.buttonCopy.Size = new System.Drawing.Size(135, 45);
       this.buttonCopy.TabIndex = 2;
@@ -450,9 +488,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.listBoxToBeCopied.FormattingEnabled = true;
+      this.listBoxToBeCopied.HorizontalScrollbar = true;
       this.listBoxToBeCopied.ItemHeight = 20;
       this.listBoxToBeCopied.Location = new System.Drawing.Point(600, 54);
       this.listBoxToBeCopied.Name = "listBoxToBeCopied";
+      this.listBoxToBeCopied.ScrollAlwaysVisible = true;
       this.listBoxToBeCopied.Size = new System.Drawing.Size(378, 524);
       this.listBoxToBeCopied.TabIndex = 1;
       // 
@@ -461,9 +501,12 @@
       this.listBoxExistingPicture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
       this.listBoxExistingPicture.FormattingEnabled = true;
+      this.listBoxExistingPicture.HorizontalScrollbar = true;
       this.listBoxExistingPicture.ItemHeight = 20;
       this.listBoxExistingPicture.Location = new System.Drawing.Point(41, 54);
       this.listBoxExistingPicture.Name = "listBoxExistingPicture";
+      this.listBoxExistingPicture.ScrollAlwaysVisible = true;
+      this.listBoxExistingPicture.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
       this.listBoxExistingPicture.Size = new System.Drawing.Size(378, 524);
       this.listBoxExistingPicture.TabIndex = 0;
       // 
@@ -476,17 +519,6 @@
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "tabPage2";
       this.tabPage2.UseVisualStyleBackColor = true;
-      // 
-      // buttonLoadPictures
-      // 
-      this.buttonLoadPictures.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonLoadPictures.Location = new System.Drawing.Point(440, 54);
-      this.buttonLoadPictures.Name = "buttonLoadPictures";
-      this.buttonLoadPictures.Size = new System.Drawing.Size(135, 45);
-      this.buttonLoadPictures.TabIndex = 6;
-      this.buttonLoadPictures.Text = "<-- Load";
-      this.buttonLoadPictures.UseVisualStyleBackColor = true;
-      this.buttonLoadPictures.Click += new System.EventHandler(this.ButtonLoadPictures_Click);
       // 
       // FormMain
       // 
@@ -560,5 +592,7 @@
     private System.Windows.Forms.ListBox listBoxToBeCopied;
     private System.Windows.Forms.ListBox listBoxExistingPicture;
     private System.Windows.Forms.Button buttonLoadPictures;
+    private System.Windows.Forms.Button buttonSelectAll;
+    private System.Windows.Forms.Button buttonRenameFileName;
   }
 }
