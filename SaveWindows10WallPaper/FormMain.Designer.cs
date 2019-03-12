@@ -67,13 +67,14 @@
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageList = new System.Windows.Forms.TabPage();
-      this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.listBoxExistingPicture = new System.Windows.Forms.ListBox();
-      this.listBoxToBeCopied = new System.Windows.Forms.ListBox();
-      this.buttonCopy = new System.Windows.Forms.Button();
-      this.buttonCommit = new System.Windows.Forms.Button();
-      this.textBoxDestinationPath = new System.Windows.Forms.TextBox();
       this.buttonGetDestinationPath = new System.Windows.Forms.Button();
+      this.textBoxDestinationPath = new System.Windows.Forms.TextBox();
+      this.buttonCommit = new System.Windows.Forms.Button();
+      this.buttonCopy = new System.Windows.Forms.Button();
+      this.listBoxToBeCopied = new System.Windows.Forms.ListBox();
+      this.listBoxExistingPicture = new System.Windows.Forms.ListBox();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.buttonLoadPictures = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageList.SuspendLayout();
@@ -388,6 +389,7 @@
       // 
       // tabPageList
       // 
+      this.tabPageList.Controls.Add(this.buttonLoadPictures);
       this.tabPageList.Controls.Add(this.buttonGetDestinationPath);
       this.tabPageList.Controls.Add(this.textBoxDestinationPath);
       this.tabPageList.Controls.Add(this.buttonCommit);
@@ -396,50 +398,29 @@
       this.tabPageList.Controls.Add(this.listBoxExistingPicture);
       this.tabPageList.Location = new System.Drawing.Point(4, 29);
       this.tabPageList.Name = "tabPageList";
-      this.tabPageList.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageList.Padding = new System.Windows.Forms.Padding(3);
       this.tabPageList.Size = new System.Drawing.Size(1016, 600);
       this.tabPageList.TabIndex = 0;
       this.tabPageList.Text = "List";
       this.tabPageList.UseVisualStyleBackColor = true;
       // 
-      // tabPage2
+      // buttonGetDestinationPath
       // 
-      this.tabPage2.Location = new System.Drawing.Point(4, 29);
-      this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-      this.tabPage2.Size = new System.Drawing.Size(728, 339);
-      this.tabPage2.TabIndex = 1;
-      this.tabPage2.Text = "tabPage2";
-      this.tabPage2.UseVisualStyleBackColor = true;
+      this.buttonGetDestinationPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonGetDestinationPath.Location = new System.Drawing.Point(533, 7);
+      this.buttonGetDestinationPath.Name = "buttonGetDestinationPath";
+      this.buttonGetDestinationPath.Size = new System.Drawing.Size(53, 26);
+      this.buttonGetDestinationPath.TabIndex = 5;
+      this.buttonGetDestinationPath.Text = "...";
+      this.buttonGetDestinationPath.UseVisualStyleBackColor = true;
+      this.buttonGetDestinationPath.Click += new System.EventHandler(this.ButtonGetDestinationPath_Click);
       // 
-      // listBoxExistingPicture
+      // textBoxDestinationPath
       // 
-      this.listBoxExistingPicture.FormattingEnabled = true;
-      this.listBoxExistingPicture.ItemHeight = 20;
-      this.listBoxExistingPicture.Location = new System.Drawing.Point(41, 54);
-      this.listBoxExistingPicture.Name = "listBoxExistingPicture";
-      this.listBoxExistingPicture.Size = new System.Drawing.Size(378, 424);
-      this.listBoxExistingPicture.TabIndex = 0;
-      // 
-      // listBoxToBeCopied
-      // 
-      this.listBoxToBeCopied.FormattingEnabled = true;
-      this.listBoxToBeCopied.ItemHeight = 20;
-      this.listBoxToBeCopied.Location = new System.Drawing.Point(600, 54);
-      this.listBoxToBeCopied.Name = "listBoxToBeCopied";
-      this.listBoxToBeCopied.Size = new System.Drawing.Size(378, 424);
-      this.listBoxToBeCopied.TabIndex = 1;
-      // 
-      // buttonCopy
-      // 
-      this.buttonCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonCopy.Location = new System.Drawing.Point(451, 248);
-      this.buttonCopy.Name = "buttonCopy";
-      this.buttonCopy.Size = new System.Drawing.Size(135, 45);
-      this.buttonCopy.TabIndex = 2;
-      this.buttonCopy.Text = "Copy -->";
-      this.buttonCopy.UseVisualStyleBackColor = true;
-      this.buttonCopy.Click += new System.EventHandler(this.ButtonCopy_Click);
+      this.textBoxDestinationPath.Location = new System.Drawing.Point(600, 7);
+      this.textBoxDestinationPath.Name = "textBoxDestinationPath";
+      this.textBoxDestinationPath.Size = new System.Drawing.Size(378, 26);
+      this.textBoxDestinationPath.TabIndex = 4;
       // 
       // buttonCommit
       // 
@@ -452,23 +433,60 @@
       this.buttonCommit.UseVisualStyleBackColor = true;
       this.buttonCommit.Click += new System.EventHandler(this.ButtonCommit_Click);
       // 
-      // textBoxDestinationPath
+      // buttonCopy
       // 
-      this.textBoxDestinationPath.Location = new System.Drawing.Point(600, 7);
-      this.textBoxDestinationPath.Name = "textBoxDestinationPath";
-      this.textBoxDestinationPath.Size = new System.Drawing.Size(378, 26);
-      this.textBoxDestinationPath.TabIndex = 4;
+      this.buttonCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonCopy.Location = new System.Drawing.Point(451, 248);
+      this.buttonCopy.Name = "buttonCopy";
+      this.buttonCopy.Size = new System.Drawing.Size(135, 45);
+      this.buttonCopy.TabIndex = 2;
+      this.buttonCopy.Text = "Copy -->";
+      this.buttonCopy.UseVisualStyleBackColor = true;
+      this.buttonCopy.Click += new System.EventHandler(this.ButtonCopy_Click);
       // 
-      // buttonGetDestinationPath
+      // listBoxToBeCopied
       // 
-      this.buttonGetDestinationPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonGetDestinationPath.Location = new System.Drawing.Point(533, 7);
-      this.buttonGetDestinationPath.Name = "buttonGetDestinationPath";
-      this.buttonGetDestinationPath.Size = new System.Drawing.Size(53, 26);
-      this.buttonGetDestinationPath.TabIndex = 5;
-      this.buttonGetDestinationPath.Text = "...";
-      this.buttonGetDestinationPath.UseVisualStyleBackColor = true;
-      this.buttonGetDestinationPath.Click += new System.EventHandler(this.ButtonGetDestinationPath_Click);
+      this.listBoxToBeCopied.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.listBoxToBeCopied.FormattingEnabled = true;
+      this.listBoxToBeCopied.ItemHeight = 20;
+      this.listBoxToBeCopied.Location = new System.Drawing.Point(600, 54);
+      this.listBoxToBeCopied.Name = "listBoxToBeCopied";
+      this.listBoxToBeCopied.Size = new System.Drawing.Size(378, 524);
+      this.listBoxToBeCopied.TabIndex = 1;
+      // 
+      // listBoxExistingPicture
+      // 
+      this.listBoxExistingPicture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+      this.listBoxExistingPicture.FormattingEnabled = true;
+      this.listBoxExistingPicture.ItemHeight = 20;
+      this.listBoxExistingPicture.Location = new System.Drawing.Point(41, 54);
+      this.listBoxExistingPicture.Name = "listBoxExistingPicture";
+      this.listBoxExistingPicture.Size = new System.Drawing.Size(378, 524);
+      this.listBoxExistingPicture.TabIndex = 0;
+      // 
+      // tabPage2
+      // 
+      this.tabPage2.Location = new System.Drawing.Point(4, 29);
+      this.tabPage2.Name = "tabPage2";
+      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage2.Size = new System.Drawing.Size(1016, 600);
+      this.tabPage2.TabIndex = 1;
+      this.tabPage2.Text = "tabPage2";
+      this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // buttonLoadPictures
+      // 
+      this.buttonLoadPictures.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonLoadPictures.Location = new System.Drawing.Point(440, 54);
+      this.buttonLoadPictures.Name = "buttonLoadPictures";
+      this.buttonLoadPictures.Size = new System.Drawing.Size(135, 45);
+      this.buttonLoadPictures.TabIndex = 6;
+      this.buttonLoadPictures.Text = "<-- Load";
+      this.buttonLoadPictures.UseVisualStyleBackColor = true;
+      this.buttonLoadPictures.Click += new System.EventHandler(this.ButtonLoadPictures_Click);
       // 
       // FormMain
       // 
@@ -541,5 +559,6 @@
     private System.Windows.Forms.Button buttonCopy;
     private System.Windows.Forms.ListBox listBoxToBeCopied;
     private System.Windows.Forms.ListBox listBoxExistingPicture;
+    private System.Windows.Forms.Button buttonLoadPictures;
   }
 }

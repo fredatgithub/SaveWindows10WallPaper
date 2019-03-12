@@ -731,7 +731,36 @@ namespace SaveWindows10WallPaper
 
     private void ButtonGetDestinationPath_Click(object sender, EventArgs e)
     {
-      
+      string path = ChooseDirectory();
+      if (path != string.Empty)
+      {
+        textBoxDestinationPath.Text = path;
+      }
+    }
+
+    public static string ChooseDirectory()
+    {
+      string result = string.Empty;
+      FolderBrowserDialog fbd = new FolderBrowserDialog();
+      if (fbd.ShowDialog() == DialogResult.OK)
+      {
+        result = fbd.SelectedPath;
+      }
+
+      return result;
+    }
+
+    private void ButtonLoadPictures_Click(object sender, EventArgs e)
+    {
+      listBoxExistingPicture.Items.Clear();
+      // ImagePath
+      //     string ImagePath = @"%AppData%\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+      string userName = "user";
+      foreach (string file in Directory.GetFiles($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"))
+      {
+        listBoxExistingPicture.Items.Add(file);
+      }
+
     }
   }
 }
