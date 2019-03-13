@@ -9,7 +9,7 @@ namespace SaveWin10Pictures
     private static void Main()
     {
       Action<string> display = Console.WriteLine;
-      Console.ForegroundColor = ConsoleColor.Magenta;
+      Console.ForegroundColor = ConsoleColor.White;
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
       int counter = 0;
@@ -44,9 +44,11 @@ namespace SaveWin10Pictures
       {
         Console.ForegroundColor = ConsoleColor.Green;
       }
-      
+
+      display(string.Empty);
       display($"{counter} image{Plural(counter)} {Plural(counter, "have")} been copied to the picture folder.");
-      Console.ForegroundColor = ConsoleColor.Blue;
+      display(string.Empty);
+      Console.ForegroundColor = ConsoleColor.Yellow;
       display("Press any key to exit:");
       Console.ReadKey(); // comment for batch to production
     }
