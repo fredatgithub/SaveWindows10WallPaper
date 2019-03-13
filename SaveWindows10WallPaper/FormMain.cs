@@ -22,7 +22,7 @@ namespace SaveWindows10WallPaper
     public readonly Dictionary<string, string> _languageDicoFr = new Dictionary<string, string>();
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
-    string ImagePath = @"%AppData%\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+    // string ImagePath = @"%AppData%\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
 
     private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
     {

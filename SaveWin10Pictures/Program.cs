@@ -9,6 +9,7 @@ namespace SaveWin10Pictures
     private static void Main()
     {
       Action<string> display = Console.WriteLine;
+      Console.ForegroundColor = ConsoleColor.Magenta;
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
       int counter = 0;
@@ -35,9 +36,19 @@ namespace SaveWin10Pictures
         // do nothing and continue with the next file
       }
 
+      if (counter == 0)
+      {
+        Console.ForegroundColor = ConsoleColor.Red;
+      }
+      else
+      {
+        Console.ForegroundColor = ConsoleColor.Green;
+      }
+      
       display($"{counter} image{Plural(counter)} {Plural(counter, "have")} been copied to the picture folder.");
+      Console.ForegroundColor = ConsoleColor.Blue;
       display("Press any key to exit:");
-      //Console.ReadKey(); // comment for batch to production
+      Console.ReadKey(); // comment for batch to production
     }
 
     public static string Plural(int number, string irregularNoun = "")
