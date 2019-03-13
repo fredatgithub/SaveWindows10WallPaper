@@ -9,9 +9,10 @@ namespace SaveWin10Pictures
     private static void Main()
     {
       Action<string> display = Console.WriteLine;
+      display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
       int counter = 0;
-      const string userName = "userName";
+      const string userName = "user";
       string imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
       foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
       {
@@ -36,7 +37,7 @@ namespace SaveWin10Pictures
 
       display($"{counter} images have been copied to the picture folder.");
       display("Press any key to exit:");
-      Console.ReadKey();
+      //Console.ReadKey(); // comment for batch to production
     }
 
     public static List<string> GetFilesFileteredBySize(DirectoryInfo directoryInfo, long sizeGreaterOrEqualTo)
