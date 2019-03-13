@@ -776,7 +776,7 @@ namespace SaveWindows10WallPaper
       listBoxExistingPicture.Items.Clear();
       // ImagePath
       //     string ImagePath = @"%AppData%\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
-      string userName = "fjuhel";
+      string userName = "userName";
       
       foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
       {
