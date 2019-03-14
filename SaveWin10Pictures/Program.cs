@@ -14,7 +14,18 @@ namespace SaveWin10Pictures
       List<string> files = new List<string>();
       int counter = 0;
       const string userName = "user";
-      string imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
+      string imagePath = $@"C:\Users\{userName}\Pictures";
+      if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
+      {
+        imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
+      }
+
+      if (!Directory.Exists($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"))
+      {
+        display($@"The directory C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets does not appear to exit, are you on a Windows 10 PC ?");
+        return;
+      }
+
       foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
       {
         files.Add(file);
