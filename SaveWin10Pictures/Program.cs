@@ -13,7 +13,7 @@ namespace SaveWin10Pictures
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
       int counter = 0;
-      const string userName = "user";
+      string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
       string imagePath = $@"C:\Users\{userName}\Pictures";
       if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
       {
