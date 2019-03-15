@@ -13,6 +13,7 @@ namespace SaveWin10Pictures
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
       int counter = 0;
+      //string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
       string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
       // remove domain if any
       if (userName.Contains("\\"))
