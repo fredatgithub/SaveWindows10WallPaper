@@ -14,6 +14,12 @@ namespace SaveWin10Pictures
       List<string> files = new List<string>();
       int counter = 0;
       string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+      // remove domain if any
+      if (userName.Contains("\\"))
+      {
+        userName = userName.Split('\\')[1]; 
+      }
+
       string imagePath = $@"C:\Users\{userName}\Pictures";
       if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
       {
