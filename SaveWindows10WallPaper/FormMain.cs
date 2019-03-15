@@ -829,8 +829,30 @@ namespace SaveWindows10WallPaper
 
     private void ButtonView_Click(object sender, EventArgs e)
     {
-      // TODO add code to do a process start on Explorer picture folder
+      string userName = Environment.UserName;
+      string imagePath = $@"C:\Users\{userName}\Pictures";
+      if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
+      {
+        imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
+      }
 
+      StartProcess("Explorer.exe", imagePath, true, false);
+    }
+
+    public static void StartProcess(string dosScript, string arguments = "", bool useShellExecute = true, bool createNoWindow = false)
+    {
+      Process task = new Process
+      {
+        StartInfo =
+        {
+          UseShellExecute = useShellExecute,
+          FileName = dosScript,
+          Arguments = arguments,
+          CreateNoWindow = createNoWindow
+        }
+      };
+
+      task.Start();
     }
 
     public static string Plural(int number, string irregularNoun = "")
@@ -932,5 +954,17 @@ namespace SaveWindows10WallPaper
       }
     }
 
+    private void ButtonViewSource_Click(object sender, EventArgs e)
+    {
+      string userName = Environment.UserName;
+      string imagePath = $@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+      if (!Directory.Exists(imagePath))
+      {
+        MessageBox.Show($@"The directory C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets does not appear to exit, are you on a Windows 10 PC ?");
+        return;
+      }
+
+      StartProcess("Explorer.exe", imagePath, true, false);
+    }
   }
 }

@@ -67,6 +67,8 @@
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageList = new System.Windows.Forms.TabPage();
+      this.buttonViewSource = new System.Windows.Forms.Button();
+      this.buttonView = new System.Windows.Forms.Button();
       this.buttonRenameFileName = new System.Windows.Forms.Button();
       this.buttonSelectAll = new System.Windows.Forms.Button();
       this.buttonLoadPictures = new System.Windows.Forms.Button();
@@ -77,7 +79,6 @@
       this.listBoxToBeCopied = new System.Windows.Forms.ListBox();
       this.listBoxExistingPicture = new System.Windows.Forms.ListBox();
       this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.buttonView = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageList.SuspendLayout();
@@ -392,6 +393,7 @@
       // 
       // tabPageList
       // 
+      this.tabPageList.Controls.Add(this.buttonViewSource);
       this.tabPageList.Controls.Add(this.buttonView);
       this.tabPageList.Controls.Add(this.buttonRenameFileName);
       this.tabPageList.Controls.Add(this.buttonSelectAll);
@@ -404,11 +406,33 @@
       this.tabPageList.Controls.Add(this.listBoxExistingPicture);
       this.tabPageList.Location = new System.Drawing.Point(4, 29);
       this.tabPageList.Name = "tabPageList";
-      this.tabPageList.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageList.Padding = new System.Windows.Forms.Padding(3);
       this.tabPageList.Size = new System.Drawing.Size(1016, 600);
       this.tabPageList.TabIndex = 0;
       this.tabPageList.Text = "List";
       this.tabPageList.UseVisualStyleBackColor = true;
+      // 
+      // buttonViewSource
+      // 
+      this.buttonViewSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonViewSource.Location = new System.Drawing.Point(440, 483);
+      this.buttonViewSource.Name = "buttonViewSource";
+      this.buttonViewSource.Size = new System.Drawing.Size(135, 45);
+      this.buttonViewSource.TabIndex = 10;
+      this.buttonViewSource.Text = "Source";
+      this.buttonViewSource.UseVisualStyleBackColor = true;
+      this.buttonViewSource.Click += new System.EventHandler(this.ButtonViewSource_Click);
+      // 
+      // buttonView
+      // 
+      this.buttonView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonView.Location = new System.Drawing.Point(440, 420);
+      this.buttonView.Name = "buttonView";
+      this.buttonView.Size = new System.Drawing.Size(135, 45);
+      this.buttonView.TabIndex = 9;
+      this.buttonView.Text = "View Pic";
+      this.buttonView.UseVisualStyleBackColor = true;
+      this.buttonView.Click += new System.EventHandler(this.ButtonView_Click);
       // 
       // buttonRenameFileName
       // 
@@ -516,22 +540,11 @@
       // 
       this.tabPage2.Location = new System.Drawing.Point(4, 29);
       this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-      this.tabPage2.Size = new System.Drawing.Size(1016, 598);
+      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage2.Size = new System.Drawing.Size(1016, 600);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "tabPage2";
       this.tabPage2.UseVisualStyleBackColor = true;
-      // 
-      // buttonView
-      // 
-      this.buttonView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonView.Location = new System.Drawing.Point(440, 420);
-      this.buttonView.Name = "buttonView";
-      this.buttonView.Size = new System.Drawing.Size(135, 45);
-      this.buttonView.TabIndex = 9;
-      this.buttonView.Text = "View";
-      this.buttonView.UseVisualStyleBackColor = true;
-      this.buttonView.Click += new System.EventHandler(this.ButtonView_Click);
       // 
       // FormMain
       // 
@@ -608,5 +621,6 @@
     private System.Windows.Forms.Button buttonSelectAll;
     private System.Windows.Forms.Button buttonRenameFileName;
     private System.Windows.Forms.Button buttonView;
+    private System.Windows.Forms.Button buttonViewSource;
   }
 }
