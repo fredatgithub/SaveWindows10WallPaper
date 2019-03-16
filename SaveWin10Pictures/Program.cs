@@ -10,6 +10,8 @@ namespace SaveWin10Pictures
     {
       Action<string> display = Console.WriteLine;
       Console.ForegroundColor = ConsoleColor.White;
+      display($"Save Windows 10 wallpaper V1.2");
+      display(string.Empty);
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
       int counter = 0;
