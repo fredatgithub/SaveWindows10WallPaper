@@ -809,7 +809,6 @@ namespace SaveWindows10WallPaper
       {
         listBoxExistingPicture.SelectedIndex = i;
       }
-      
     }
 
     private void ButtonRenameFileName_Click(object sender, EventArgs e)

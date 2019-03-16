@@ -78,7 +78,6 @@
       this.buttonCopy = new System.Windows.Forms.Button();
       this.listBoxToBeCopied = new System.Windows.Forms.ListBox();
       this.listBoxExistingPicture = new System.Windows.Forms.ListBox();
-      this.tabPage2 = new System.Windows.Forms.TabPage();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageList.SuspendLayout();
@@ -383,7 +382,6 @@
       // tabControlMain
       // 
       this.tabControlMain.Controls.Add(this.tabPageList);
-      this.tabControlMain.Controls.Add(this.tabPage2);
       this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabControlMain.Location = new System.Drawing.Point(0, 35);
       this.tabControlMain.Name = "tabControlMain";
@@ -536,16 +534,6 @@
       this.listBoxExistingPicture.Size = new System.Drawing.Size(378, 504);
       this.listBoxExistingPicture.TabIndex = 0;
       // 
-      // tabPage2
-      // 
-      this.tabPage2.Location = new System.Drawing.Point(4, 29);
-      this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(1016, 600);
-      this.tabPage2.TabIndex = 1;
-      this.tabPage2.Text = "tabPage2";
-      this.tabPage2.UseVisualStyleBackColor = true;
-      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -610,7 +598,6 @@
     private System.Windows.Forms.ToolStripMenuItem LargeToolStripMenuItem;
     private System.Windows.Forms.TabControl tabControlMain;
     private System.Windows.Forms.TabPage tabPageList;
-    private System.Windows.Forms.TabPage tabPage2;
     private System.Windows.Forms.Button buttonGetDestinationPath;
     private System.Windows.Forms.TextBox textBoxDestinationPath;
     private System.Windows.Forms.Button buttonCommit;
