@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 
 namespace SaveWin10Pictures
@@ -22,7 +23,7 @@ namespace SaveWin10Pictures
       // remove domain if any
       if (userName.Contains("\\"))
       {
-        userName = userName.Split('\\')[1]; 
+        userName = userName.Split('\\')[1];
       }
 
       string imagePath = $@"C:\Users\{userName}\Pictures";
@@ -70,9 +71,43 @@ namespace SaveWin10Pictures
       display(string.Empty);
       display($"{counter} image{Plural(counter)} {Plural(counter, "have")} been copied to the picture folder.");
       display(string.Empty);
+
+      // Open explorer to see source picture folder
+      userName = Environment.UserName;
+      imagePath = $@"C:\Users\{userName}\Pictures";
+      if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
+      {
+        imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
+      }
+
+      StartProcess("Explorer.exe", imagePath, true, false);
+
+      // Open explorer to view target picture folder
+      imagePath = $@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+      if (Directory.Exists(imagePath))
+      {
+        StartProcess("Explorer.exe", imagePath, true, false);
+      }
+
       Console.ForegroundColor = ConsoleColor.Yellow;
       display("Press any key to exit:");
       Console.ReadKey(); // comment for batch to production
+    }
+
+    public static void StartProcess(string dosScript, string arguments = "", bool useShellExecute = true, bool createNoWindow = false)
+    {
+      Process task = new Process
+      {
+        StartInfo =
+        {
+          UseShellExecute = useShellExecute,
+          FileName = dosScript,
+          Arguments = arguments,
+          CreateNoWindow = createNoWindow
+        }
+      };
+
+      task.Start();
     }
 
     public static string Plural(int number, string irregularNoun = "")
