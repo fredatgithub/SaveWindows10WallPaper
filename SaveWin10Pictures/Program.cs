@@ -11,7 +11,7 @@ namespace SaveWin10Pictures
     {
       Action<string> display = Console.WriteLine;
       Console.ForegroundColor = ConsoleColor.White;
-      display($"Save Windows 10 wallpaper V1.3 with Explorer opening");
+      display($"Save Windows 10 wallpaper V1.4 without Explorer opening");
       display(string.Empty);
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
@@ -49,9 +49,12 @@ namespace SaveWin10Pictures
         for (int i = 0; i < files.Count; i++)
         {
           string source = files[i];
-          string destination = Path.Combine(imagePath, source) + ".jpg";
-          File.Copy(source, destination, overwirte);
-          counter++;
+          string destination = Path.Combine(imagePath, Path.GetFileName(source)) + ".jpg";
+          if (!File.Exists(destination))
+          {
+            File.Copy(source, destination, overwirte);
+            counter++;
+          }
         }
       }
       catch (Exception)
@@ -72,22 +75,22 @@ namespace SaveWin10Pictures
       display($"{counter} image{Plural(counter)} {Plural(counter, "have")} been copied to the picture folder.");
       display(string.Empty);
 
-      // Open explorer to see source picture folder
-      userName = Environment.UserName;
-      imagePath = $@"C:\Users\{userName}\Pictures";
-      if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
-      {
-        imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
-      }
+      // Open explorer to see source picture folder for test to debug
+      //userName = Environment.UserName;
+      //imagePath = $@"C:\Users\{userName}\Pictures";
+      //if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
+      //{
+      //  imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
+      //}
 
-      StartProcess("Explorer.exe", imagePath, true, false);
+      //StartProcess("Explorer.exe", imagePath, true, false);
 
-      // Open explorer to view target picture folder
-      imagePath = $@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
-      if (Directory.Exists(imagePath))
-      {
-        StartProcess("Explorer.exe", imagePath, true, false);
-      }
+      // Open explorer to view target picture folder for test to debug
+      //imagePath = $@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+      //if (Directory.Exists(imagePath))
+      //{
+      //  StartProcess("Explorer.exe", imagePath, true, false);
+      //}
 
       Console.ForegroundColor = ConsoleColor.Yellow;
       display("Press any key to exit:");
