@@ -11,7 +11,7 @@ namespace SaveWin10Pictures
     {
       Action<string> display = Console.WriteLine;
       Console.ForegroundColor = ConsoleColor.White;
-      display($"Save Windows 10 wallpaper V1.4 without Explorer opening");
+      display($"Save Windows 10 wallpaper V1.6 without Explorer opening");
       display(string.Empty);
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
