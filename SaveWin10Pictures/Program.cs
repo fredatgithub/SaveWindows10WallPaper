@@ -45,21 +45,22 @@ namespace SaveWin10Pictures
 
       try
       {
-        const bool overwirte = false;
+        //const bool overwrite = true;
+        const bool doNotOverwrite = false;
         for (int i = 0; i < files.Count; i++)
         {
           string source = files[i];
           string destination = Path.Combine(imagePath, Path.GetFileName(source)) + ".jpg";
           if (!File.Exists(destination))
           {
-            File.Copy(source, destination, overwirte);
+            File.Copy(source, destination, doNotOverwrite);
             counter++;
             // copying pic to source git
             string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
             string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source)) + ".jpg";
             if (File.Exists(destinationGit))
             {
-              File.Copy(source, destinationGit, overwirte);
+              File.Copy(source, destinationGit, doNotOverwrite);
             }
           }
         }
