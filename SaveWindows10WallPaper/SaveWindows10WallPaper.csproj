@@ -106,13 +106,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\2daef326d1d9e4b40fd250287a9cf2eabdf5d4df6fa03b53983a16b7e9a6e040.jpg" />
+    <Content Include="images\47e0e5ab1e3169145be43769ecb9644e52011ea6da89c6cfbfb7313c044af7d1.jpg" />
+    <Content Include="images\520fff690cd637532a5cb2191fcf28eaf52bec699d0db3d2bf6fc24fd1748708.jpg" />
+    <Content Include="images\55357a472733bcc50c92c784e5214e71aef2494b96daace67d46825e10c8beb3.jpg" />
+    <Content Include="images\568b988096458b6c057406a8240056acf5723dd455820a553310d7805be24b0a.jpg" />
+    <Content Include="images\6797f9954e5e9d9c5175d64652d43db62447357a067ffb3e559d81d586728d21.jpg" />
+    <Content Include="images\820b339797313e247f1aa6200d1244c553a2b1113f278363d5e3f98e02a382aa.jpg" />
+    <Content Include="images\af92b45f07727058aaf13c641d30d6865ff0f57b1754b2b90165db3613a08113.jpg" />
+    <Content Include="images\bateaux-annecy.jpg" />
+    <Content Include="images\blue sea with yatch.jpg" />
+    <Content Include="images\d787b80b9bad2c44786996e7e4ca8651460fe41fd17b89b1af22b70e7e1d46ea.jpg" />
+    <Content Include="images\lac_automne.jpg" />
+    <Content Include="images\mer_montagne_verdure.jpg" />
+    <Content Include="images\moon atop blue planet earth.jpg" />
     <Content Include="Translations.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="images\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
