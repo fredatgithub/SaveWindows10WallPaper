@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 
 namespace SaveWin10Pictures
 {
@@ -11,7 +12,7 @@ namespace SaveWin10Pictures
     {
       Action<string> display = Console.WriteLine;
       Console.ForegroundColor = ConsoleColor.White;
-      display($"Save Windows 10 wallpaper V1.6 without Explorer opening");
+      display($"Save Windows 10 wallpaper {DisplayTitle()} without Explorer opening");
       display(string.Empty);
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
@@ -103,6 +104,13 @@ namespace SaveWin10Pictures
       Console.ForegroundColor = ConsoleColor.Yellow;
       display("Press any key to exit:");
       Console.ReadKey(); // comment for batch to production
+    }
+
+    private static string DisplayTitle()
+    {
+      Assembly assembly = Assembly.GetExecutingAssembly();
+      FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+      return $@"V{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
     }
 
     public static void StartProcess(string dosScript, string arguments = "", bool useShellExecute = true, bool createNoWindow = false)
