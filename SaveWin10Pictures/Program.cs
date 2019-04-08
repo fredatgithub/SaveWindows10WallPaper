@@ -16,25 +16,28 @@ namespace SaveWin10Pictures
       //string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
       //string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
       string userName = Environment.UserName;
+      string userNameProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+      string myPicturesFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+      string appDatafolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
       // remove domain if any
       if (userName.Contains("\\"))
       {
         userName = userName.Split('\\')[1]; 
       }
 
-      string imagePath = $@"C:\Users\{userName}\Pictures";
-      if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
+      string imagePath = myPicturesFolder;
+      if (Directory.Exists($@"{myPicturesFolder}\fond_ecran"))
       {
-        imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
+        imagePath = $@"{myPicturesFolder}\fond_ecran";
       }
 
-      if (!Directory.Exists($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"))
+      if (!Directory.Exists($@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"))
       {
-        display($@"The directory C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets does not appear to exit, are you on a Windows 10 PC ?");
+        display($@"The directory {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets does not appear to exit, are you on a Windows 10 PC ?");
         return;
       }
 
-      foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
+      foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
       {
         files.Add(file);
       }
