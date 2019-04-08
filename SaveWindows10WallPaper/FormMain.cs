@@ -22,7 +22,6 @@ namespace SaveWindows10WallPaper
     public readonly Dictionary<string, string> _languageDicoFr = new Dictionary<string, string>();
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
-    // string ImagePath = @"%AppData%\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
 
     private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -734,6 +733,7 @@ namespace SaveWindows10WallPaper
         return;
       }
 
+      int counter = 0;
       try
       {
         bool overwirte = false;
@@ -742,12 +742,15 @@ namespace SaveWindows10WallPaper
           string source = listBoxToBeCopied.Items[i].ToString();
           string destination = Path.Combine(textBoxDestinationPath.Text, source) + ".jpg";
           File.Copy(source, destination, overwirte);
+          counter++;
         }
       }
       catch (Exception)
       {
         // do nothing and continue to next file
       }
+
+      MessageBox.Show($"{counter} image{Plural(counter)} {Plural(counter, "have")} been copied to the picture folder.");
     }
 
     private void ButtonGetDestinationPath_Click(object sender, EventArgs e)
@@ -774,10 +777,7 @@ namespace SaveWindows10WallPaper
     private void ButtonLoadPictures_Click(object sender, EventArgs e)
     {
       listBoxExistingPicture.Items.Clear();
-      // ImagePath
-      //     string ImagePath = @"%AppData%\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
-      string userName = "userName";
-      
+      string userName = Environment.UserName;
       foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
       {
         listBoxExistingPicture.Items.Add(file);
@@ -809,7 +809,6 @@ namespace SaveWindows10WallPaper
       {
         listBoxExistingPicture.SelectedIndex = i;
       }
-      
     }
 
     private void ButtonRenameFileName_Click(object sender, EventArgs e)
@@ -825,6 +824,146 @@ namespace SaveWindows10WallPaper
       {
         listBoxToBeCopied.Items.Add(file);
       }
+    }
+
+    private void ButtonView_Click(object sender, EventArgs e)
+    {
+      string userName = Environment.UserName;
+      string imagePath = $@"C:\Users\{userName}\Pictures";
+      if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
+      {
+        imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
+      }
+
+      StartProcess("Explorer.exe", imagePath, true, false);
+    }
+
+    public static void StartProcess(string dosScript, string arguments = "", bool useShellExecute = true, bool createNoWindow = false)
+    {
+      Process task = new Process
+      {
+        StartInfo =
+        {
+          UseShellExecute = useShellExecute,
+          FileName = dosScript,
+          Arguments = arguments,
+          CreateNoWindow = createNoWindow
+        }
+      };
+
+      task.Start();
+    }
+
+    public static string Plural(int number, string irregularNoun = "")
+    {
+      switch (irregularNoun)
+      {
+        case "":
+          return number > 1 ? "s" : string.Empty;
+        case "al":
+          return number > 1 ? "aux" : "al";
+        case "au":
+          return number > 1 ? "aux" : "au";
+        case "eau":
+          return number > 1 ? "eaux" : "eau";
+        case "eu":
+          return number > 1 ? "eux" : "eu";
+        case "landau":
+          return number > 1 ? "landaus" : "landau";
+        case "sarrau":
+          return number > 1 ? "sarraus" : "sarrau";
+        case "bleu":
+          return number > 1 ? "bleus" : "bleu";
+        case "émeu":
+          return number > 1 ? "émeus" : "émeu";
+        case "lieu":
+          return number > 1 ? "lieux" : "lieu";
+        case "pneu":
+          return number > 1 ? "pneus" : "pneu";
+        case "aval":
+          return number > 1 ? "avals" : "aval";
+        case "bal":
+          return number > 1 ? "bals" : "bal";
+        case "chacal":
+          return number > 1 ? "chacals" : "chacal";
+        case "carnaval":
+          return number > 1 ? "carnavals" : "carnaval";
+        case "festival":
+          return number > 1 ? "festivals" : "festival";
+        case "récital":
+          return number > 1 ? "récitals" : "récital";
+        case "régal":
+          return number > 1 ? "régals" : "régal";
+        case "cal":
+          return number > 1 ? "cals" : "cal";
+        case "serval":
+          return number > 1 ? "servals" : "serval";
+        case "choral":
+          return number > 1 ? "chorals" : "choral";
+        case "narval":
+          return number > 1 ? "narvals" : "narval";
+        case "bail":
+          return number > 1 ? "baux" : "bail";
+        case "corail":
+          return number > 1 ? "coraux" : "corail";
+        case "émail":
+          return number > 1 ? "émaux" : "émail";
+        case "soupirail":
+          return number > 1 ? "soupiraux" : "soupirail";
+        case "travail":
+          return number > 1 ? "travaux" : "travail";
+        case "vantail":
+          return number > 1 ? "vantaux" : "vantail";
+        case "vitrail":
+          return number > 1 ? "vitraux" : "vitrail";
+        case "bijou":
+          return number > 1 ? "bijoux" : "bijou";
+        case "caillou":
+          return number > 1 ? "cailloux" : "caillou";
+        case "chou":
+          return number > 1 ? "choux" : "chou";
+        case "genou":
+          return number > 1 ? "genoux" : "genou";
+        case "hibou":
+          return number > 1 ? "hiboux" : "hibou";
+        case "joujou":
+          return number > 1 ? "joujoux" : "joujou";
+        case "pou":
+          return number > 1 ? "poux" : "pou";
+        case "est":
+          return number > 1 ? "sont" : "est";
+
+        // English
+        case " is":
+          return number > 1 ? "s are" : " is"; // with a space before
+        case "is":
+          return number > 1 ? "are" : "is"; // without a space before
+        case "are":
+          return number > 1 ? "are" : "is"; // without a space before
+        case "has":
+          return number > 1 ? "have" : "has";
+        case "have":
+          return number > 1 ? "have" : "has";
+        case "The":
+          return "The"; // CAPITAL, useful because of French plural
+        case "the":
+          return "the"; // lower case, useful because of French plural
+        default:
+          return number > 1 ? "s" : string.Empty;
+      }
+    }
+
+    private void ButtonViewSource_Click(object sender, EventArgs e)
+    {
+      string userName = Environment.UserName;
+      string imagePath = $@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+      if (!Directory.Exists(imagePath))
+      {
+        MessageBox.Show($@"The directory C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets does not appear to exit, are you on a Windows 10 PC ?");
+        return;
+      }
+
+      StartProcess("Explorer.exe", imagePath, true, false);
     }
   }
 }
