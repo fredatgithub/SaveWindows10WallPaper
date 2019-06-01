@@ -106,11 +106,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\186111fbe9b06135fa6fbfb8d46ae88c9a79aabfbbe86a79957cf8d5b01b1059.jpg" />
     <Content Include="images\2daef326d1d9e4b40fd250287a9cf2eabdf5d4df6fa03b53983a16b7e9a6e040.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\314a2bb1c114523ca38d39570bad64ab133730a525a3cec90ca4059e6c8bfb3f.jpg" />
+    <Content Include="images\31868e2bb783fe4ad74e7aa4097e81cefb26c227b674c069941cfba407215e7c.jpg" />
     <Content Include="images\47e0e5ab1e3169145be43769ecb9644e52011ea6da89c6cfbfb7313c044af7d1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -124,9 +124,11 @@
     <Content Include="images\568b988096458b6c057406a8240056acf5723dd455820a553310d7805be24b0a.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\61965cac2ccfba9395d586a64216f23ca88aac080e9be18962bc4ea715e5e927.jpg" />
     <Content Include="images\6797f9954e5e9d9c5175d64652d43db62447357a067ffb3e559d81d586728d21.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\6b1e26b6b0e7831a492cd56dc60a34c1767f91dc1d9c9722028c51a059f08f7a.jpg" />
     <Content Include="images\820b339797313e247f1aa6200d1244c553a2b1113f278363d5e3f98e02a382aa.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -141,10 +143,12 @@
     <Content Include="images\blue sea with yatch.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\d619367119fc2c52a05919299d744516268dc509799f4b4bb321aaa8d1aed42f.jpg" />
     <Content Include="images\d6b78f6f5ba2a037bfe83cad70a03c07becfdffd1edeec6b0e1789e1076591aa.jpg" />
     <Content Include="images\d787b80b9bad2c44786996e7e4ca8651460fe41fd17b89b1af22b70e7e1d46ea.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\e7e00211172d8ed29960a6cd2aa6c30175aa3832a072765311015ccca61460f4.jpg" />
     <Content Include="images\lac_automne.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
