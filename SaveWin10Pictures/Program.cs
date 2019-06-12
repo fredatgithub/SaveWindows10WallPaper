@@ -106,16 +106,15 @@ namespace SaveWin10Pictures
 
 
       // keeps running for pc up all the time until Q key is pressed
-      while (true)
+     
+      do
       {
         Console.ForegroundColor = ConsoleColor.Yellow;
-        display("Press q to quit or let it run forever:");
-        // Console.ReadKey();
-        if (Console.ReadKey() == ConsoleKeyInfo)
-        {
+        display("Press Q to quit or let it run forever:");
+        cki = Console.ReadKey();
 
-        }
-      }
+        
+      } while (cki.Key != ConsoleKey.Q);
 
       Console.ForegroundColor = ConsoleColor.Yellow;
       display("Press any key to exit:");
