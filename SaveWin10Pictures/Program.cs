@@ -104,6 +104,19 @@ namespace SaveWin10Pictures
       //  StartProcess("Explorer.exe", imagePath, true, false);
       //}
 
+
+      // keeps running for pc up all the time until Q key is pressed
+      while (true)
+      {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        display("Press q to quit or let it run forever:");
+        // Console.ReadKey();
+        if (Console.ReadKey() == ConsoleKeyInfo)
+        {
+
+        }
+      }
+
       Console.ForegroundColor = ConsoleColor.Yellow;
       display("Press any key to exit:");
       Console.ReadKey(); // comment for batch to production
