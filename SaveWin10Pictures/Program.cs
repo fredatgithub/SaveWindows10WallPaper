@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 
 namespace SaveWin10Pictures
 {
@@ -106,15 +107,20 @@ namespace SaveWin10Pictures
 
 
       // keeps running for pc up all the time until Q key is pressed
-     
+      
+      ConsoleKeyInfo consoleKeyPressed;
+      DateTime timeToCheck = DateTime.Now;
       do
       {
         Console.ForegroundColor = ConsoleColor.Yellow;
         display("Press Q to quit or let it run forever:");
-        cki = Console.ReadKey();
-
+        display("Press S to open Source directory:");
+        display("Press T to open Target directory:");
+        consoleKeyPressed = Console.ReadKey();
+        // Check every 24 hours
+        Thread.Sleep(5000);
         
-      } while (cki.Key != ConsoleKey.Q);
+      } while (consoleKeyPressed.Key != ConsoleKey.Q);
 
       Console.ForegroundColor = ConsoleColor.Yellow;
       display("Press any key to exit:");
