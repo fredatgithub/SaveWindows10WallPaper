@@ -118,8 +118,23 @@ namespace SaveWin10Pictures
         display("Press T to open Target directory:");
         consoleKeyPressed = Console.ReadKey();
         // Check every 24 hours
-        Thread.Sleep(5000);
-        
+        //Thread.Sleep(5000);
+        if (consoleKeyPressed.ToString() == "Q")
+        {
+          break;
+        }
+
+        if (consoleKeyPressed.ToString() == "S")
+        {
+          string sourceDirectory = "";
+
+        }
+
+        if (consoleKeyPressed.ToString() == "T")
+        {
+          string targetDirectory = "";
+        }
+
       } while (consoleKeyPressed.Key != ConsoleKey.Q);
 
       Console.ForegroundColor = ConsoleColor.Yellow;
