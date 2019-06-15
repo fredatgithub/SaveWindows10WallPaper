@@ -107,7 +107,7 @@ namespace SaveWin10Pictures
 
 
       // keeps running for pc up all the time until Q key is pressed
-      
+
       ConsoleKeyInfo consoleKeyPressed;
       DateTime timeToCheck = DateTime.Now;
       do
@@ -132,7 +132,14 @@ namespace SaveWin10Pictures
 
         if (consoleKeyPressed.ToString() == "T")
         {
-          string targetDirectory = "";
+          string targetDirectory = myPicturesFolder;
+          if (Directory.Exists($@"{myPicturesFolder}\fond_ecran"))
+          {
+            targetDirectory = $@"{myPicturesFolder}\fond_ecran";
+          }
+
+          // process start explorer 
+
         }
 
       } while (consoleKeyPressed.Key != ConsoleKey.Q);
