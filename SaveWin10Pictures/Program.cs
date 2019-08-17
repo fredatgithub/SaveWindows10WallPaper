@@ -118,7 +118,7 @@ namespace SaveWin10Pictures
         consoleKeyPressed = Console.ReadKey();
         // Check every 24 hours
         //Thread.Sleep(5000);
-        if (consoleKeyPressed.ToString() == "Q")
+        if (consoleKeyPressed.ToString().ToUpper() == "Q")
         {
           break;
         }
@@ -143,9 +143,9 @@ namespace SaveWin10Pictures
 
       } while (consoleKeyPressed.Key != ConsoleKey.Q);
 
-      Console.ForegroundColor = ConsoleColor.Yellow;
-      display("Press any key to exit:");
-      Console.ReadKey(); // comment for batch to production
+      //Console.ForegroundColor = ConsoleColor.Yellow;
+      //display("Press any key to exit:");
+      //Console.ReadKey(); // comment for batch to production
     }
 
     private static string DisplayTitle()
