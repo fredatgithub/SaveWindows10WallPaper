@@ -106,15 +106,32 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\017b91493d448c797dc11f7ca28f16ff058b2347b0767376a89fb1615b8b900e.jpg" />
+    <Content Include="images\01e8e94b9d8880f0fa5f663d4e83c60c3a98b8e9b4e44415222984167f2b0746.jpg" />
+    <Content Include="images\0460cdfb1d4f02ecc64906f88a4d48987edce4f4d3a9c232a46c6228ff5bf28e.jpg" />
+    <Content Include="images\0dad295d3933646f18661ddafa0289aefee3e0f60ebc56bea0d7d65782ffcb0a.jpg" />
+    <Content Include="images\1108913c1c7fc2cb4ee2b2b5bd6ee5abb96601fdd53188e0b3dabed17aa788a9.jpg" />
+    <Content Include="images\1795347e4d7a99aa1eeed9f4f755bfcda0a8d4cc5809952542192243e3deb1a5.jpg" />
+    <Content Include="images\194e74e6847e5a613efadb6e846b5828912a711be2b0ed20bcad03362aa235b3.jpg" />
+    <Content Include="images\1f111236ce4936e3e62958407ecf595c09bae9a801c59a8b3e4c808eb6c939ef.jpg" />
+    <Content Include="images\1fc0d8e9227c0538a56f3e7262c368622b65798a526fb8ddbc09ebf811d828ea.jpg" />
+    <Content Include="images\23465b3f37e11d1ea45558ddd35411c1e513d2494f6691ab6c0d6993258872ec.jpg" />
     <Content Include="images\2daef326d1d9e4b40fd250287a9cf2eabdf5d4df6fa03b53983a16b7e9a6e040.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\310ff4bb7bc7a7943b347031ebe08bd2a3e9ba5b3000b582006c723aaede71d5.jpg" />
     <Content Include="images\314a2bb1c114523ca38d39570bad64ab133730a525a3cec90ca4059e6c8bfb3f.jpg" />
     <Content Include="images\31868e2bb783fe4ad74e7aa4097e81cefb26c227b674c069941cfba407215e7c.jpg" />
+    <Content Include="images\3242b0a97c4dc1a5acf8064d78642f456322e6f9f6fe5e5b90cde486a424fdc9.jpg" />
+    <Content Include="images\3c67a5fa5aa1fb004d155408fe7fa123540ba277696ce0bcd4670129637bf87b.jpg" />
+    <Content Include="images\3d39d4cb4872c2db66d8d071ba065fe341fa39efeeeed8f68d5d194f85510118.jpg" />
+    <Content Include="images\47a911143ba664ec11008e692d211ea616fd3dd8963ee53e53b4234ad75fa4b2.jpg" />
     <Content Include="images\47e0e5ab1e3169145be43769ecb9644e52011ea6da89c6cfbfb7313c044af7d1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\4b4a987b5aedc40ef420de50c98f51088ca59dbc41ffa82e215866d44fc5ac4b.jpg" />
     <Content Include="images\4e7950762cd2fa5e5cbfc0d8fd2b3ec649979aafeadf23db7c86cdbf4709ac24.jpg" />
+    <Content Include="images\50972f541079bd54bf9429d17d2e8438aa3a50c661da4d2aafdfa949f686e1c7.jpg" />
     <Content Include="images\520fff690cd637532a5cb2191fcf28eaf52bec699d0db3d2bf6fc24fd1748708.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -124,31 +141,66 @@
     <Content Include="images\568b988096458b6c057406a8240056acf5723dd455820a553310d7805be24b0a.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\5c4cbed3562bcb4e45c765b99256bec753a08986760f3b772430500bfba5de59.jpg" />
     <Content Include="images\61965cac2ccfba9395d586a64216f23ca88aac080e9be18962bc4ea715e5e927.jpg" />
+    <Content Include="images\66ed3b33c0ab748135a8e9c99be25b2b92cfbcdc4ba49f6127b3eaa8d0faa7ff.jpg" />
     <Content Include="images\6797f9954e5e9d9c5175d64652d43db62447357a067ffb3e559d81d586728d21.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\693a7056837f7754641e4d05356fb7c4f70737627670c6764afdd25d9f7e11b8.jpg" />
     <Content Include="images\6b1e26b6b0e7831a492cd56dc60a34c1767f91dc1d9c9722028c51a059f08f7a.jpg" />
+    <Content Include="images\6c1b59f1b047d6484d80ab99dd4b950f8f5f97cd7e55cb52ee4b507c2f291a88.jpg" />
+    <Content Include="images\6dd31e28438a6e1b0f693a27d39979ed2da508916a91e0c8183fd4e71d97fee6.jpg" />
+    <Content Include="images\7057ba7e334273ad4dc76a7100c0ed5bae057a13a7e0506dd72971290863f65b.jpg" />
+    <Content Include="images\75268874049e6f953834ef5091de3ce121a7ba51b27844b6bd9bc8d0ac0d57bc.jpg" />
     <Content Include="images\820b339797313e247f1aa6200d1244c553a2b1113f278363d5e3f98e02a382aa.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\83175ef783399fd0e2d154a44dbad99ff4a095026bfb21cb6de0a1a5d406ea08.jpg" />
+    <Content Include="images\870a86c17102037f7e33c7dc1f42aa0e1e665b6770e14a6981cbf2feecd2f580.jpg" />
+    <Content Include="images\8d4c22024a8b5b6acb135fe7c1d4570402d4deda233f9a61daac81f1a02aaa87.jpg" />
+    <Content Include="images\91d222f256f85261d0b9152fc72de60cf666b18e00bdc2d239256daa62d8f522.jpg" />
+    <Content Include="images\9214587e62a688edaeecef55589e39cb7bf79c6f996eec5c062c83d5261f37bc.jpg" />
+    <Content Include="images\94cb6d22e6ddad1f023596b56c1c91f34a549dccf6cff63d63086027379e701c.jpg" />
+    <Content Include="images\955dab78a2a43b3956fb00111b1849770aaeda6fbd86fcbc5220d11d64221c7e.jpg" />
     <Content Include="images\968f275432dfac02df91c77d0decc174b16ed8e6d44bfd06b3e392d966a57b91.jpg" />
     <Content Include="images\9b2323aae99ae2213879ad064b9e0d32e5791f8a77d1e33ed56ff4801bbd6668.jpg" />
+    <Content Include="images\a27e0002c7721d42855ed442cbd79d72816e536e45c39dd595138217fc59dc1e.jpg" />
+    <Content Include="images\a82f6db0b17266bf3fd595fc3e33d920c089039f3ffae83af2311c994a0d3f1a.jpg" />
+    <Content Include="images\aa740673d8a2aebacfc252d363044dab85eeecc61e6e2ee752cec5af91d29ad8.jpg" />
     <Content Include="images\af92b45f07727058aaf13c641d30d6865ff0f57b1754b2b90165db3613a08113.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\b19d5f40aa538457dd96446e7d71b47d9f36037c1be5bc29dc2f5c65271d294d.jpg" />
+    <Content Include="images\b63c74b184384c770db347fec7e89861670c6a74049c142ecedb5f5479b3205b.jpg" />
+    <Content Include="images\b8b19a224cc2b37fc5d7779465ca36a2a89d9a8ac6128609f4aa4bfd30c023cf.jpg" />
     <Content Include="images\bateaux-annecy.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\blue sea with yatch.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\c3eab7240ead6b411b405dbad94c4f83238aa1f3e91bfb8bf4cee75ff3f9ee2f.jpg" />
+    <Content Include="images\c59f53a654721cb8fd3bc4e9fc6ff7a626646b0a0ca21102a0a12e9c5ef42a83.jpg" />
+    <Content Include="images\c6ce49982e3e555414447dd9b1b65d9cffb642753c5a846da6f9d5eb1dcc9f10.jpg" />
+    <Content Include="images\c8e73faaf76c727af5fd48443bc9af7812db73f20191dc9743a5303099991f25.jpg" />
+    <Content Include="images\ca53eb49104966f3f0163335e9b75230ecd2664f6ca10026f07c63d36a21e29a.jpg" />
+    <Content Include="images\d01551b9b7e584c53b323c58defe8442ad985ea86eca50ad5c6329405874daf8.jpg" />
     <Content Include="images\d619367119fc2c52a05919299d744516268dc509799f4b4bb321aaa8d1aed42f.jpg" />
+    <Content Include="images\d621735561c4278a1e15c306fd4e2881594a6c5ef0d5187ed5edc809b97c0a38.jpg" />
+    <Content Include="images\d64f89ee8f959bc78675abf20513926a909621c0bbb81560c823d68c8a3456ed.jpg" />
+    <Content Include="images\d6afbba997969eafc8eaeffd9df869f2fefb841a40f3801041e6985174fa0310.jpg" />
     <Content Include="images\d6b78f6f5ba2a037bfe83cad70a03c07becfdffd1edeec6b0e1789e1076591aa.jpg" />
     <Content Include="images\d787b80b9bad2c44786996e7e4ca8651460fe41fd17b89b1af22b70e7e1d46ea.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\d9d7ba5e61501bb5dbe4eaf7d237d0e22d661d1af4cb3c51f59d2ed5e5b6eb53.jpg" />
+    <Content Include="images\df6907deda7e65f574817f8a6c1be42c64cd080665252c3bc985b36a65ceb66c.jpg" />
     <Content Include="images\e7e00211172d8ed29960a6cd2aa6c30175aa3832a072765311015ccca61460f4.jpg" />
+    <Content Include="images\f2abd77263dbecf8440866673636003c41f9c6f92de7ed423098368ad0839f09.jpg" />
+    <Content Include="images\f32aa8c2f1480e825285f6778a764f30db1fda882fd19c36f65d9785df1fb545.jpg" />
+    <Content Include="images\f70809c5365f1460352573994694241fbc9d1e84d2e39d2555d060d3b7abc71d.jpg" />
+    <Content Include="images\f9e76a316616348afd996cf42f6ce101d4ff7ab95750c005283e8bce019bde48.jpg" />
     <Content Include="images\lac_automne.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
