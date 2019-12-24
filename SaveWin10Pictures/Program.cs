@@ -108,6 +108,11 @@ namespace SaveWin10Pictures
         if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "S")
         {
           string sourceDirectory = $@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+          if (!Directory.Exists(sourceDirectory))
+          {
+            sourceDirectory = appDatafolder;
+          }
+
           StartApplication("explorer.exe", sourceDirectory, false);
         }
 
