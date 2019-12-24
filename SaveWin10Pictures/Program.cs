@@ -12,7 +12,7 @@ namespace SaveWin10Pictures
     {
       Action<string> display = Console.WriteLine;
       Console.ForegroundColor = ConsoleColor.White;
-      display($"Save Windows 10 wallpaper {DisplayTitle()} without Explorer opening");
+      display($"Save Windows 10 wallpaper {DisplayTitle()} with Explorer opening");
       display(string.Empty);
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
@@ -87,25 +87,7 @@ namespace SaveWin10Pictures
       display($"{counter} image{Plural(counter)} {Plural(counter, "have")} been copied to the picture folder.");
       display(string.Empty);
 
-      // Open explorer to see source picture folder for test to debug
-      //userName = Environment.UserName;
-      //imagePath = $@"C:\Users\{userName}\Pictures";
-      //if (Directory.Exists($@"C:\Users\{userName}\Pictures\fond_ecran"))
-      //{
-      //  imagePath = $@"C:\Users\{userName}\Pictures\fond_ecran";
-      //}
-
-      //StartProcess("Explorer.exe", imagePath, true, false);
-
-      // Open explorer to view target picture folder for test to debug
-      //imagePath = $@"C:\Users\{userName}\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
-      //if (Directory.Exists(imagePath))
-      //{
-      //  StartProcess("Explorer.exe", imagePath, true, false);
-      //}
-
-
-      // keeps running for pc up all the time until Q key is pressed
+      // keeps pc running all the time until Q key is pressed
 
       ConsoleKeyInfo consoleKeyPressed;
       DateTime timeToCheck = DateTime.Now;
@@ -118,18 +100,18 @@ namespace SaveWin10Pictures
         consoleKeyPressed = Console.ReadKey();
         // Check every 24 hours
         //Thread.Sleep(5000);
-        if (consoleKeyPressed.ToString().ToUpper() == "Q")
+        if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "Q")
         {
           break;
         }
 
-        if (consoleKeyPressed.ToString() == "S")
+        if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "S")
         {
-          string sourceDirectory = "";
-
+          string sourceDirectory = $@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+          StartApplication("explorer.exe", sourceDirectory, false);
         }
 
-        if (consoleKeyPressed.ToString() == "T")
+        if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "T")
         {
           string targetDirectory = myPicturesFolder;
           if (Directory.Exists($@"{myPicturesFolder}\fond_ecran"))
@@ -138,21 +120,35 @@ namespace SaveWin10Pictures
           }
 
           // process start explorer 
-
+          StartApplication("explorer.exe", targetDirectory, false);
         }
 
       } while (consoleKeyPressed.Key != ConsoleKey.Q);
 
-      //Console.ForegroundColor = ConsoleColor.Yellow;
-      //display("Press any key to exit:");
-      //Console.ReadKey(); // comment for batch to production
+      Console.ForegroundColor = ConsoleColor.White;
     }
 
-    private static string DisplayTitle()
+    public static string DisplayTitle()
     {
       Assembly assembly = Assembly.GetExecutingAssembly();
       FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
       return $@"V{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
+    }
+
+    public static void StartApplication(string applicationName, string argument, bool useShellExecute = true, bool createNoWindow = false)
+    {
+      Process task = new Process
+      {
+        StartInfo =
+        {
+          UseShellExecute = useShellExecute,
+          FileName = applicationName,
+          Arguments = argument,
+          CreateNoWindow = createNoWindow
+        }
+      };
+
+      task.Start();
     }
 
     public static void StartProcess(string dosScript, string arguments = "", bool useShellExecute = true, bool createNoWindow = false)
