@@ -12,15 +12,9 @@ namespace TestOnceADay
       {
         if (DateTime.Now.Hour == 15 && DateTime.Now.Minute == 15 && DateTime.Now.Second == 31)
         {
-          counter
-            
-            
-            
-            
-            
-            
-            
-
+          counter++;
+          Console.WriteLine(counter);
+        }
       } while (true);
 
       // about 2529 or 2752 times within one second
