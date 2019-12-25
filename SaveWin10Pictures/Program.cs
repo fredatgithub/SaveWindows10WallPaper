@@ -6,9 +6,10 @@ using System.Reflection;
 
 namespace SaveWin10Pictures
 {
-  internal class Program
+  internal static class Program
   {
-    private static void Main()
+    [STAThread]
+    private static void Main(string[] arguments) //string arguments
     {
       Action<string> display = Console.WriteLine;
       Console.ForegroundColor = ConsoleColor.White;
@@ -86,16 +87,28 @@ namespace SaveWin10Pictures
       display(string.Empty);
       display($"{counter} image{Plural(counter)} {Plural(counter, "have")} been copied to the picture folder.");
       display(string.Empty);
-
+      // Exit if arguments contains no
+      if (arguments.ToString().Contains("no"))
+      {
+        return;
+      }
       // keeps pc running all the time until Q key is pressed
 
       ConsoleKeyInfo consoleKeyPressed;
-      DateTime timeToCheck = DateTime.Now;
+      //DateTime startProcessTime = DateTime.Now;
+      //int numberOfDaysPassed = 1;
+      //bool runThisDay = false;
+      //display($"number of days since process started: {DateTime.Now.Day}");
+      //display($"startProcessTime.Day: {startProcessTime.Day}");
+      //display($"numberOfDaysPassed: {numberOfDaysPassed}");
+      
       do
       {
         Console.ForegroundColor = ConsoleColor.Yellow;
         display("Press Q to quit or let it run forever:");
+        display("");
         display("Press S to open Source directory:");
+        display("");
         display("Press T to open Target directory:");
         consoleKeyPressed = Console.ReadKey();
         // Check every 24 hours
@@ -124,9 +137,19 @@ namespace SaveWin10Pictures
             targetDirectory = $@"{myPicturesFolder}\fond_ecran";
           }
 
-          // process start explorer 
+          // start explorer process
           StartApplication("explorer.exe", targetDirectory, false);
         }
+
+        //display($"number of days since process started: {DateTime.Now.Day}");
+        //display($"startProcessTime.Day: {startProcessTime.Day}");
+        //display($"numberOfDayspassed: {numberOfDaysPassed}");
+
+        //if (startProcessTime.Hour == 23 && !runThisDay)
+        //{
+        //  runThisDay = true;
+        //  Program.Main(new string[] { "no" });
+        //}
 
       } while (consoleKeyPressed.Key != ConsoleKey.Q);
 
