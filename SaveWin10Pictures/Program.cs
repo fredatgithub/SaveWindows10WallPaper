@@ -50,7 +50,6 @@ namespace SaveWin10Pictures
 
       try
       {
-        //const bool overwrite = true;
         const bool doNotOverwrite = false;
         for (int i = 0; i < files.Count; i++)
         {
@@ -95,63 +94,65 @@ namespace SaveWin10Pictures
       // keeps pc running all the time until Q key is pressed
 
       ConsoleKeyInfo consoleKeyPressed;
-      //DateTime startProcessTime = DateTime.Now;
-      //int numberOfDaysPassed = 1;
-      //bool runThisDay = false;
-      //display($"number of days since process started: {DateTime.Now.Day}");
-      //display($"startProcessTime.Day: {startProcessTime.Day}");
-      //display($"numberOfDaysPassed: {numberOfDaysPassed}");
-      
+      Console.ForegroundColor = ConsoleColor.Yellow;
+      display("Press QQ to quit or let it run forever:");
+      display("");
+      display("Press S to open Source directory:");
+      display("");
+      display("Press T to open Target directory:");
       do
       {
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        display("Press Q to quit or let it run forever:");
-        display("");
-        display("Press S to open Source directory:");
-        display("");
-        display("Press T to open Target directory:");
-        consoleKeyPressed = Console.ReadKey();
-        // Check every 24 hours
-        //Thread.Sleep(5000);
-        if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "Q")
+        while (!Console.KeyAvailable)
         {
-          break;
-        }
-
-        if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "S")
-        {
-          string sourceDirectory = $@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
-          if (!Directory.Exists(sourceDirectory))
+          //display($"hour: {DateTime.Now.Hour} minute:{DateTime.Now.Minute} seconde:{DateTime.Now.Second}");
+          if (DateTime.Now.Hour == 17 && DateTime.Now.Minute == 8)//  && DateTime.Now.Second == 1
           {
-            sourceDirectory = appDatafolder;
+            //runThisDay = true;
+            Program.Main(new string[] { "no" });
           }
 
-          StartApplication("explorer.exe", sourceDirectory, false);
-        }
-
-        if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "T")
-        {
-          string targetDirectory = myPicturesFolder;
-          if (Directory.Exists($@"{myPicturesFolder}\fond_ecran"))
+          consoleKeyPressed = Console.ReadKey();
+          // Check every 24 hours
+          //Thread.Sleep(5000);
+          if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "Q")
           {
-            targetDirectory = $@"{myPicturesFolder}\fond_ecran";
+            break;
           }
 
-          // start explorer process
-          StartApplication("explorer.exe", targetDirectory, false);
+          if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "S")
+          {
+            display("");
+            display("The S key has been pressed");
+            display("");
+            string sourceDirectory = $@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+            if (!Directory.Exists(sourceDirectory))
+            {
+              sourceDirectory = appDatafolder;
+            }
+
+            StartApplication("explorer.exe", sourceDirectory, false);
+          }
+
+          if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "T")
+          {
+            display("");
+            display("The T key has been pressed");
+            display("");
+            string targetDirectory = myPicturesFolder;
+            if (Directory.Exists($@"{myPicturesFolder}\fond_ecran"))
+            {
+              targetDirectory = $@"{myPicturesFolder}\fond_ecran";
+            }
+
+            StartApplication("explorer.exe", targetDirectory, false);
+          }
+          if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "Q")
+          {
+            // exit program
+            break;
+          }
         }
-
-        //display($"number of days since process started: {DateTime.Now.Day}");
-        //display($"startProcessTime.Day: {startProcessTime.Day}");
-        //display($"numberOfDayspassed: {numberOfDaysPassed}");
-
-        //if (startProcessTime.Hour == 23 && !runThisDay)
-        //{
-        //  runThisDay = true;
-        //  Program.Main(new string[] { "no" });
-        //}
-
-      } while (consoleKeyPressed.Key != ConsoleKey.Q);
+      } while (Console.ReadKey(true).Key != ConsoleKey.Q);
 
       Console.ForegroundColor = ConsoleColor.White;
     }

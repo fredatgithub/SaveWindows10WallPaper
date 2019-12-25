@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveWin10Pictures", "SaveWi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEnvironmentSpecialFolders", "TestEnvironmentSpecialFolders\TestEnvironmentSpecialFolders.csproj", "{FFF09F11-BC59-4AB7-95BD-D07D8557A54C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestOnceADay", "TestOnceADay\TestOnceADay.csproj", "{3A0AF553-F2E1-413F-9E27-71C870187ECD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FFF09F11-BC59-4AB7-95BD-D07D8557A54C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFF09F11-BC59-4AB7-95BD-D07D8557A54C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFF09F11-BC59-4AB7-95BD-D07D8557A54C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0AF553-F2E1-413F-9E27-71C870187ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0AF553-F2E1-413F-9E27-71C870187ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0AF553-F2E1-413F-9E27-71C870187ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0AF553-F2E1-413F-9E27-71C870187ECD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
