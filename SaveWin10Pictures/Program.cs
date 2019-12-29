@@ -37,6 +37,7 @@ namespace SaveWin10Pictures
         imagePath = $@"{myPicturesFolder}\fond_ecran";
       }
 
+      // C:\Users\userName\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets
       if (!Directory.Exists($@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"))
       {
         display($@"The directory {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets does not appear to exit, are you on a Windows 10 PC ?");
@@ -62,7 +63,7 @@ namespace SaveWin10Pictures
             // copying pic to source git
             string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
             string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source)) + ".jpg";
-            if (File.Exists(destinationGit))
+            if (!File.Exists(destinationGit))
             {
               File.Copy(source, destinationGit, doNotOverwrite);
             }
