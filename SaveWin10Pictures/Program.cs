@@ -4,12 +4,13 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
+
 namespace SaveWin10Pictures
 {
   internal static class Program
   {
     [STAThread]
-    private static void Main(string[] arguments) //string arguments
+    private static void Main(string[] arguments)
     {
       Action<string> display = Console.WriteLine;
       Console.ForegroundColor = ConsoleColor.White;
@@ -156,6 +157,31 @@ namespace SaveWin10Pictures
       } while (Console.ReadKey(true).Key != ConsoleKey.Q);
 
       Console.ForegroundColor = ConsoleColor.White;
+    }
+
+    public static bool IsLandscape(string picPath)
+    {
+      bool result = false;
+      //System.Net.Mime.MediaTypeNames.Image img = System.Net.Mime.MediaTypeNames.Image.FromFile(picPath);
+      //if (img.PropertyIdList.Contains(0x0112))
+      //{
+      //  PropertyItem propOrientation = _image.GetPropertyItem(0x0112);
+      //  short orientation = BitConverter.ToInt16(propOrientation.Value, 0);
+      //  if (orientation == 6)
+      //  {
+      //    img.RotateFlip(RotateFlipType.Rotate90FlipNone);
+      //  }
+      //  else if (orientation == 8)
+      //  {
+      //    img.RotateFlip(RotateFlipType.Rotate270FlipNone);
+      //  }
+      //  else
+      //  {
+      //    // Do nothing
+      //  }
+      //}
+
+      return result;
     }
 
     public static string DisplayTitle()
