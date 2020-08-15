@@ -88,7 +88,6 @@ namespace SaveWin10Pic24Hours
         display(string.Empty);
         Thread.Sleep(1000 * 60 * 60 * 24); // sleep 24 hours
       }
-
     }
 
     public static string Plural(int number, string irregularNoun = "")
