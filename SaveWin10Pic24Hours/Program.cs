@@ -14,7 +14,7 @@ namespace SaveWin10Pic24Hours
       while (true)
       {
         display(string.Empty);
-        display("Checking if there are new images to be copied...");
+        display($"Checking if there are new images to be copied on {DateTime.Now}");
         List<string> files = new List<string>();
         int counter = 0;
         //string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
@@ -84,7 +84,7 @@ namespace SaveWin10Pic24Hours
         }
 
         display(string.Empty);
-        display($"{counter} image{Plural(counter)} {Plural(counter, "have")} been copied to the picture folder.");
+        display($"{counter} image{Plural(counter)} {Plural(counter, "have")} been copied to the picture folder on {DateTime.Now}.");
         display(string.Empty);
         Thread.Sleep(1000 * 60 * 60 * 24); // sleep 24 hours
       }
