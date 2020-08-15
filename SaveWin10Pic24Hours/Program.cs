@@ -10,6 +10,7 @@ namespace SaveWin10Pic24Hours
     static void Main()
     {
       Action<string> display = Console.WriteLine;
+      Console.ForegroundColor = ConsoleColor.Yellow;
       display("Save Windows 10 pictures every 24 hours version 1.0.0.0");
       while (true)
       {
