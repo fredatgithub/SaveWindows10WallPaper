@@ -15,6 +15,7 @@ namespace SaveWin10Pic24Hours
       while (true)
       {
         display(string.Empty);
+        Console.ForegroundColor = ConsoleColor.Yellow;
         display($"Checking if there are new images to be copied on {DateTime.Now}");
         List<string> files = new List<string>();
         int counter = 0;
