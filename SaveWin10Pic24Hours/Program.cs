@@ -269,6 +269,7 @@ namespace SaveWin10Pic24Hours
             break;
         }
       }
+
       //Make sure we actually got something in our OS check
       //We don't want to just return " Service Pack 2" or " 32-bit"
       //That information is useless without the OS version.
