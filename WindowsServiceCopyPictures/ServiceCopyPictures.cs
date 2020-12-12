@@ -29,14 +29,14 @@ namespace WindowsServiceCopyPictures
       eventLog1.WriteEntry("OnStart from Service copy pictures.");
       // Set up a timer that triggers every minute.
       Timer timer = new Timer();
-      timer.Interval = 60000 * 60 * 24; // 60 seconds * 60 * 24 = 24 hours
+      timer.Interval = 60000 * 60; // 60 seconds * 60 = 1 hour // * 24 = 24 hours
       timer.Elapsed += new ElapsedEventHandler(this.OnTimer);
       timer.Start();
     }
 
     public void OnTimer(object sender, ElapsedEventArgs e)
     {
-      eventLog1.WriteEntry("Monitoring the service ServiceCopyPictures", EventLogEntryType.Information, eventId++);
+      eventLog1.WriteEntry("Checking if new pictures have been downloaded for the service ServiceCopyPictures", EventLogEntryType.Information, eventId++);
       List<string> files = new List<string>();
       int counter = 0;
       string userName = Environment.UserName;
