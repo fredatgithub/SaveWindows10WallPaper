@@ -15,18 +15,18 @@ namespace WindowsServiceCopyPictures
     {
       InitializeComponent();
       eventLog1 = new EventLog();
-      if (!EventLog.SourceExists("MySource"))
+      if (!EventLog.SourceExists("ServiceGetPictures"))
       {
-        EventLog.CreateEventSource("MySource", "MyNewLog");
+        EventLog.CreateEventSource("ServiceGetPictures", "MyNewLog");
       }
 
-      eventLog1.Source = "MySource";
+      eventLog1.Source = "ServiceGetPictures";
       eventLog1.Log = "MyNewLog";
     }
 
     protected override void OnStart(string[] args)
     {
-      eventLog1.WriteEntry("OnStart from Service copy pictures.");
+      eventLog1.WriteEntry("Starting Service to copy pictures.");
       // Set up a timer that triggers every minute.
       Timer timer = new Timer();
       timer.Interval = 60000 * 60; // 60 seconds * 60 = 1 hour // * 24 = 24 hours
