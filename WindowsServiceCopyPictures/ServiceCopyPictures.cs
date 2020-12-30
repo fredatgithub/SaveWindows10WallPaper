@@ -75,6 +75,7 @@ namespace WindowsServiceCopyPictures
           if (!File.Exists(destination))
           {
             File.Copy(source, destination, doNotOverwrite);
+            eventLog1.WriteEntry($"Copying one picture from: {source} to destination: {destination} for the service ServiceCopyPictures", EventLogEntryType.Information, eventId++);
             counter++;
             // copying pic to source git
             string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
