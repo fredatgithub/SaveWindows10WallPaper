@@ -28,9 +28,12 @@ namespace WindowsServiceCopyPictures
     {
       eventLog1.WriteEntry("Starting Service to copy pictures.");
       // Set up a timer that triggers every minute.
-      Timer timer = new Timer();
-      timer.Interval = 60000 * 60; // 60 seconds * 60 = 1 hour // * 24 = 24 hours
-      timer.Elapsed += new ElapsedEventHandler(this.OnTimer);
+      Timer timer = new Timer
+      {
+        Interval = 60000 * 60 // 60 seconds * 60 = 1 hour // * 24 = 24 hours
+      };
+
+      timer.Elapsed += new ElapsedEventHandler(OnTimer);
       timer.Start();
     }
 
