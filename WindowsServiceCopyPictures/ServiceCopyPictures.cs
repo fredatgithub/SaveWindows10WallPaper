@@ -88,6 +88,10 @@ namespace WindowsServiceCopyPictures
               File.Copy(source, destinationGit, doNotOverwrite);
             }
           }
+          else
+          {
+            eventLog1.WriteEntry($"Picture already exists on destination: {destination} for the service ServiceCopyPictures", EventLogEntryType.Information, eventId++);
+          }
         }
       }
       catch (Exception)
