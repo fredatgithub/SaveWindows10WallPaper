@@ -115,7 +115,6 @@ namespace SaveWin10Pictures
 
           consoleKeyPressed = Console.ReadKey();
           // Check every 24 hours
-          //Thread.Sleep(5000);
           if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "Q")
           {
             break;
