@@ -145,6 +145,6 @@ namespace WindowsServiceCopyPictures
       public int dwServiceSpecificExitCode;
       public int dwCheckPoint;
       public int dwWaitHint;
-    };
+    }
   }
 }
