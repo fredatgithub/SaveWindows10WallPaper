@@ -110,7 +110,7 @@ namespace SaveWin10Pictures
           if (DateTime.Now.Hour == 17 && DateTime.Now.Minute == 8)//  && DateTime.Now.Second == 1
           {
             //runThisDay = true;
-            Program.Main(new string[] { "no" });
+            Main(new string[] { "no" });
           }
 
           consoleKeyPressed = Console.ReadKey();
