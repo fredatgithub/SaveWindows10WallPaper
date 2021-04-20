@@ -352,14 +352,14 @@ namespace SaveWindows10WallPaper
       SaveWindowValue();
     }
 
-    private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+    private void FrenchToolStripMenuItem_Click(object sender, EventArgs e)
     {
       _currentLanguage = Language.French.ToString();
       SetLanguage(Language.French.ToString());
       AdjustAllControls();
     }
 
-    private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+    private void EnglishToolStripMenuItem_Click(object sender, EventArgs e)
     {
       _currentLanguage = Language.English.ToString();
       SetLanguage(Language.English.ToString());
@@ -449,7 +449,7 @@ namespace SaveWindows10WallPaper
       }
     }
 
-    private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+    private void CutToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
       var tb = focusedControl as TextBox;
@@ -459,7 +459,7 @@ namespace SaveWindows10WallPaper
       }
     }
 
-    private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+    private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
       var tb = focusedControl as TextBox;
@@ -469,7 +469,7 @@ namespace SaveWindows10WallPaper
       }
     }
 
-    private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+    private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
       var tb = focusedControl as TextBox;
@@ -479,7 +479,7 @@ namespace SaveWindows10WallPaper
       }
     }
 
-    private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+    private void SelectAllToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
       TextBox control = focusedControl as TextBox;
@@ -498,7 +498,7 @@ namespace SaveWindows10WallPaper
         return;
       }
 
-      if (tb.SelectedText == string.Empty)
+      if (string.IsNullOrEmpty(tb.SelectedText))
       {
         DisplayMessage(Translate("NoTextHasBeenSelected"),
           Translate(errorMessage), MessageBoxButtons.OK);
@@ -512,14 +512,14 @@ namespace SaveWindows10WallPaper
     private void CopyToClipboard(TextBoxBase tb, string message = "nothing")
     {
       if (tb != ActiveControl) return;
-      if (tb.Text == string.Empty)
+      if (string.IsNullOrEmpty(tb.Text))
       {
         DisplayMessage(Translate("ThereIsNothingToCopy") + Punctuation.OneSpace,
           Translate(message), MessageBoxButtons.OK);
         return;
       }
 
-      if (tb.SelectedText == string.Empty)
+      if (string.IsNullOrEmpty(tb.SelectedText))
       {
         DisplayMessage(Translate("NoTextHasBeenSelected"),
           Translate(message), MessageBoxButtons.OK);
@@ -756,7 +756,7 @@ namespace SaveWindows10WallPaper
     private void ButtonGetDestinationPath_Click(object sender, EventArgs e)
     {
       string path = ChooseDirectory();
-      if (path != string.Empty)
+      if (!string.IsNullOrEmpty(path))
       {
         textBoxDestinationPath.Text = path;
       }
