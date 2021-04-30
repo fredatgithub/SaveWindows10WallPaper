@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Threading;
 
@@ -57,14 +58,14 @@ namespace SaveWin10Pic24Hours
           {
             string source = files[i];
             string destination = Path.Combine(imagePath, Path.GetFileName(source)) + ".jpg";
-            if (!File.Exists(destination))
+            if (!File.Exists(destination) && IsPictureLandscape(destination)) // and picture is landscape
             {
               File.Copy(source, destination, doNotOverwrite);
               counter++;
               // copying pic to source git
               string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
               string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source)) + ".jpg";
-              if (!File.Exists(destinationGit))
+              if (!File.Exists(destinationGit) && IsPictureLandscape(destinationGit))
               {
                 File.Copy(source, destinationGit, doNotOverwrite);
               }
@@ -288,6 +289,12 @@ namespace SaveWin10Pic24Hours
       }
       //Return the information we've gathered.
       return operatingSystem;
+    }
+
+    public static bool IsPictureLandscape(string fileName)
+    {
+      Bitmap image = new Bitmap(fileName);
+      return image.Width > image.Height;
     }
   }
 }

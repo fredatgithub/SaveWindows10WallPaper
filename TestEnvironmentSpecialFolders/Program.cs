@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace TestEnvironmentSpecialFolders
 {
@@ -68,8 +69,16 @@ namespace TestEnvironmentSpecialFolders
       //{
       //  display($"{item)}");
       //}
+
+      //display($"The picture: {picture} is landscape: {IsPictureLandscape(picture)}");
       display("Press any key to exit:");
       Console.ReadKey();
+    }
+
+    public static bool IsPictureLandscape(string fileName)
+    {
+      Bitmap image = new Bitmap(fileName);
+      return image.Width > image.Height;
     }
   }
 }
