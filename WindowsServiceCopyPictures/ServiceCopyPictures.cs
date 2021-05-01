@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.ServiceProcess;
@@ -75,7 +76,7 @@ namespace WindowsServiceCopyPictures
         {
           string source = files[i];
           string destination = Path.Combine(imagePath, Path.GetFileName(source)) + ".jpg";
-          if (!File.Exists(destination))
+          if (!File.Exists(destination) && IsPictureLandscape(destination)) // and picture is landscape
           {
             File.Copy(source, destination, doNotOverwrite);
             eventLog1.WriteEntry($"Copying one picture from: {source} to destination: {destination} for the service ServiceCopyPictures", EventLogEntryType.Information, eventId++);
@@ -83,7 +84,7 @@ namespace WindowsServiceCopyPictures
             // copying pic to source git
             string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
             string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source)) + ".jpg";
-            if (!File.Exists(destinationGit))
+            if (!File.Exists(destinationGit) && IsPictureLandscape(destinationGit)) // and picture is landscape
             {
               File.Copy(source, destinationGit, doNotOverwrite);
             }
@@ -136,7 +137,7 @@ namespace WindowsServiceCopyPictures
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    public struct ServiceStatus
+    private struct ServiceStatus
     {
       public int dwServiceType;
       public ServiceState dwCurrentState;
@@ -145,6 +146,19 @@ namespace WindowsServiceCopyPictures
       public int dwServiceSpecificExitCode;
       public int dwCheckPoint;
       public int dwWaitHint;
+    }
+
+    public static bool IsPictureLandscape(string fileName)
+    {
+      try
+      {
+        Bitmap image = new Bitmap(fileName);
+        return image.Width > image.Height;
+      }
+      catch (Exception)
+      {
+        return false;
+      }
     }
   }
 }
