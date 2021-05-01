@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 
@@ -57,14 +58,14 @@ namespace SaveWin10Pictures
         {
           string source = files[i];
           string destination = Path.Combine(imagePath, Path.GetFileName(source)) + ".jpg";
-          if (!File.Exists(destination))
+          if (!File.Exists(destination) && IsPictureLandscape(destination)) // and picture is landscape
           {
             File.Copy(source, destination, doNotOverwrite);
             counter++;
             // copying pic to source git
             string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
             string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source)) + ".jpg";
-            if (!File.Exists(destinationGit))
+            if (!File.Exists(destinationGit) && IsPictureLandscape(destinationGit)) // and picture is landscape
             {
               File.Copy(source, destinationGit, doNotOverwrite);
             }
@@ -156,31 +157,6 @@ namespace SaveWin10Pictures
       } while (Console.ReadKey(true).Key != ConsoleKey.Q);
 
       Console.ForegroundColor = ConsoleColor.White;
-    }
-
-    public static bool IsLandscape(string picPath)
-    {
-      bool result = false;
-      //System.Net.Mime.MediaTypeNames.Image img = System.Net.Mime.MediaTypeNames.Image.FromFile(picPath);
-      //if (img.PropertyIdList.Contains(0x0112))
-      //{
-      //  PropertyItem propOrientation = _image.GetPropertyItem(0x0112);
-      //  short orientation = BitConverter.ToInt16(propOrientation.Value, 0);
-      //  if (orientation == 6)
-      //  {
-      //    img.RotateFlip(RotateFlipType.Rotate90FlipNone);
-      //  }
-      //  else if (orientation == 8)
-      //  {
-      //    img.RotateFlip(RotateFlipType.Rotate270FlipNone);
-      //  }
-      //  else
-      //  {
-      //    // Do nothing
-      //  }
-      //}
-
-      return result;
     }
 
     public static string DisplayTitle()
@@ -417,6 +393,19 @@ namespace SaveWin10Pictures
       }
       //Return the information we've gathered.
       return operatingSystem;
+    }
+
+    public static bool IsPictureLandscape(string fileName)
+    {
+      try
+      {
+        Bitmap image = new Bitmap(fileName);
+        return image.Width > image.Height;
+      }
+      catch (Exception)
+      {
+        return false;
+      }
     }
   }
 }
