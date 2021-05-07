@@ -15,7 +15,7 @@ namespace SaveWin10Pictures
     {
       Action<string> display = Console.WriteLine;
       Console.ForegroundColor = ConsoleColor.White;
-      display($"Save Windows 10 wallpaper {DisplayTitle()} with Explorer opening");
+      display($"Save Windows 10 wallpaper {GetVersion()} with Explorer opening");
       display(string.Empty);
       display("Checking if there are new images to be copied...");
       List<string> files = new List<string>();
@@ -58,14 +58,14 @@ namespace SaveWin10Pictures
         {
           string source = files[i];
           string destination = Path.Combine(imagePath, Path.GetFileName(source)) + ".jpg";
-          if (!File.Exists(destination) && IsPictureLandscape(destination)) // and picture is landscape
+          if (!File.Exists(destination) && IsPictureLandscape(source)) // and picture is landscape
           {
             File.Copy(source, destination, doNotOverwrite);
             counter++;
             // copying pic to source git
             string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
             string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source)) + ".jpg";
-            if (!File.Exists(destinationGit) && IsPictureLandscape(destinationGit)) // and picture is landscape
+            if (!File.Exists(destinationGit) && IsPictureLandscape(source)) // and picture is landscape
             {
               File.Copy(source, destinationGit, doNotOverwrite);
             }
@@ -159,7 +159,7 @@ namespace SaveWin10Pictures
       Console.ForegroundColor = ConsoleColor.White;
     }
 
-    public static string DisplayTitle()
+    public static string GetVersion()
     {
       Assembly assembly = Assembly.GetExecutingAssembly();
       FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
