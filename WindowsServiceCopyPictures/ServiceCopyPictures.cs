@@ -76,7 +76,7 @@ namespace WindowsServiceCopyPictures
         {
           string source = files[i];
           string destination = Path.Combine(imagePath, Path.GetFileName(source)) + ".jpg";
-          if (!File.Exists(destination) && IsPictureLandscape(destination)) // and picture is landscape
+          if (!File.Exists(destination) && IsPictureLandscape(source, "jpg")) // and picture is landscape
           {
             File.Copy(source, destination, doNotOverwrite);
             eventLog1.WriteEntry($"Copying one picture from: {source} to destination: {destination} for the service ServiceCopyPictures", EventLogEntryType.Information, eventId++);
@@ -84,7 +84,7 @@ namespace WindowsServiceCopyPictures
             // copying pic to source git
             string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
             string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source)) + ".jpg";
-            if (!File.Exists(destinationGit) && IsPictureLandscape(destinationGit)) // and picture is landscape
+            if (!File.Exists(destinationGit) && IsPictureLandscape(source, "jpg")) // and picture is landscape
             {
               File.Copy(source, destinationGit, doNotOverwrite);
             }
@@ -148,12 +148,22 @@ namespace WindowsServiceCopyPictures
       public int dwWaitHint;
     }
 
-    public static bool IsPictureLandscape(string fileName)
+    public static bool IsPictureLandscape(string fileName, string pictureExtension)
     {
       try
       {
-        Bitmap image = new Bitmap(fileName);
-        return image.Width > image.Height;
+        if (File.Exists(fileName))
+        {
+          Bitmap image = new Bitmap(fileName);
+          return image.Width > image.Height;
+        }
+        else if (File.Exists($"{fileName}.{pictureExtension}"))
+        {
+          Bitmap image = new Bitmap($"{fileName}.{pictureExtension}");
+          return image.Width > image.Height;
+        }
+
+        return false;
       }
       catch (Exception)
       {
