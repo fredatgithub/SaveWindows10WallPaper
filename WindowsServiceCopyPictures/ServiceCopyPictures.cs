@@ -71,7 +71,7 @@ namespace WindowsServiceCopyPictures
         eventLog1.WriteEntry($@"FOUND PICTURE {file} OF SIZE {fileInfo.Length} BYTES IN {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets", EventLogEntryType.Information, eventId++);
       }
 
-      eventLog1.WriteEntry($@"There are {files.Count} picture files (bigger than 100 kb) found in {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets", EventLogEntryType.Information, eventId++);
+      eventLog1.WriteEntry($@"There are {files.Count} picture file{Pluralize(files.Count)} (bigger than 100 kb) found in {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets", EventLogEntryType.Information, eventId++);
 
       try
       {
@@ -103,6 +103,11 @@ namespace WindowsServiceCopyPictures
       {
         // do nothing and continue with the next file
       }
+    }
+
+    private object Pluralize(int count)
+    {
+      return count > 1 ? "s" : "";
     }
 
     private List<string> GetFilesFileteredBySize(DirectoryInfo directoryInfo, long sizeGreaterOrEqualTo)
