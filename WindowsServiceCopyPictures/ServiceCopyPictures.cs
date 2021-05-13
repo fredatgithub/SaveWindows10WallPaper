@@ -64,12 +64,14 @@ namespace WindowsServiceCopyPictures
         return;
       }
 
-      foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
+      foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100_000))
       {
         files.Add(file);
         FileInfo fileInfo = new FileInfo(file);
         eventLog1.WriteEntry($@"FOUND PICTURE {file} OF SIZE {fileInfo.Length} BYTES IN {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets", EventLogEntryType.Information, eventId++);
       }
+
+      eventLog1.WriteEntry($@"There are {files.Count} picture files (bigger than 100 kb) found in {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets", EventLogEntryType.Information, eventId++);
 
       try
       {
