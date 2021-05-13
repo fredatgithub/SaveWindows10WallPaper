@@ -68,7 +68,7 @@ namespace WindowsServiceCopyPictures
       {
         files.Add(file);
         FileInfo fileInfo = new FileInfo(file);
-        eventLog1.WriteEntry($@"Found picture {file} of size {fileInfo.Length} bytes in {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets", EventLogEntryType.Information, eventId++);
+        eventLog1.WriteEntry($@"FOUND PICTURE {file} OF SIZE {fileInfo.Length} BYTES IN {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets", EventLogEntryType.Information, eventId++);
       }
 
       try
