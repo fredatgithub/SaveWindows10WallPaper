@@ -67,7 +67,8 @@ namespace WindowsServiceCopyPictures
       foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
       {
         files.Add(file);
-        eventLog1.WriteEntry($@"Found picture {file} in {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets", EventLogEntryType.Information, eventId++);
+        FileInfo fileInfo = new FileInfo(file);
+        eventLog1.WriteEntry($@"Found picture {file} of size {fileInfo.Length} bytes in {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets", EventLogEntryType.Information, eventId++);
       }
 
       try
