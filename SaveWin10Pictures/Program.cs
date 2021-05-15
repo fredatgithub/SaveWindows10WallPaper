@@ -94,15 +94,15 @@ namespace SaveWin10Pictures
       {
         return;
       }
-      // keeps pc running all the time until Q key is pressed
 
+      // keeps pc running all the time until Q key is pressed
       ConsoleKeyInfo consoleKeyPressed;
       Console.ForegroundColor = ConsoleColor.Yellow;
-      display("Press QQ to quit or let it run forever:");
+      display("Press QQ or qq to quit or let it run forever:");
       display("");
-      display("Press S to open Source directory:");
+      display("Press S or s to open Source directory:");
       display("");
-      display("Press T to open Target directory:");
+      display("Press T or t to open Target directory:");
       do
       {
         while (!Console.KeyAvailable)
