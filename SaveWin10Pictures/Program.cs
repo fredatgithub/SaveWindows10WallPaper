@@ -62,13 +62,14 @@ namespace SaveWin10Pictures
           {
             File.Copy(source, destination, doNotOverwrite);
             counter++;
-            // copying pic to source git
-            string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
-            string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source)) + ".jpg";
-            if (!File.Exists(destinationGit) && IsPictureLandscape(source, "jpg")) // and picture is landscape
-            {
-              File.Copy(source, destinationGit, doNotOverwrite);
-            }
+          }
+
+          // copying pic to source git
+          string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
+          string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source)) + ".jpg";
+          if (!File.Exists(destinationGit) && IsPictureLandscape(source, "jpg")) // and picture is landscape
+          {
+            File.Copy(source, destinationGit, doNotOverwrite);
           }
         }
       }
