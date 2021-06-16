@@ -18,7 +18,7 @@ namespace SaveWin10Pictures
       display($"Save Windows 10 wallpaper {GetVersion()} with Explorer opening");
       display(string.Empty);
       display("Checking if there are new images to be copied...");
-      List<string> files = new List<string>();
+      var files = new List<string>();
       int counter = 0;
       //string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
       string OSVersion = GetOSInfo();
