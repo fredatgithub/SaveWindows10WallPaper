@@ -91,6 +91,7 @@ namespace WindowsServiceCopyPictures
             if (!File.Exists(destinationGit) && IsPictureLandscape(source, "jpg")) // and picture is landscape
             {
               File.Copy(source, destinationGit, doNotOverwrite);
+              eventLog1.WriteEntry($"Copying one picture to the Git repo from: {source} to destination: {destinationGit} for the service ServiceCopyPictures", EventLogEntryType.Information, eventId++);
             }
           }
           else
