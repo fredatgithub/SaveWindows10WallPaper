@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveWin10Pic24Hours", "Save
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsServiceCopyPictures", "WindowsServiceCopyPictures\WindowsServiceCopyPictures.csproj", "{6ACE039B-03E2-4313-805B-14F27CEA03D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewNewPictures", "ViewNewPictures\ViewNewPictures.csproj", "{02E9B214-DC21-448E-BEC5-26A71338074F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6ACE039B-03E2-4313-805B-14F27CEA03D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ACE039B-03E2-4313-805B-14F27CEA03D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ACE039B-03E2-4313-805B-14F27CEA03D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E9B214-DC21-448E-BEC5-26A71338074F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E9B214-DC21-448E-BEC5-26A71338074F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E9B214-DC21-448E-BEC5-26A71338074F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E9B214-DC21-448E-BEC5-26A71338074F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
