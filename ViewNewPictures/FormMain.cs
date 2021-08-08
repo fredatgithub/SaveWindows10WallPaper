@@ -29,6 +29,11 @@ namespace ViewNewPictures
       if (files.Count > 0)
       {
         DisplayPictures(files.Count, files);
+        tabControlMain.SelectedIndex = 1;
+      }
+      else
+      {
+        MessageBox.Show($"No picture were found.");
       }
     }
 
@@ -38,6 +43,7 @@ namespace ViewNewPictures
       {
         case 1:
           pictureBox1.ImageLocation = files[0];
+          HideOtherTabs(1);
           break;
         case 2:
           pictureBox1.ImageLocation = files[0];
@@ -138,7 +144,191 @@ namespace ViewNewPictures
           pictureBox11.ImageLocation = files[10];
           pictureBox12.ImageLocation = files[11];
           break;
+        case 13:
+          pictureBox1.ImageLocation = files[0];
+          pictureBox2.ImageLocation = files[1];
+          pictureBox3.ImageLocation = files[2];
+          pictureBox4.ImageLocation = files[3];
+          pictureBox5.ImageLocation = files[4];
+          pictureBox6.ImageLocation = files[5];
+          pictureBox7.ImageLocation = files[6];
+          pictureBox8.ImageLocation = files[7];
+          pictureBox9.ImageLocation = files[8];
+          pictureBox10.ImageLocation = files[9];
+          pictureBox11.ImageLocation = files[10];
+          pictureBox12.ImageLocation = files[11];
+          pictureBox13.ImageLocation = files[12];
+          break;
+        case 14:
+          pictureBox1.ImageLocation = files[0];
+          pictureBox2.ImageLocation = files[1];
+          pictureBox3.ImageLocation = files[2];
+          pictureBox4.ImageLocation = files[3];
+          pictureBox5.ImageLocation = files[4];
+          pictureBox6.ImageLocation = files[5];
+          pictureBox7.ImageLocation = files[6];
+          pictureBox8.ImageLocation = files[7];
+          pictureBox9.ImageLocation = files[8];
+          pictureBox10.ImageLocation = files[9];
+          pictureBox11.ImageLocation = files[10];
+          pictureBox12.ImageLocation = files[11];
+          pictureBox13.ImageLocation = files[12];
+          pictureBox14.ImageLocation = files[13];
+          break;
+        case 15:
+          pictureBox1.ImageLocation = files[0];
+          pictureBox2.ImageLocation = files[1];
+          pictureBox3.ImageLocation = files[2];
+          pictureBox4.ImageLocation = files[3];
+          pictureBox5.ImageLocation = files[4];
+          pictureBox6.ImageLocation = files[5];
+          pictureBox7.ImageLocation = files[6];
+          pictureBox8.ImageLocation = files[7];
+          pictureBox9.ImageLocation = files[8];
+          pictureBox10.ImageLocation = files[9];
+          pictureBox11.ImageLocation = files[10];
+          pictureBox12.ImageLocation = files[11];
+          pictureBox13.ImageLocation = files[12];
+          pictureBox14.ImageLocation = files[13];
+          pictureBox15.ImageLocation = files[14];
+          break;
+        case 16:
+          pictureBox1.ImageLocation = files[0];
+          pictureBox2.ImageLocation = files[1];
+          pictureBox3.ImageLocation = files[2];
+          pictureBox4.ImageLocation = files[3];
+          pictureBox5.ImageLocation = files[4];
+          pictureBox6.ImageLocation = files[5];
+          pictureBox7.ImageLocation = files[6];
+          pictureBox8.ImageLocation = files[7];
+          pictureBox9.ImageLocation = files[8];
+          pictureBox10.ImageLocation = files[9];
+          pictureBox11.ImageLocation = files[10];
+          pictureBox12.ImageLocation = files[11];
+          pictureBox13.ImageLocation = files[12];
+          pictureBox14.ImageLocation = files[13];
+          pictureBox15.ImageLocation = files[14];
+          pictureBox16.ImageLocation = files[15];
+          break;
+        case 17:
+          pictureBox1.ImageLocation = files[0];
+          pictureBox2.ImageLocation = files[1];
+          pictureBox3.ImageLocation = files[2];
+          pictureBox4.ImageLocation = files[3];
+          pictureBox5.ImageLocation = files[4];
+          pictureBox6.ImageLocation = files[5];
+          pictureBox7.ImageLocation = files[6];
+          pictureBox8.ImageLocation = files[7];
+          pictureBox9.ImageLocation = files[8];
+          pictureBox10.ImageLocation = files[9];
+          pictureBox11.ImageLocation = files[10];
+          pictureBox12.ImageLocation = files[11];
+          pictureBox13.ImageLocation = files[12];
+          pictureBox14.ImageLocation = files[13];
+          pictureBox15.ImageLocation = files[14];
+          pictureBox16.ImageLocation = files[15];
+          pictureBox17.ImageLocation = files[16];
+          break;
+        case 18:
+          pictureBox1.ImageLocation = files[0];
+          pictureBox2.ImageLocation = files[1];
+          pictureBox3.ImageLocation = files[2];
+          pictureBox4.ImageLocation = files[3];
+          pictureBox5.ImageLocation = files[4];
+          pictureBox6.ImageLocation = files[5];
+          pictureBox7.ImageLocation = files[6];
+          pictureBox8.ImageLocation = files[7];
+          pictureBox9.ImageLocation = files[8];
+          pictureBox10.ImageLocation = files[9];
+          pictureBox11.ImageLocation = files[10];
+          pictureBox12.ImageLocation = files[11];
+          pictureBox13.ImageLocation = files[12];
+          pictureBox14.ImageLocation = files[13];
+          pictureBox15.ImageLocation = files[14];
+          pictureBox16.ImageLocation = files[15];
+          pictureBox17.ImageLocation = files[16];
+          pictureBox18.ImageLocation = files[17];
+          break;
+        case 19:
+          pictureBox1.ImageLocation = files[0];
+          pictureBox2.ImageLocation = files[1];
+          pictureBox3.ImageLocation = files[2];
+          pictureBox4.ImageLocation = files[3];
+          pictureBox5.ImageLocation = files[4];
+          pictureBox6.ImageLocation = files[5];
+          pictureBox7.ImageLocation = files[6];
+          pictureBox8.ImageLocation = files[7];
+          pictureBox9.ImageLocation = files[8];
+          pictureBox10.ImageLocation = files[9];
+          pictureBox11.ImageLocation = files[10];
+          pictureBox12.ImageLocation = files[11];
+          pictureBox13.ImageLocation = files[12];
+          pictureBox14.ImageLocation = files[13];
+          pictureBox15.ImageLocation = files[14];
+          pictureBox16.ImageLocation = files[15];
+          pictureBox17.ImageLocation = files[16];
+          pictureBox18.ImageLocation = files[17];
+          pictureBox19.ImageLocation = files[18];
+          break;
+        case 20:
+          pictureBox1.ImageLocation = files[0];
+          pictureBox2.ImageLocation = files[1];
+          pictureBox3.ImageLocation = files[2];
+          pictureBox4.ImageLocation = files[3];
+          pictureBox5.ImageLocation = files[4];
+          pictureBox6.ImageLocation = files[5];
+          pictureBox7.ImageLocation = files[6];
+          pictureBox8.ImageLocation = files[7];
+          pictureBox9.ImageLocation = files[8];
+          pictureBox10.ImageLocation = files[9];
+          pictureBox11.ImageLocation = files[10];
+          pictureBox12.ImageLocation = files[11];
+          pictureBox13.ImageLocation = files[12];
+          pictureBox14.ImageLocation = files[13];
+          pictureBox15.ImageLocation = files[14];
+          pictureBox16.ImageLocation = files[15];
+          pictureBox17.ImageLocation = files[16];
+          pictureBox18.ImageLocation = files[17];
+          pictureBox19.ImageLocation = files[18];
+          pictureBox20.ImageLocation = files[19];
+          break;
+        case 21:
+          pictureBox1.ImageLocation = files[0];
+          pictureBox2.ImageLocation = files[1];
+          pictureBox3.ImageLocation = files[2];
+          pictureBox4.ImageLocation = files[3];
+          pictureBox5.ImageLocation = files[4];
+          pictureBox6.ImageLocation = files[5];
+          pictureBox7.ImageLocation = files[6];
+          pictureBox8.ImageLocation = files[7];
+          pictureBox9.ImageLocation = files[8];
+          pictureBox10.ImageLocation = files[9];
+          pictureBox11.ImageLocation = files[10];
+          pictureBox12.ImageLocation = files[11];
+          pictureBox13.ImageLocation = files[12];
+          pictureBox14.ImageLocation = files[13];
+          pictureBox15.ImageLocation = files[14];
+          pictureBox16.ImageLocation = files[15];
+          pictureBox17.ImageLocation = files[16];
+          pictureBox18.ImageLocation = files[17];
+          pictureBox19.ImageLocation = files[18];
+          pictureBox20.ImageLocation = files[19];
+          pictureBox21.ImageLocation = files[20];
+          break;
 
+        default:
+          MessageBox.Show($"There are {files.Count} pictures found.");
+          break;
+      }
+    }
+
+    private void HideOtherTabs(int tabNumber)
+    {
+      switch (tabNumber)
+      {
+        case 1:
+
+          break;
         default:
           break;
       }
