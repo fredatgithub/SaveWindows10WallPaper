@@ -5,7 +5,6 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 
-
 namespace SaveWin10Pictures
 {
   internal static class Program
