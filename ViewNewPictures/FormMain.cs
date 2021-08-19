@@ -48,17 +48,20 @@ namespace ViewNewPictures
         case 2:
           pictureBox1.ImageLocation = files[0];
           pictureBox2.ImageLocation = files[1];
+          HideOtherTabs(2);
           break;
         case 3:
           pictureBox1.ImageLocation = files[0];
           pictureBox2.ImageLocation = files[1];
           pictureBox3.ImageLocation = files[2];
+          HideOtherTabs(3);
           break;
         case 4:
           pictureBox1.ImageLocation = files[0];
           pictureBox2.ImageLocation = files[1];
           pictureBox3.ImageLocation = files[2];
           pictureBox4.ImageLocation = files[3];
+          HideOtherTabs(4);
           break;
         case 5:
           pictureBox1.ImageLocation = files[0];
@@ -66,6 +69,7 @@ namespace ViewNewPictures
           pictureBox3.ImageLocation = files[2];
           pictureBox4.ImageLocation = files[3];
           pictureBox5.ImageLocation = files[4];
+          HideOtherTabs(5);
           break;
         case 6:
           pictureBox1.ImageLocation = files[0];
@@ -74,6 +78,7 @@ namespace ViewNewPictures
           pictureBox4.ImageLocation = files[3];
           pictureBox5.ImageLocation = files[4];
           pictureBox6.ImageLocation = files[5];
+          HideOtherTabs(6);
           break;
         case 7:
           pictureBox1.ImageLocation = files[0];
@@ -83,6 +88,7 @@ namespace ViewNewPictures
           pictureBox5.ImageLocation = files[4];
           pictureBox6.ImageLocation = files[5];
           pictureBox7.ImageLocation = files[6];
+          HideOtherTabs(7);
           break;
         case 8:
           pictureBox1.ImageLocation = files[0];
@@ -93,6 +99,7 @@ namespace ViewNewPictures
           pictureBox6.ImageLocation = files[5];
           pictureBox7.ImageLocation = files[6];
           pictureBox8.ImageLocation = files[7];
+          HideOtherTabs(8);
           break;
         case 9:
           pictureBox1.ImageLocation = files[0];
@@ -104,6 +111,7 @@ namespace ViewNewPictures
           pictureBox7.ImageLocation = files[6];
           pictureBox8.ImageLocation = files[7];
           pictureBox9.ImageLocation = files[8];
+          HideOtherTabs(9);
           break;
         case 10:
           pictureBox1.ImageLocation = files[0];
@@ -116,6 +124,7 @@ namespace ViewNewPictures
           pictureBox8.ImageLocation = files[7];
           pictureBox9.ImageLocation = files[8];
           pictureBox10.ImageLocation = files[9];
+          HideOtherTabs(10);
           break;
         case 11:
           pictureBox1.ImageLocation = files[0];
@@ -129,6 +138,7 @@ namespace ViewNewPictures
           pictureBox9.ImageLocation = files[8];
           pictureBox10.ImageLocation = files[9];
           pictureBox11.ImageLocation = files[10];
+          HideOtherTabs(11);
           break;
         case 12:
           pictureBox1.ImageLocation = files[0];
@@ -143,6 +153,7 @@ namespace ViewNewPictures
           pictureBox10.ImageLocation = files[9];
           pictureBox11.ImageLocation = files[10];
           pictureBox12.ImageLocation = files[11];
+          HideOtherTabs(12);
           break;
         case 13:
           pictureBox1.ImageLocation = files[0];
@@ -158,6 +169,7 @@ namespace ViewNewPictures
           pictureBox11.ImageLocation = files[10];
           pictureBox12.ImageLocation = files[11];
           pictureBox13.ImageLocation = files[12];
+          HideOtherTabs(13);
           break;
         case 14:
           pictureBox1.ImageLocation = files[0];
@@ -174,6 +186,7 @@ namespace ViewNewPictures
           pictureBox12.ImageLocation = files[11];
           pictureBox13.ImageLocation = files[12];
           pictureBox14.ImageLocation = files[13];
+          HideOtherTabs(14);
           break;
         case 15:
           pictureBox1.ImageLocation = files[0];
@@ -191,6 +204,7 @@ namespace ViewNewPictures
           pictureBox13.ImageLocation = files[12];
           pictureBox14.ImageLocation = files[13];
           pictureBox15.ImageLocation = files[14];
+          HideOtherTabs(15);
           break;
         case 16:
           pictureBox1.ImageLocation = files[0];
@@ -209,6 +223,7 @@ namespace ViewNewPictures
           pictureBox14.ImageLocation = files[13];
           pictureBox15.ImageLocation = files[14];
           pictureBox16.ImageLocation = files[15];
+          HideOtherTabs(16);
           break;
         case 17:
           pictureBox1.ImageLocation = files[0];
@@ -228,6 +243,7 @@ namespace ViewNewPictures
           pictureBox15.ImageLocation = files[14];
           pictureBox16.ImageLocation = files[15];
           pictureBox17.ImageLocation = files[16];
+          HideOtherTabs(17);
           break;
         case 18:
           pictureBox1.ImageLocation = files[0];
@@ -248,6 +264,7 @@ namespace ViewNewPictures
           pictureBox16.ImageLocation = files[15];
           pictureBox17.ImageLocation = files[16];
           pictureBox18.ImageLocation = files[17];
+          HideOtherTabs(18);
           break;
         case 19:
           pictureBox1.ImageLocation = files[0];
@@ -269,6 +286,7 @@ namespace ViewNewPictures
           pictureBox17.ImageLocation = files[16];
           pictureBox18.ImageLocation = files[17];
           pictureBox19.ImageLocation = files[18];
+          HideOtherTabs(19);
           break;
         case 20:
           pictureBox1.ImageLocation = files[0];
@@ -291,6 +309,7 @@ namespace ViewNewPictures
           pictureBox18.ImageLocation = files[17];
           pictureBox19.ImageLocation = files[18];
           pictureBox20.ImageLocation = files[19];
+          HideOtherTabs(20);
           break;
         case 21:
           pictureBox1.ImageLocation = files[0];
@@ -314,6 +333,7 @@ namespace ViewNewPictures
           pictureBox19.ImageLocation = files[18];
           pictureBox20.ImageLocation = files[19];
           pictureBox21.ImageLocation = files[20];
+          HideOtherTabs(21);
           break;
 
         default:
@@ -327,9 +347,508 @@ namespace ViewNewPictures
       switch (tabNumber)
       {
         case 1:
-
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = false;
+          tabPagePic3.Visible = false;
+          tabPagePic4.Visible = false;
+          tabPagePic5.Visible = false;
+          tabPagePic6.Visible = false;
+          tabPagePic7.Visible = false;
+          tabPagePic8.Visible = false;
+          tabPagePic9.Visible = false;
+          tabPagePic10.Visible = false;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
           break;
+
+        case 2:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = false;
+          tabPagePic4.Visible = false;
+          tabPagePic5.Visible = false;
+          tabPagePic6.Visible = false;
+          tabPagePic7.Visible = false;
+          tabPagePic8.Visible = false;
+          tabPagePic9.Visible = false;
+          tabPagePic10.Visible = false;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 3:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = false;
+          tabPagePic5.Visible = false;
+          tabPagePic6.Visible = false;
+          tabPagePic7.Visible = false;
+          tabPagePic8.Visible = false;
+          tabPagePic9.Visible = false;
+          tabPagePic10.Visible = false;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 4:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = false;
+          tabPagePic6.Visible = false;
+          tabPagePic7.Visible = false;
+          tabPagePic8.Visible = false;
+          tabPagePic9.Visible = false;
+          tabPagePic10.Visible = false;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 5:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = false;
+          tabPagePic7.Visible = false;
+          tabPagePic8.Visible = false;
+          tabPagePic9.Visible = false;
+          tabPagePic10.Visible = false;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 6:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = false;
+          tabPagePic8.Visible = false;
+          tabPagePic9.Visible = false;
+          tabPagePic10.Visible = false;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 7:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = false;
+          tabPagePic9.Visible = false;
+          tabPagePic10.Visible = false;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 8:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = false;
+          tabPagePic10.Visible = false;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 9:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = false;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 10:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = false;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 11:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = false;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 12:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = false;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 13:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = true;
+          tabPagePic14.Visible = false;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 14:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = true;
+          tabPagePic14.Visible = true;
+          tabPagePic15.Visible = false;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 15:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = true;
+          tabPagePic14.Visible = true;
+          tabPagePic15.Visible = true;
+          tabPagePic16.Visible = false;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 16:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = true;
+          tabPagePic14.Visible = true;
+          tabPagePic15.Visible = true;
+          tabPagePic16.Visible = true;
+          tabPagePic17.Visible = false;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 17:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = true;
+          tabPagePic14.Visible = true;
+          tabPagePic15.Visible = true;
+          tabPagePic16.Visible = true;
+          tabPagePic17.Visible = true;
+          tabPagePic18.Visible = false;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 18:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = true;
+          tabPagePic14.Visible = true;
+          tabPagePic15.Visible = true;
+          tabPagePic16.Visible = true;
+          tabPagePic17.Visible = true;
+          tabPagePic18.Visible = true;
+          tabPagePic19.Visible = false;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 19:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = true;
+          tabPagePic14.Visible = true;
+          tabPagePic15.Visible = true;
+          tabPagePic16.Visible = true;
+          tabPagePic17.Visible = true;
+          tabPagePic18.Visible = true;
+          tabPagePic19.Visible = true;
+          tabPagePic20.Visible = false;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 20:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = true;
+          tabPagePic14.Visible = true;
+          tabPagePic15.Visible = true;
+          tabPagePic16.Visible = true;
+          tabPagePic17.Visible = true;
+          tabPagePic18.Visible = true;
+          tabPagePic19.Visible = true;
+          tabPagePic20.Visible = true;
+          tabPagePic21.Visible = false;
+          break;
+
+        case 21:
         default:
+          tabPagePic1.Visible = true;
+          tabPagePic2.Visible = true;
+          tabPagePic3.Visible = true;
+          tabPagePic4.Visible = true;
+          tabPagePic5.Visible = true;
+          tabPagePic6.Visible = true;
+          tabPagePic7.Visible = true;
+          tabPagePic8.Visible = true;
+          tabPagePic9.Visible = true;
+          tabPagePic10.Visible = true;
+          tabPagePic11.Visible = true;
+          tabPagePic12.Visible = true;
+          tabPagePic13.Visible = true;
+          tabPagePic14.Visible = true;
+          tabPagePic15.Visible = true;
+          tabPagePic16.Visible = true;
+          tabPagePic17.Visible = true;
+          tabPagePic18.Visible = true;
+          tabPagePic19.Visible = true;
+          tabPagePic20.Visible = true;
+          tabPagePic21.Visible = true;
           break;
       }
     }
