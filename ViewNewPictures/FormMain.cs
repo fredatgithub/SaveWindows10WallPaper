@@ -826,7 +826,6 @@ namespace ViewNewPictures
           tabPagePic21.Visible = false;
           break;
 
-        case 21:
         default:
           tabPagePic1.Visible = true;
           tabPagePic2.Visible = true;
