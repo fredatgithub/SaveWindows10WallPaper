@@ -855,12 +855,19 @@ namespace ViewNewPictures
     public static List<string> GetFilesFileteredBySize(DirectoryInfo directoryInfo, long sizeGreaterOrEqualTo)
     {
       List<string> result = new List<string>();
-      foreach (FileInfo fileInfo in directoryInfo.GetFiles())
+      try
       {
-        if (fileInfo.Length >= sizeGreaterOrEqualTo)
+        foreach (FileInfo fileInfo in directoryInfo.GetFiles())
         {
-          result.Add(fileInfo.FullName);
+          if (fileInfo.Length >= sizeGreaterOrEqualTo)
+          {
+            result.Add(fileInfo.FullName);
+          }
         }
+      }
+      catch (Exception)
+      {
+        result = new List<string>();
       }
 
       return result;
@@ -885,6 +892,7 @@ namespace ViewNewPictures
     private void SaveSettings()
     {
       Properties.Settings.Default.textBoxPath = textBoxPath.Text;
+      Properties.Settings.Default.Save();
     }
 
     private void ButtonGetPicturePath_Click(object sender, EventArgs e)
@@ -894,6 +902,12 @@ namespace ViewNewPictures
       {
         textBoxPath.Text = openFileDialog1.FileName;
       }
+    }
+
+    private void QuitterToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      SaveSettings();
+      Application.Exit();
     }
   }
 }
