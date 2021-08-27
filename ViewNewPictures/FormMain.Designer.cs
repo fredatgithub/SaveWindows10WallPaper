@@ -108,6 +108,8 @@ namespace ViewNewPictures
       this.rechercherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.àproposdeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.précédentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.suivantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.tabControlMain.SuspendLayout();
       this.tabPageSettings.SuspendLayout();
@@ -158,19 +160,17 @@ namespace ViewNewPictures
       // 
       // textBoxPath
       // 
-      this.textBoxPath.Location = new System.Drawing.Point(100, 166);
-      this.textBoxPath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.textBoxPath.Location = new System.Drawing.Point(67, 108);
       this.textBoxPath.Name = "textBoxPath";
-      this.textBoxPath.Size = new System.Drawing.Size(982, 26);
+      this.textBoxPath.Size = new System.Drawing.Size(656, 20);
       this.textBoxPath.TabIndex = 0;
       // 
       // labelPath
       // 
       this.labelPath.AutoSize = true;
-      this.labelPath.Location = new System.Drawing.Point(27, 175);
-      this.labelPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.labelPath.Location = new System.Drawing.Point(18, 114);
       this.labelPath.Name = "labelPath";
-      this.labelPath.Size = new System.Drawing.Size(42, 20);
+      this.labelPath.Size = new System.Drawing.Size(29, 13);
       this.labelPath.TabIndex = 1;
       this.labelPath.Text = "Path";
       // 
@@ -199,11 +199,10 @@ namespace ViewNewPictures
       this.tabControlMain.Controls.Add(this.tabPagePic20);
       this.tabControlMain.Controls.Add(this.tabPagePic21);
       this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.tabControlMain.Location = new System.Drawing.Point(0, 35);
-      this.tabControlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabControlMain.Location = new System.Drawing.Point(0, 24);
       this.tabControlMain.Name = "tabControlMain";
       this.tabControlMain.SelectedIndex = 0;
-      this.tabControlMain.Size = new System.Drawing.Size(1761, 1015);
+      this.tabControlMain.Size = new System.Drawing.Size(1436, 711);
       this.tabControlMain.TabIndex = 2;
       // 
       // tabPageSettings
@@ -213,19 +212,17 @@ namespace ViewNewPictures
       this.tabPageSettings.Controls.Add(this.buttonGetPictures);
       this.tabPageSettings.Controls.Add(this.textBoxPath);
       this.tabPageSettings.Controls.Add(this.labelPath);
-      this.tabPageSettings.Location = new System.Drawing.Point(4, 29);
-      this.tabPageSettings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPageSettings.Location = new System.Drawing.Point(4, 22);
       this.tabPageSettings.Name = "tabPageSettings";
-      this.tabPageSettings.Size = new System.Drawing.Size(1753, 982);
+      this.tabPageSettings.Size = new System.Drawing.Size(1428, 685);
       this.tabPageSettings.TabIndex = 10;
       this.tabPageSettings.Text = "Settings";
       // 
       // buttonGetPicturePath
       // 
-      this.buttonGetPicturePath.Location = new System.Drawing.Point(1094, 165);
-      this.buttonGetPicturePath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.buttonGetPicturePath.Location = new System.Drawing.Point(729, 107);
       this.buttonGetPicturePath.Name = "buttonGetPicturePath";
-      this.buttonGetPicturePath.Size = new System.Drawing.Size(54, 35);
+      this.buttonGetPicturePath.Size = new System.Drawing.Size(36, 23);
       this.buttonGetPicturePath.TabIndex = 4;
       this.buttonGetPicturePath.Text = "...";
       this.buttonGetPicturePath.UseVisualStyleBackColor = true;
@@ -233,10 +230,9 @@ namespace ViewNewPictures
       // 
       // buttonGetPictures
       // 
-      this.buttonGetPictures.Location = new System.Drawing.Point(1156, 165);
-      this.buttonGetPictures.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.buttonGetPictures.Location = new System.Drawing.Point(771, 107);
       this.buttonGetPictures.Name = "buttonGetPictures";
-      this.buttonGetPictures.Size = new System.Drawing.Size(112, 35);
+      this.buttonGetPictures.Size = new System.Drawing.Size(75, 23);
       this.buttonGetPictures.TabIndex = 3;
       this.buttonGetPictures.Text = "Get pictures";
       this.buttonGetPictures.UseVisualStyleBackColor = true;
@@ -245,11 +241,10 @@ namespace ViewNewPictures
       // tabPagePic1
       // 
       this.tabPagePic1.Controls.Add(this.pictureBox1);
-      this.tabPagePic1.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic1.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic1.Name = "tabPagePic1";
-      this.tabPagePic1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-      this.tabPagePic1.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic1.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPagePic1.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic1.TabIndex = 0;
       this.tabPagePic1.Text = "Picture 1";
       this.tabPagePic1.UseVisualStyleBackColor = true;
@@ -257,21 +252,19 @@ namespace ViewNewPictures
       // pictureBox1
       // 
       this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.pictureBox1.Location = new System.Drawing.Point(4, 5);
-      this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.pictureBox1.Location = new System.Drawing.Point(3, 3);
       this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(1745, 1068);
+      this.pictureBox1.Size = new System.Drawing.Size(1422, 679);
       this.pictureBox1.TabIndex = 0;
       this.pictureBox1.TabStop = false;
       // 
       // tabPagePic2
       // 
       this.tabPagePic2.Controls.Add(this.pictureBox2);
-      this.tabPagePic2.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic2.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic2.Name = "tabPagePic2";
-      this.tabPagePic2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-      this.tabPagePic2.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic2.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPagePic2.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic2.TabIndex = 1;
       this.tabPagePic2.Text = "Picture 2";
       this.tabPagePic2.UseVisualStyleBackColor = true;
@@ -279,20 +272,18 @@ namespace ViewNewPictures
       // pictureBox2
       // 
       this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.pictureBox2.Location = new System.Drawing.Point(4, 5);
-      this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.pictureBox2.Location = new System.Drawing.Point(3, 3);
       this.pictureBox2.Name = "pictureBox2";
-      this.pictureBox2.Size = new System.Drawing.Size(1745, 1068);
+      this.pictureBox2.Size = new System.Drawing.Size(1422, 679);
       this.pictureBox2.TabIndex = 1;
       this.pictureBox2.TabStop = false;
       // 
       // tabPagePic3
       // 
       this.tabPagePic3.Controls.Add(this.pictureBox3);
-      this.tabPagePic3.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic3.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic3.Name = "tabPagePic3";
-      this.tabPagePic3.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic3.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic3.TabIndex = 2;
       this.tabPagePic3.Text = "Picture 3";
       this.tabPagePic3.UseVisualStyleBackColor = true;
@@ -301,19 +292,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox3.Name = "pictureBox3";
-      this.pictureBox3.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox3.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox3.TabIndex = 1;
       this.pictureBox3.TabStop = false;
       // 
       // tabPagePic4
       // 
       this.tabPagePic4.Controls.Add(this.pictureBox4);
-      this.tabPagePic4.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic4.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic4.Name = "tabPagePic4";
-      this.tabPagePic4.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic4.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic4.TabIndex = 3;
       this.tabPagePic4.Text = "Picture 4";
       this.tabPagePic4.UseVisualStyleBackColor = true;
@@ -322,19 +311,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox4.Name = "pictureBox4";
-      this.pictureBox4.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox4.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox4.TabIndex = 1;
       this.pictureBox4.TabStop = false;
       // 
       // tabPagePic5
       // 
       this.tabPagePic5.Controls.Add(this.pictureBox5);
-      this.tabPagePic5.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic5.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic5.Name = "tabPagePic5";
-      this.tabPagePic5.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic5.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic5.TabIndex = 4;
       this.tabPagePic5.Text = "Picture 5";
       this.tabPagePic5.UseVisualStyleBackColor = true;
@@ -343,19 +330,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox5.Name = "pictureBox5";
-      this.pictureBox5.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox5.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox5.TabIndex = 1;
       this.pictureBox5.TabStop = false;
       // 
       // tabPagePic6
       // 
       this.tabPagePic6.Controls.Add(this.pictureBox6);
-      this.tabPagePic6.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic6.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic6.Name = "tabPagePic6";
-      this.tabPagePic6.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic6.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic6.TabIndex = 5;
       this.tabPagePic6.Text = "Picture 6";
       this.tabPagePic6.UseVisualStyleBackColor = true;
@@ -364,19 +349,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox6.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox6.Name = "pictureBox6";
-      this.pictureBox6.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox6.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox6.TabIndex = 1;
       this.pictureBox6.TabStop = false;
       // 
       // tabPagePic7
       // 
       this.tabPagePic7.Controls.Add(this.pictureBox7);
-      this.tabPagePic7.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic7.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic7.Name = "tabPagePic7";
-      this.tabPagePic7.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic7.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic7.TabIndex = 6;
       this.tabPagePic7.Text = "Picture 7";
       this.tabPagePic7.UseVisualStyleBackColor = true;
@@ -385,19 +368,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox7.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox7.Name = "pictureBox7";
-      this.pictureBox7.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox7.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox7.TabIndex = 1;
       this.pictureBox7.TabStop = false;
       // 
       // tabPagePic8
       // 
       this.tabPagePic8.Controls.Add(this.pictureBox8);
-      this.tabPagePic8.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic8.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic8.Name = "tabPagePic8";
-      this.tabPagePic8.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic8.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic8.TabIndex = 7;
       this.tabPagePic8.Text = "Picture 8";
       this.tabPagePic8.UseVisualStyleBackColor = true;
@@ -406,19 +387,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox8.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox8.Name = "pictureBox8";
-      this.pictureBox8.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox8.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox8.TabIndex = 1;
       this.pictureBox8.TabStop = false;
       // 
       // tabPagePic9
       // 
       this.tabPagePic9.Controls.Add(this.pictureBox9);
-      this.tabPagePic9.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic9.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic9.Name = "tabPagePic9";
-      this.tabPagePic9.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic9.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic9.TabIndex = 8;
       this.tabPagePic9.Text = "Picture 9";
       this.tabPagePic9.UseVisualStyleBackColor = true;
@@ -427,19 +406,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox9.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox9.Name = "pictureBox9";
-      this.pictureBox9.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox9.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox9.TabIndex = 1;
       this.pictureBox9.TabStop = false;
       // 
       // tabPagePic10
       // 
       this.tabPagePic10.Controls.Add(this.pictureBox10);
-      this.tabPagePic10.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic10.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic10.Name = "tabPagePic10";
-      this.tabPagePic10.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic10.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic10.TabIndex = 9;
       this.tabPagePic10.Text = "Picture 10";
       this.tabPagePic10.UseVisualStyleBackColor = true;
@@ -448,19 +425,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox10.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox10.Name = "pictureBox10";
-      this.pictureBox10.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox10.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox10.TabIndex = 1;
       this.pictureBox10.TabStop = false;
       // 
       // tabPagePic11
       // 
       this.tabPagePic11.Controls.Add(this.pictureBox11);
-      this.tabPagePic11.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic11.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic11.Name = "tabPagePic11";
-      this.tabPagePic11.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic11.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic11.TabIndex = 11;
       this.tabPagePic11.Text = "Picture 11";
       this.tabPagePic11.UseVisualStyleBackColor = true;
@@ -469,19 +444,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox11.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox11.Name = "pictureBox11";
-      this.pictureBox11.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox11.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox11.TabIndex = 2;
       this.pictureBox11.TabStop = false;
       // 
       // tabPagePic12
       // 
       this.tabPagePic12.Controls.Add(this.pictureBox12);
-      this.tabPagePic12.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic12.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic12.Name = "tabPagePic12";
-      this.tabPagePic12.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic12.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic12.TabIndex = 12;
       this.tabPagePic12.Text = "Picture 12";
       this.tabPagePic12.UseVisualStyleBackColor = true;
@@ -490,19 +463,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox12.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox12.Name = "pictureBox12";
-      this.pictureBox12.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox12.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox12.TabIndex = 2;
       this.pictureBox12.TabStop = false;
       // 
       // tabPagePic13
       // 
       this.tabPagePic13.Controls.Add(this.pictureBox13);
-      this.tabPagePic13.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic13.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic13.Name = "tabPagePic13";
-      this.tabPagePic13.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic13.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic13.TabIndex = 13;
       this.tabPagePic13.Text = "Picture 13";
       this.tabPagePic13.UseVisualStyleBackColor = true;
@@ -511,19 +482,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox13.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox13.Name = "pictureBox13";
-      this.pictureBox13.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox13.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox13.TabIndex = 3;
       this.pictureBox13.TabStop = false;
       // 
       // tabPagePic14
       // 
       this.tabPagePic14.Controls.Add(this.pictureBox14);
-      this.tabPagePic14.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic14.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic14.Name = "tabPagePic14";
-      this.tabPagePic14.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic14.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic14.TabIndex = 14;
       this.tabPagePic14.Text = "Picture 14";
       this.tabPagePic14.UseVisualStyleBackColor = true;
@@ -532,19 +501,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox14.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox14.Name = "pictureBox14";
-      this.pictureBox14.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox14.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox14.TabIndex = 3;
       this.pictureBox14.TabStop = false;
       // 
       // tabPagePic15
       // 
       this.tabPagePic15.Controls.Add(this.pictureBox15);
-      this.tabPagePic15.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic15.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic15.Name = "tabPagePic15";
-      this.tabPagePic15.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic15.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic15.TabIndex = 15;
       this.tabPagePic15.Text = "Picture 15";
       this.tabPagePic15.UseVisualStyleBackColor = true;
@@ -553,19 +520,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox15.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox15.Name = "pictureBox15";
-      this.pictureBox15.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox15.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox15.TabIndex = 3;
       this.pictureBox15.TabStop = false;
       // 
       // tabPagePic16
       // 
       this.tabPagePic16.Controls.Add(this.pictureBox16);
-      this.tabPagePic16.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic16.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic16.Name = "tabPagePic16";
-      this.tabPagePic16.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic16.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic16.TabIndex = 16;
       this.tabPagePic16.Text = "Picture 16";
       this.tabPagePic16.UseVisualStyleBackColor = true;
@@ -574,19 +539,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox16.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox16.Name = "pictureBox16";
-      this.pictureBox16.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox16.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox16.TabIndex = 3;
       this.pictureBox16.TabStop = false;
       // 
       // tabPagePic17
       // 
       this.tabPagePic17.Controls.Add(this.pictureBox17);
-      this.tabPagePic17.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic17.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic17.Name = "tabPagePic17";
-      this.tabPagePic17.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic17.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic17.TabIndex = 17;
       this.tabPagePic17.Text = "Picture 17";
       this.tabPagePic17.UseVisualStyleBackColor = true;
@@ -595,19 +558,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox17.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox17.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox17.Name = "pictureBox17";
-      this.pictureBox17.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox17.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox17.TabIndex = 3;
       this.pictureBox17.TabStop = false;
       // 
       // tabPagePic18
       // 
       this.tabPagePic18.Controls.Add(this.pictureBox18);
-      this.tabPagePic18.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic18.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic18.Name = "tabPagePic18";
-      this.tabPagePic18.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic18.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic18.TabIndex = 18;
       this.tabPagePic18.Text = "Picture 18";
       this.tabPagePic18.UseVisualStyleBackColor = true;
@@ -616,19 +577,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox18.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox18.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox18.Name = "pictureBox18";
-      this.pictureBox18.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox18.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox18.TabIndex = 3;
       this.pictureBox18.TabStop = false;
       // 
       // tabPagePic19
       // 
       this.tabPagePic19.Controls.Add(this.pictureBox19);
-      this.tabPagePic19.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic19.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic19.Name = "tabPagePic19";
-      this.tabPagePic19.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic19.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic19.TabIndex = 19;
       this.tabPagePic19.Text = "Picture 19";
       this.tabPagePic19.UseVisualStyleBackColor = true;
@@ -637,19 +596,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox19.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox19.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox19.Name = "pictureBox19";
-      this.pictureBox19.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox19.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox19.TabIndex = 3;
       this.pictureBox19.TabStop = false;
       // 
       // tabPagePic20
       // 
       this.tabPagePic20.Controls.Add(this.pictureBox20);
-      this.tabPagePic20.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic20.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic20.Name = "tabPagePic20";
-      this.tabPagePic20.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic20.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic20.TabIndex = 20;
       this.tabPagePic20.Text = "Picture 20";
       this.tabPagePic20.UseVisualStyleBackColor = true;
@@ -658,19 +615,17 @@ namespace ViewNewPictures
       // 
       this.pictureBox20.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox20.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox20.Name = "pictureBox20";
-      this.pictureBox20.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox20.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox20.TabIndex = 3;
       this.pictureBox20.TabStop = false;
       // 
       // tabPagePic21
       // 
       this.tabPagePic21.Controls.Add(this.pictureBox21);
-      this.tabPagePic21.Location = new System.Drawing.Point(4, 29);
-      this.tabPagePic21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+      this.tabPagePic21.Location = new System.Drawing.Point(4, 22);
       this.tabPagePic21.Name = "tabPagePic21";
-      this.tabPagePic21.Size = new System.Drawing.Size(1753, 1078);
+      this.tabPagePic21.Size = new System.Drawing.Size(1428, 685);
       this.tabPagePic21.TabIndex = 21;
       this.tabPagePic21.Text = "Picture 21";
       this.tabPagePic21.UseVisualStyleBackColor = true;
@@ -679,24 +634,25 @@ namespace ViewNewPictures
       // 
       this.pictureBox21.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureBox21.Location = new System.Drawing.Point(0, 0);
-      this.pictureBox21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.pictureBox21.Name = "pictureBox21";
-      this.pictureBox21.Size = new System.Drawing.Size(1753, 1078);
+      this.pictureBox21.Size = new System.Drawing.Size(1428, 685);
       this.pictureBox21.TabIndex = 3;
       this.pictureBox21.TabStop = false;
       // 
       // menuStrip1
       // 
-      this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
       this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
       this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
             this.editionToolStripMenuItem,
             this.outilsToolStripMenuItem,
-            this.aideToolStripMenuItem});
+            this.aideToolStripMenuItem,
+            this.précédentToolStripMenuItem,
+            this.suivantToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(1761, 35);
+      this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+      this.menuStrip1.Size = new System.Drawing.Size(1436, 24);
       this.menuStrip1.TabIndex = 5;
       this.menuStrip1.Text = "menuStrip1";
       // 
@@ -714,7 +670,7 @@ namespace ViewNewPictures
             this.toolStripSeparator2,
             this.quitterToolStripMenuItem});
       this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-      this.fichierToolStripMenuItem.Size = new System.Drawing.Size(78, 29);
+      this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
       this.fichierToolStripMenuItem.Text = "&Fichier";
       // 
       // nouveauToolStripMenuItem
@@ -723,7 +679,7 @@ namespace ViewNewPictures
       this.nouveauToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.nouveauToolStripMenuItem.Name = "nouveauToolStripMenuItem";
       this.nouveauToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-      this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+      this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
       this.nouveauToolStripMenuItem.Text = "&Nouveau";
       // 
       // ouvrirToolStripMenuItem
@@ -732,13 +688,13 @@ namespace ViewNewPictures
       this.ouvrirToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
       this.ouvrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-      this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+      this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
       this.ouvrirToolStripMenuItem.Text = "&Ouvrir";
       // 
       // toolStripSeparator
       // 
       this.toolStripSeparator.Name = "toolStripSeparator";
-      this.toolStripSeparator.Size = new System.Drawing.Size(307, 6);
+      this.toolStripSeparator.Size = new System.Drawing.Size(202, 6);
       // 
       // enregistrerToolStripMenuItem
       // 
@@ -746,19 +702,19 @@ namespace ViewNewPictures
       this.enregistrerToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
       this.enregistrerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-      this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+      this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
       this.enregistrerToolStripMenuItem.Text = "&Enregistrer";
       // 
       // enregistrersousToolStripMenuItem
       // 
       this.enregistrersousToolStripMenuItem.Name = "enregistrersousToolStripMenuItem";
-      this.enregistrersousToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+      this.enregistrersousToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
       this.enregistrersousToolStripMenuItem.Text = "Enregistrer &sous";
       // 
       // toolStripSeparator1
       // 
       this.toolStripSeparator1.Name = "toolStripSeparator1";
-      this.toolStripSeparator1.Size = new System.Drawing.Size(307, 6);
+      this.toolStripSeparator1.Size = new System.Drawing.Size(202, 6);
       // 
       // imprimerToolStripMenuItem
       // 
@@ -766,7 +722,7 @@ namespace ViewNewPictures
       this.imprimerToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
       this.imprimerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-      this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+      this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
       this.imprimerToolStripMenuItem.Text = "&Imprimer";
       // 
       // aperçuavantimpressionToolStripMenuItem
@@ -774,18 +730,18 @@ namespace ViewNewPictures
       this.aperçuavantimpressionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aperçuavantimpressionToolStripMenuItem.Image")));
       this.aperçuavantimpressionToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.aperçuavantimpressionToolStripMenuItem.Name = "aperçuavantimpressionToolStripMenuItem";
-      this.aperçuavantimpressionToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+      this.aperçuavantimpressionToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
       this.aperçuavantimpressionToolStripMenuItem.Text = "Aperçu a&vant impression";
       // 
       // toolStripSeparator2
       // 
       this.toolStripSeparator2.Name = "toolStripSeparator2";
-      this.toolStripSeparator2.Size = new System.Drawing.Size(307, 6);
+      this.toolStripSeparator2.Size = new System.Drawing.Size(202, 6);
       // 
       // quitterToolStripMenuItem
       // 
       this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-      this.quitterToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
+      this.quitterToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
       this.quitterToolStripMenuItem.Text = "&Quitter";
       this.quitterToolStripMenuItem.Click += new System.EventHandler(this.QuitterToolStripMenuItem_Click);
       // 
@@ -801,27 +757,27 @@ namespace ViewNewPictures
             this.toolStripSeparator4,
             this.sélectionnertoutToolStripMenuItem});
       this.editionToolStripMenuItem.Name = "editionToolStripMenuItem";
-      this.editionToolStripMenuItem.Size = new System.Drawing.Size(83, 29);
+      this.editionToolStripMenuItem.Size = new System.Drawing.Size(56, 22);
       this.editionToolStripMenuItem.Text = "&Edition";
       // 
       // annulerToolStripMenuItem
       // 
       this.annulerToolStripMenuItem.Name = "annulerToolStripMenuItem";
       this.annulerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-      this.annulerToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+      this.annulerToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
       this.annulerToolStripMenuItem.Text = "&Annuler";
       // 
       // rétablirToolStripMenuItem
       // 
       this.rétablirToolStripMenuItem.Name = "rétablirToolStripMenuItem";
       this.rétablirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-      this.rétablirToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+      this.rétablirToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
       this.rétablirToolStripMenuItem.Text = "&Rétablir";
       // 
       // toolStripSeparator3
       // 
       this.toolStripSeparator3.Name = "toolStripSeparator3";
-      this.toolStripSeparator3.Size = new System.Drawing.Size(245, 6);
+      this.toolStripSeparator3.Size = new System.Drawing.Size(161, 6);
       // 
       // couperToolStripMenuItem
       // 
@@ -829,7 +785,7 @@ namespace ViewNewPictures
       this.couperToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
       this.couperToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-      this.couperToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+      this.couperToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
       this.couperToolStripMenuItem.Text = "&Couper";
       // 
       // copierToolStripMenuItem
@@ -838,7 +794,7 @@ namespace ViewNewPictures
       this.copierToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
       this.copierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-      this.copierToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+      this.copierToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
       this.copierToolStripMenuItem.Text = "Co&pier";
       // 
       // collerToolStripMenuItem
@@ -847,18 +803,18 @@ namespace ViewNewPictures
       this.collerToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
       this.collerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-      this.collerToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+      this.collerToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
       this.collerToolStripMenuItem.Text = "Co&ller";
       // 
       // toolStripSeparator4
       // 
       this.toolStripSeparator4.Name = "toolStripSeparator4";
-      this.toolStripSeparator4.Size = new System.Drawing.Size(245, 6);
+      this.toolStripSeparator4.Size = new System.Drawing.Size(161, 6);
       // 
       // sélectionnertoutToolStripMenuItem
       // 
       this.sélectionnertoutToolStripMenuItem.Name = "sélectionnertoutToolStripMenuItem";
-      this.sélectionnertoutToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
+      this.sélectionnertoutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
       this.sélectionnertoutToolStripMenuItem.Text = "Sélectio&nner tout";
       // 
       // outilsToolStripMenuItem
@@ -867,19 +823,19 @@ namespace ViewNewPictures
             this.personnaliserToolStripMenuItem,
             this.optionsToolStripMenuItem});
       this.outilsToolStripMenuItem.Name = "outilsToolStripMenuItem";
-      this.outilsToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+      this.outilsToolStripMenuItem.Size = new System.Drawing.Size(50, 22);
       this.outilsToolStripMenuItem.Text = "&Outils";
       // 
       // personnaliserToolStripMenuItem
       // 
       this.personnaliserToolStripMenuItem.Name = "personnaliserToolStripMenuItem";
-      this.personnaliserToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
+      this.personnaliserToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
       this.personnaliserToolStripMenuItem.Text = "&Personnaliser";
       // 
       // optionsToolStripMenuItem
       // 
       this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-      this.optionsToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
+      this.optionsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
       this.optionsToolStripMenuItem.Text = "&Options";
       // 
       // aideToolStripMenuItem
@@ -891,37 +847,51 @@ namespace ViewNewPictures
             this.toolStripSeparator5,
             this.àproposdeToolStripMenuItem});
       this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-      this.aideToolStripMenuItem.Size = new System.Drawing.Size(64, 29);
+      this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 22);
       this.aideToolStripMenuItem.Text = "&Aide";
       // 
       // sommaireToolStripMenuItem
       // 
       this.sommaireToolStripMenuItem.Name = "sommaireToolStripMenuItem";
-      this.sommaireToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
+      this.sommaireToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.sommaireToolStripMenuItem.Text = "&Sommaire";
       // 
       // indexToolStripMenuItem
       // 
       this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-      this.indexToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
+      this.indexToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.indexToolStripMenuItem.Text = "&Index";
       // 
       // rechercherToolStripMenuItem
       // 
       this.rechercherToolStripMenuItem.Name = "rechercherToolStripMenuItem";
-      this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
+      this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.rechercherToolStripMenuItem.Text = "&Rechercher";
       // 
       // toolStripSeparator5
       // 
       this.toolStripSeparator5.Name = "toolStripSeparator5";
-      this.toolStripSeparator5.Size = new System.Drawing.Size(223, 6);
+      this.toolStripSeparator5.Size = new System.Drawing.Size(144, 6);
       // 
       // àproposdeToolStripMenuItem
       // 
       this.àproposdeToolStripMenuItem.Name = "àproposdeToolStripMenuItem";
-      this.àproposdeToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
+      this.àproposdeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.àproposdeToolStripMenuItem.Text = "À &propos de...";
+      // 
+      // précédentToolStripMenuItem
+      // 
+      this.précédentToolStripMenuItem.Name = "précédentToolStripMenuItem";
+      this.précédentToolStripMenuItem.Size = new System.Drawing.Size(72, 22);
+      this.précédentToolStripMenuItem.Text = "Précédent";
+      this.précédentToolStripMenuItem.Click += new System.EventHandler(this.PrécédentToolStripMenuItem_Click);
+      // 
+      // suivantToolStripMenuItem
+      // 
+      this.suivantToolStripMenuItem.Name = "suivantToolStripMenuItem";
+      this.suivantToolStripMenuItem.Size = new System.Drawing.Size(58, 22);
+      this.suivantToolStripMenuItem.Text = "Suivant";
+      this.suivantToolStripMenuItem.Click += new System.EventHandler(this.SuivantToolStripMenuItem_Click);
       // 
       // openFileDialog1
       // 
@@ -929,12 +899,11 @@ namespace ViewNewPictures
       // 
       // FormMain
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1761, 1050);
+      this.ClientSize = new System.Drawing.Size(1436, 735);
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.menuStrip1);
-      this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.Name = "FormMain";
       this.Text = "view new pictures";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
@@ -1072,6 +1041,8 @@ namespace ViewNewPictures
     private System.Windows.Forms.PictureBox pictureBox19;
     private System.Windows.Forms.PictureBox pictureBox20;
     private System.Windows.Forms.PictureBox pictureBox21;
+    private System.Windows.Forms.ToolStripMenuItem précédentToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem suivantToolStripMenuItem;
   }
 }
 
