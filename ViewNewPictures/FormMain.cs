@@ -32,6 +32,7 @@ namespace ViewNewPictures
         tabControlMain.SelectedIndex = 1;
         précédentToolStripMenuItem.Enabled = false;
         suivantToolStripMenuItem.Enabled = true;
+        ActiveForm.WindowState = FormWindowState.Maximized;
       }
       else
       {
