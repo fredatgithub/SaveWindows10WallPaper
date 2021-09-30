@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 
 namespace TestEnvironmentSpecialFolders
 {
@@ -69,10 +71,33 @@ namespace TestEnvironmentSpecialFolders
       display($"Environment.SpecialFolder.CommonDesktopDirectory : {Environment.SpecialFolder.CommonDesktopDirectory}");
       display($"Environment.SpecialFolder.CommonDocuments : {Environment.SpecialFolder.CommonDocuments}");
       //display($"Environment.SpecialFolder. : {Environment.SpecialFolder.}");
-      //foreach (var item in Environment.SpecialFolder)
-      //{
-      //  display($"{item)}");
-      //}
+      /* enum restantes à montrer
+        CommonAdminTools
+        CommonDesktopDirectory
+        CommonDocuments
+        CommonMusic
+        CommonOemLinks
+        CommonPictures
+        CommonProgramFiles
+        CommonProgramFilesX86
+        CommonPrograms
+        CommonStartup
+        CommonTemplates
+        CommonVideos
+        Cookies
+        Favorites
+        Fonts
+        MyMusic
+        MyVideos
+        NetworkShortcuts
+        PrinterShortcuts
+        ProgramFiles
+       * */
+
+      foreach (var item in GetEnumList<Environment.SpecialFolder>())
+      {
+        display($"{item}");
+      }
 
       //display($"The picture: {picture} is landscape: {IsPictureLandscape(picture)}");
       display("Press any key to exit:");
@@ -83,6 +108,11 @@ namespace TestEnvironmentSpecialFolders
     {
       Bitmap image = new Bitmap(fileName);
       return image.Width > image.Height;
+    }
+
+    private static List<T> GetEnumList<T>()
+    {
+      return Enum.GetValues(typeof(T)).Cast<T>().ToList();
     }
   }
 }
