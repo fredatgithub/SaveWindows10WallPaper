@@ -62,10 +62,14 @@ namespace TestEnvironmentSpecialFolders
       display(string.Empty);
       display($"Environment.SpecialFolder.CommonApplicationData :{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}");
       display(string.Empty);
-      //display($"EnvironmentVariableTarget.User : {EnvironmentVariableTarget.User.ToString())}");
-      //display($"Environment.SpecialFolder. : {Environment.SpecialFolder.)}");
-      //display($"Environment.SpecialFolder. : {Environment.SpecialFolder.)}");
-      //foreach (var item in EnvironmentVariableTarget.User)
+      //display($"EnvironmentVariableTarget.User : {EnvironmentVariableTarget.User.ToString()}");
+      display($"Environment.SpecialFolder.CommonProgramFiles : {Environment.SpecialFolder.CommonProgramFiles}");
+      display($"Environment.SpecialFolder.ProgramFiles : {Environment.SpecialFolder.ProgramFiles}");
+      display($"Environment.SpecialFolder.CommonAdminTools : {Environment.SpecialFolder.CommonAdminTools}");
+      display($"Environment.SpecialFolder.CommonDesktopDirectory : {Environment.SpecialFolder.CommonDesktopDirectory}");
+      display($"Environment.SpecialFolder.CommonDocuments : {Environment.SpecialFolder.CommonDocuments}");
+      //display($"Environment.SpecialFolder. : {Environment.SpecialFolder.}");
+      //foreach (var item in Environment.SpecialFolder)
       //{
       //  display($"{item)}");
       //}
