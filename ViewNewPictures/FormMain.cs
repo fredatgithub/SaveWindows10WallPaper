@@ -30,7 +30,7 @@ namespace ViewNewPictures
       {
         DisplayPictures(files.Count, files);
         tabControlMain.SelectedIndex = 1;
-        précédentToolStripMenuItem.Enabled = false;
+        previousToolStripMenuItem.Enabled = false;
         suivantToolStripMenuItem.Enabled = true;
         ActiveForm.WindowState = FormWindowState.Maximized;
       }
@@ -884,7 +884,7 @@ namespace ViewNewPictures
     private void LoadSettings()
     {
       textBoxPath.Text = Properties.Settings.Default.textBoxPath;
-      précédentToolStripMenuItem.Enabled = false;
+      previousToolStripMenuItem.Enabled = false;
       suivantToolStripMenuItem.Enabled = false;
     }
 
@@ -937,7 +937,7 @@ namespace ViewNewPictures
     private void EnableDisableMenu()
     {
       suivantToolStripMenuItem.Enabled = tabControlMain.SelectedIndex != 21;
-      précédentToolStripMenuItem.Enabled = tabControlMain.SelectedIndex != 1;
+      previousToolStripMenuItem.Enabled = tabControlMain.SelectedIndex != 1;
     }
   }
 }

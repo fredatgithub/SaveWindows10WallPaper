@@ -108,7 +108,7 @@ namespace ViewNewPictures
       this.rechercherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.àproposdeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.précédentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.previousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.suivantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.tabControlMain.SuspendLayout();
@@ -647,7 +647,7 @@ namespace ViewNewPictures
             this.editionToolStripMenuItem,
             this.outilsToolStripMenuItem,
             this.aideToolStripMenuItem,
-            this.précédentToolStripMenuItem,
+            this.previousToolStripMenuItem,
             this.suivantToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
@@ -881,10 +881,10 @@ namespace ViewNewPictures
       // 
       // précédentToolStripMenuItem
       // 
-      this.précédentToolStripMenuItem.Name = "précédentToolStripMenuItem";
-      this.précédentToolStripMenuItem.Size = new System.Drawing.Size(72, 22);
-      this.précédentToolStripMenuItem.Text = "Précédent";
-      this.précédentToolStripMenuItem.Click += new System.EventHandler(this.PrécédentToolStripMenuItem_Click);
+      this.previousToolStripMenuItem.Name = "précédentToolStripMenuItem";
+      this.previousToolStripMenuItem.Size = new System.Drawing.Size(72, 22);
+      this.previousToolStripMenuItem.Text = "Précédent";
+      this.previousToolStripMenuItem.Click += new System.EventHandler(this.PrécédentToolStripMenuItem_Click);
       // 
       // suivantToolStripMenuItem
       // 
@@ -1041,7 +1041,7 @@ namespace ViewNewPictures
     private System.Windows.Forms.PictureBox pictureBox19;
     private System.Windows.Forms.PictureBox pictureBox20;
     private System.Windows.Forms.PictureBox pictureBox21;
-    private System.Windows.Forms.ToolStripMenuItem précédentToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem previousToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem suivantToolStripMenuItem;
   }
 }
