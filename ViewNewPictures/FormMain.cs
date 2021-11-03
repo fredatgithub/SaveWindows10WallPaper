@@ -21,7 +21,7 @@ namespace ViewNewPictures
 
       // get all pictures above 1 MO
       List<string> files = new List<string>();
-      foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"{textBoxPath.Text}"), 100000))
+      foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"{textBoxPath.Text}"), 100_000))
       {
         files.Add(file);
       }
