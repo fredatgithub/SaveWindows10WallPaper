@@ -136,7 +136,17 @@
     <frenchValue>Il y a</frenchValue>
   </term>
   <term>
+    <name>There is</name>
+    <englishValue>There is</englishValue>
+    <frenchValue>Il y a</frenchValue>
+  </term>
+  <term>
     <name>toCut</name>
+    <englishValue>to cut</englishValue>
+    <frenchValue>à couper</frenchValue>
+  </term>
+   <term>
+    <name>to cut</name>
     <englishValue>to cut</englishValue>
     <frenchValue>à couper</frenchValue>
   </term>
@@ -145,8 +155,18 @@
     <englishValue>No text has been selected</englishValue>
     <frenchValue>Pas de texte a été selectionné</frenchValue>
   </term>
+   <term>
+    <name>No text has been selected</name>
+    <englishValue>No text has been selected</englishValue>
+    <frenchValue>Aucun texte n'a été selectionné</frenchValue>
+  </term>
   <term>
     <name>ThereIsNothingToCopy</name>
+    <englishValue>There is nothing to copy</englishValue>
+    <frenchValue>Il n'y a rien à copier</frenchValue>
+  </term>
+  <term>
+    <name>There is nothing to copy</name>
     <englishValue>There is nothing to copy</englishValue>
     <frenchValue>Il n'y a rien à copier</frenchValue>
   </term>
@@ -726,6 +746,11 @@
     <frenchValue>millisecondes</frenchValue>
   </term>
   <term>
+    <name>millisecond</name>
+    <englishValue>millisecond</englishValue>
+    <frenchValue>milliseconde</frenchValue>
+  </term>
+  <term>
     <name>Process over</name>
     <englishValue>Process over</englishValue>
     <frenchValue>Processus terminé</frenchValue>
@@ -789,6 +814,11 @@
     <name>GitBash binary path not in Windows Path variable</name>
     <englishValue>GitBash binary path is not in the Windows Path variable</englishValue>
     <frenchValue>Le chemin des binaires de GitBash n'est pas dans la variable Path de Windows</frenchValue>
+  </term>
+  <term>
+    <name>No GitBash binary found in PATH variable</name>
+    <englishValue>No GitBash binary found in PATH variable</englishValue>
+    <frenchValue>Pas de binaire GitBash trouvé dans la variable PATH</frenchValue>
   </term>
   <term>
     <name>error</name>
@@ -889,6 +919,11 @@
     <name>Quote</name>
     <englishValue>Quote</englishValue>
     <frenchValue>Citation</frenchValue>
+  </term>
+   <term>
+    <name>quote</name>
+    <englishValue>quote</englishValue>
+    <frenchValue>citation</frenchValue>
   </term>
   <term>
     <name>Search</name>
@@ -1251,26 +1286,6 @@
     <frenchValue>Le chemin de sauvegarde du fichier ne peut être vide</frenchValue>
   </term>
   <term>
-    <name>There is nothing to copy</name>
-    <englishValue>There is nothing to copy</englishValue>
-    <frenchValue>Il n'y a rien à copier</frenchValue>
-  </term>
-  <term>
-    <name>There is</name>
-    <englishValue>There is</englishValue>
-    <frenchValue>Il y a</frenchValue>
-  </term>
-  <term>
-    <name>to cut</name>
-    <englishValue>to cut</englishValue>
-    <frenchValue>à couper</frenchValue>
-  </term>
-  <term>
-    <name>No text has been selected</name>
-    <englishValue>No text has been selected</englishValue>
-    <frenchValue>Pas de texte n'a été sélectionné</frenchValue>
-  </term>
-  <term>
     <name>the term</name>
     <englishValue>the term</englishValue>
     <frenchValue>le terme</frenchValue>
@@ -1459,5 +1474,330 @@
     <name>Replace</name>
     <englishValue>Replace</englishValue>
     <frenchValue>Remplacer</frenchValue>
+  </term>
+  <term>
+    <name>The list doesn't have any item</name>
+    <englishValue>The list doesn't have any item</englishValue>
+    <frenchValue>La liste n'a pas d'élément</frenchValue>
+  </term>
+  <term>
+    <name>View</name>
+    <englishValue>View</englishValue>
+    <frenchValue>Afficher</frenchValue>
+  </term>
+  <term>
+    <name>The list doesn't have any item to view</name>
+    <englishValue>The list doesn't have any item to view</englishValue>
+    <frenchValue>La liste n'a pas d'item a visualiser</frenchValue>
+  </term>
+  <term>
+    <name>Check off some items</name>
+    <englishValue>Check off some items</englishValue>
+    <frenchValue>Cochez un ou plusieurs éléments</frenchValue>
+  </term>
+  <term>
+    <name>No selected item</name>
+    <englishValue>No selected item</englishValue>
+    <frenchValue>Pas d'élément coché</frenchValue>
+  </term>
+  <term>
+    <name>File modified</name>
+    <englishValue>File modified</englishValue>
+    <frenchValue>Fichier modifié</frenchValue>
+  </term>
+  <term>
+    <name>One file</name>
+    <englishValue>One file</englishValue>
+    <frenchValue>Un fichier</frenchValue>
+  </term>
+  <term>
+    <name>Rename</name>
+    <englishValue>Rename</englishValue>
+    <frenchValue>Renommer</frenchValue>
+  </term>
+  <term>
+    <name>All files in</name>
+    <englishValue>All files in</englishValue>
+    <frenchValue>Tous les fichiers dans</frenchValue>
+  </term>
+  <term>
+    <name>Includes sub-directories</name>
+    <englishValue>Includes sub-directories</englishValue>
+    <frenchValue>Incluant les sous répertoires</frenchValue>
+  </term>
+  <term>
+    <name>Cut file every</name>
+    <englishValue>Cut file every</englishValue>
+    <frenchValue>Couper le fichier à chaque</frenchValue>
+  </term>
+  <term>
+    <name>MB</name>
+    <englishValue>MB</englishValue>
+    <frenchValue>MO</frenchValue>
+  </term>
+  <term>
+    <name>Delete source file after rename</name>
+    <englishValue>Delete source file after rename</englishValue>
+    <frenchValue>Effacer le fichier source après renommage</frenchValue>
+  </term>
+  <term>
+    <name>Wrong file name</name>
+    <englishValue>Wrong file name</englishValue>
+    <frenchValue>Mauvais nom de fichier</frenchValue>
+  </term>
+  <term>
+    <name>The file doesn't start with the word primes</name>
+    <englishValue>The file doesn't start with the word primes</englishValue>
+    <frenchValue>Le fichier ne commence pas par le mot primes</frenchValue>
+  </term>
+  <term>
+    <name>Nothing to do</name>
+    <englishValue>Nothing to do</englishValue>
+    <frenchValue>Rien à faire</frenchValue>
+  </term>
+  <term>
+    <name>The file name has a start number and you don't want it to be cut so there's nothing to do</name>
+    <englishValue>The file name has a start number and you don't want it to be cut so there's nothing to do</englishValue>
+    <frenchValue>Le nom du fichier a un nombre de début et vous ne voulez pas couper le fichier donc il n'y a rien à faire</frenchValue>
+  </term>
+  <term>
+    <name>The file name or the path is not correct</name>
+    <englishValue>The file name or the path is not correct</englishValue>
+    <frenchValue>Le nom du fichier ou le chemin n'est pas correct</frenchValue>
+  </term>
+  <term>
+    <name>File not correct</name>
+    <englishValue>File not correct</englishValue>
+    <frenchValue>Fichier non correct</frenchValue>
+  </term>
+  <term>
+    <name>Select</name>
+    <englishValue>Select</englishValue>
+    <frenchValue>Sélectionner</frenchValue>
+  </term>
+  <term>
+    <name>Enter</name>
+    <englishValue>Enter</englishValue>
+    <frenchValue>Entrez</frenchValue>
+  </term>
+  <term>
+    <name>a continent</name>
+    <englishValue>a continent</englishValue>
+    <frenchValue>un continent</frenchValue>
+  </term>
+  <term>
+    <name>a country</name>
+    <englishValue>a country</englishValue>
+    <frenchValue>un pays</frenchValue>
+  </term>
+  <term>
+    <name>a state</name>
+    <englishValue>a state</englishValue>
+    <frenchValue>un état</frenchValue>
+  </term>
+  <term>
+    <name>a county</name>
+    <englishValue>a county</englishValue>
+    <frenchValue>un comté</frenchValue>
+  </term>
+  <term>
+    <name>a city</name>
+    <englishValue>a city</englishValue>
+    <frenchValue>une ville</frenchValue>
+  </term>
+  <term>
+    <name>First name</name>
+    <englishValue>First name</englishValue>
+    <frenchValue>Prénom</frenchValue>
+  </term>
+  <term>
+    <name>Last name</name>
+    <englishValue>Last name</englishValue>
+    <frenchValue>Nom de famille</frenchValue>
+  </term>
+  <term>
+    <name>Gender</name>
+    <englishValue>Gender</englishValue>
+    <frenchValue>Sexe</frenchValue>
+  </term>
+  <term>
+    <name>Simple level</name>
+    <englishValue>Simple level</englishValue>
+    <frenchValue>Niveau en simple</frenchValue>
+  </term>
+  <term>
+    <name>Double level</name>
+    <englishValue>Double level</englishValue>
+    <frenchValue>Niveau en double</frenchValue>
+  </term>
+  <term>
+    <name>Mixed level</name>
+    <englishValue>Mixed level</englishValue>
+    <frenchValue>Niveau en mixte</frenchValue>
+  </term>
+  <term>
+    <name>Player number</name>
+    <englishValue>Player number</englishValue>
+    <frenchValue>Numéro joueur</frenchValue>
+  </term>
+  <term>
+    <name>License number</name>
+    <englishValue>License number</englishValue>
+    <frenchValue>Numéro de licence</frenchValue>
+  </term>
+  <term>
+    <name>Choose a process</name>
+    <englishValue>Choose a process</englishValue>
+    <frenchValue>Choisir un process</frenchValue>
+  </term>
+  <term>
+    <name>Shutdown when done</name>
+    <englishValue>Shutdown when done</englishValue>
+    <frenchValue>Arrêter PC quand fini</frenchValue>
+  </term>
+   <term>
+    <name>You must select a process first</name>
+    <englishValue>You must select a process first</englishValue>
+    <frenchValue>Vous devez sélectionner un process</frenchValue>
+  </term>
+  <term>
+    <name>Select a process</name>
+    <englishValue>Select a process</englishValue>
+    <frenchValue>Sélectionnez un process</frenchValue>
+  </term>
+  <term>
+    <name>Result found</name>
+    <englishValue>Result found</englishValue>
+    <frenchValue>Résultat trouvé</frenchValue>
+  </term>
+   <term>
+    <name>Quote found</name>
+    <englishValue>Quote found</englishValue>
+    <frenchValue>Citation trouvée</frenchValue>
+  </term>
+   <term>
+    <name>Statistics</name>
+    <englishValue>Statistics</englishValue>
+    <frenchValue>Statistiques</frenchValue>
+  </term>
+   <term>
+    <name>in total</name>
+    <englishValue>in total</englishValue>
+    <frenchValue>au total</frenchValue>
+  </term>
+  <term>
+    <name>in French</name>
+    <englishValue>in French</englishValue>
+    <frenchValue>en français</frenchValue>
+  </term>
+  <term>
+    <name>duplicate quote</name>
+    <englishValue>duplicate quote</englishValue>
+    <frenchValue>citation en double</frenchValue>
+  </term>
+  <term>
+    <name>No duplicate quote found</name>
+    <englishValue>No duplicate quote found</englishValue>
+    <frenchValue>Pas de citation en double</frenchValue>
+  </term>
+  <term>
+    <name>List of author sorted by number of quotes descending</name>
+    <englishValue>List of author sorted by number of quotes descending</englishValue>
+    <frenchValue>Liste des auteurs triée par nombre de citation par ordre décroissant</frenchValue>
+  </term>
+   <term>
+    <name>List of author sorted in alphabetical order</name>
+    <englishValue>List of author sorted in alphabetical order</englishValue>
+    <frenchValue>Liste des auteurs triée par ordre alphabétique</frenchValue>
+  </term>
+  <term>
+    <name>in English</name>
+    <englishValue>in English</englishValue>
+    <frenchValue>en anglais</frenchValue>
+  </term>
+  <term>
+    <name>Open XML file</name>
+    <englishValue>Open XML file</englishValue>
+    <frenchValue>Ouvrir fichier XML</frenchValue>
+  </term>
+  <term>
+    <name>Found</name>
+    <englishValue>Found</englishValue>
+    <frenchValue>Trouvé</frenchValue>
+  </term>
+  <term>
+    <name>Not Found</name>
+    <englishValue>Not Found</englishValue>
+    <frenchValue>Non trouvé</frenchValue>
+  </term>
+  <term>
+    <name>Load</name>
+    <englishValue>Load</englishValue>
+    <frenchValue>Charger</frenchValue>
+  </term>
+  <term>
+    <name>Term to search</name>
+    <englishValue>Term to search</englishValue>
+    <frenchValue>Terme à chercher</frenchValue>
+  </term>
+  <term>
+    <name>Path to XML file</name>
+    <englishValue>Path to XML file</englishValue>
+    <frenchValue>Chemin du fichier XML</frenchValue>
+  </term>
+  <term>
+    <name>Xml files</name>
+    <englishValue>Xml files</englishValue>
+    <frenchValue>Fichier Xml</frenchValue>
+  </term>
+  <term>
+    <name>You should clean the file</name>
+    <englishValue>You should clean the file</englishValue>
+    <frenchValue>Vous devriez nettoyer le fichier</frenchValue>
+  </term>
+  <term>
+    <name>Cleaning needed</name>
+    <englishValue>Cleaning needed</englishValue>
+    <frenchValue>Nettoyage nécessaire</frenchValue>
+  </term>
+   <term>
+    <name>Duplicate</name>
+    <englishValue>Duplicate</englishValue>
+    <frenchValue>Doublon</frenchValue>
+  </term>
+  <term>
+    <name>Update</name>
+    <englishValue>Update</englishValue>
+    <frenchValue>Mise à jour</frenchValue>
+  </term>
+  <term>
+    <name>year</name>
+    <englishValue>year</englishValue>
+    <frenchValue>année</frenchValue>
+  </term>
+  <term>
+    <name>month</name>
+    <englishValue>month</englishValue>
+    <frenchValue>mois</frenchValue>
+  </term>
+  <term>
+    <name>day</name>
+    <englishValue>day</englishValue>
+    <frenchValue>jour</frenchValue>
+  </term>
+  <term>
+    <name>hour</name>
+    <englishValue>hour</englishValue>
+    <frenchValue>heure</frenchValue>
+  </term>
+  <term>
+    <name>minute</name>
+    <englishValue>minute</englishValue>
+    <frenchValue>minute</frenchValue>
+  </term>
+  <term>
+    <name>second</name>
+    <englishValue>second</englishValue>
+    <frenchValue>seconde</frenchValue>
   </term>
 </terms>
