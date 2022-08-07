@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveWindows10WallPaper", "SaveWindows10WallPaper\SaveWindows10WallPaper.csproj", "{4002BFE0-672E-45B0-B4FC-AE011D5374E0}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsServiceCopyPictures", "WindowsServiceCopyPictures\WindowsServiceCopyPictures.csproj", "{6ACE039B-03E2-4313-805B-14F27CEA03D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewNewPictures", "ViewNewPictures\ViewNewPictures.csproj", "{02E9B214-DC21-448E-BEC5-26A71338074F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyPictures", "CopyPictures\CopyPictures.csproj", "{DAD2192C-D7B2-4549-BE8B-067BC80917DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,18 @@ Global
 		{02E9B214-DC21-448E-BEC5-26A71338074F}.Release|x64.Build.0 = Release|x64
 		{02E9B214-DC21-448E-BEC5-26A71338074F}.Release|x86.ActiveCfg = Release|x86
 		{02E9B214-DC21-448E-BEC5-26A71338074F}.Release|x86.Build.0 = Release|x86
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Debug|x64.Build.0 = Debug|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Debug|x86.Build.0 = Debug|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Release|x64.ActiveCfg = Release|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Release|x64.Build.0 = Release|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Release|x86.ActiveCfg = Release|Any CPU
+		{DAD2192C-D7B2-4549-BE8B-067BC80917DA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
