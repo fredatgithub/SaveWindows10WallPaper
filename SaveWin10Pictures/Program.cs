@@ -319,7 +319,7 @@ namespace SaveWin10Pictures
       Version vs = os.Version;
 
       //Variable to hold our return value
-      string operatingSystem = "";
+      string operatingSystem = string.Empty;
 
       if (os.Platform == PlatformID.Win32Windows)
       {
