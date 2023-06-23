@@ -5,7 +5,7 @@ namespace TestOnceADay
 {
   class Program
   {
-    static void Main(string[] args)
+    static void Main()
     {
       //int counter = 0;
       //do
