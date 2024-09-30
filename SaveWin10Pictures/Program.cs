@@ -442,20 +442,49 @@ namespace SaveWin10Pictures
     {
       var result = new List<string>();
       // if directory exists then add it to destination list
-      // C:\Users\username\Images\fond_ecran
-      var directory = "";
+      string userName = Environment.UserName;
+      string userNameProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+      string myPicturesFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+      string appDatafolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+      // remove domain if any
+      if (userName.Contains("\\"))
+      {
+        userName = userName.Split('\\')[1];
+      }
+
+      // C:\Users\username\OneDrive\Images\fond_ecran
+      var directory = Path.Combine(myPicturesFolder, "fond_ecran");
       if (Directory.Exists(directory))
       {
         result.Add(directory);
       }
 
-      // C:\Users\username\OneDrive\Images\fond_ecran
-
       // C:\Users\username\source\repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images
+      directory = Path.Combine(userNameProfile, @"source\repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images");
+      if (Directory.Exists(directory))
+      {
+        result.Add(directory);
+      }
 
       // D:\Users\username\source\repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images
+      var oldDirectory = Path.Combine(userNameProfile, "source\\repos\\SaveWindows10WallPaper\\SaveWindows10WallPaper\\images");
+      directory = ChangeDrive(oldDirectory, 'D');
+      if (Directory.Exists(directory))
+      {
+        result.Add(directory);
+      }
+
+
+      // C:\Users\username\OneDrive - companyName\Images\fond_ecran
+      // C:\Users\fjuhel\OneDrive - companyName\Documents\OneDrive - companyName\Pictures\fond_ecran
 
       return result;
+    }
+
+    private static string ChangeDrive(string directoryPath, char driveLetter)
+    {
+      var result = $"{driveLetter}{directoryPath.Substring(1, directoryPath.Length - 1)}";
+      return result; 
     }
   }
 }
