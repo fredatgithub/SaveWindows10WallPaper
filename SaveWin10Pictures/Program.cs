@@ -18,6 +18,8 @@ namespace SaveWin10Pictures
       display(string.Empty);
       display("Checking if there are new images to be copied...");
       var files = new List<string>();
+      var destinationDirectories = new List<string>();
+      destinationDirectories = GetListOfDirectories();
       int counter = 0;
       //string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
       string OSVersion = GetOSInfo();
@@ -434,6 +436,23 @@ namespace SaveWin10Pictures
       {
         return false;
       }
+    }
+
+    private static List<string> GetListOfDirectories()
+    {
+      var result = new List<string>();
+      // if directory exists then add it to destination list
+      // C:\Users\username\Images\fond_ecran
+      var directory = "";
+      if (Directory.Exists(directory))
+      {
+        result.Add(directory);
+      }
+
+      // C:\Users\username\OneDrive\Images\fond_ecran
+
+      // C:\Users\username\source\repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images
+      return result;
     }
   }
 }
