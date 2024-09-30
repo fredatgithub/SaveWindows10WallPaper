@@ -452,6 +452,9 @@ namespace SaveWin10Pictures
       // C:\Users\username\OneDrive\Images\fond_ecran
 
       // C:\Users\username\source\repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images
+
+      // D:\Users\username\source\repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images
+
       return result;
     }
   }
