@@ -18,8 +18,11 @@ namespace SaveWin10Pictures
       display(string.Empty);
       display("Checking if there are new images to be copied...");
       var files = new List<string>();
+      var ListOfDrives = new List<string>();
+      ListOfDrives = GetListOfDrives();
       var destinationDirectories = new List<string>();
       destinationDirectories = GetListOfDirectories();
+      
       int counter = 0;
       //string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
       string OSVersion = GetOSInfo();
@@ -177,6 +180,22 @@ namespace SaveWin10Pictures
       } while (Console.ReadKey(true).Key != ConsoleKey.Q);
 
       Console.ForegroundColor = ConsoleColor.White;
+    }
+
+    private static List<string> GetListOfDrives()
+    {
+      var result = new List<string>();
+      DriveInfo[] lecteurs = DriveInfo.GetDrives();
+      foreach (var drive in lecteurs)
+      {
+        //if (lecteur.DriveType == DriveType.Fixed && lecteur.IsReady)
+        if (drive.IsReady && drive.DriveType == DriveType.Fixed)
+        {
+          result.Add(drive.Name);
+        }
+      }
+
+      return result;
     }
 
     public static string GetVersion()
