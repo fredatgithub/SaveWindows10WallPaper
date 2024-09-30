@@ -495,7 +495,7 @@ namespace SaveWin10Pictures
 
 
       // C:\Users\username\OneDrive - companyName\Images\fond_ecran
-      // C:\Users\fjuhel\OneDrive - companyName\Documents\OneDrive - companyName\Pictures\fond_ecran
+      // C:\Users\username\OneDrive - companyName\Documents\OneDrive - companyName\Pictures\fond_ecran
 
       return result;
     }
