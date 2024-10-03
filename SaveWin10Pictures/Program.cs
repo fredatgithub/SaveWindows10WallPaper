@@ -18,6 +18,11 @@ namespace SaveWin10Pictures
       display(string.Empty);
       display("Checking if there are new images to be copied...");
       var files = new List<string>();
+      var ListOfDrives = new List<string>();
+      ListOfDrives = GetListOfDrives();
+      var destinationDirectories = new List<string>();
+      destinationDirectories = GetListOfDirectories();
+      
       int counter = 0;
       //string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
       string OSVersion = GetOSInfo();
@@ -175,6 +180,22 @@ namespace SaveWin10Pictures
       } while (Console.ReadKey(true).Key != ConsoleKey.Q);
 
       Console.ForegroundColor = ConsoleColor.White;
+    }
+
+    private static List<string> GetListOfDrives()
+    {
+      var result = new List<string>();
+      DriveInfo[] lecteurs = DriveInfo.GetDrives();
+      foreach (var drive in lecteurs)
+      {
+        //if (lecteur.DriveType == DriveType.Fixed && lecteur.IsReady)
+        if (drive.IsReady && drive.DriveType == DriveType.Fixed)
+        {
+          result.Add(drive.Name);
+        }
+      }
+
+      return result;
     }
 
     public static string GetVersion()
@@ -434,6 +455,55 @@ namespace SaveWin10Pictures
       {
         return false;
       }
+    }
+
+    private static List<string> GetListOfDirectories()
+    {
+      var result = new List<string>();
+      // if directory exists then add it to destination list
+      string userName = Environment.UserName;
+      string userNameProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+      string myPicturesFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+      string appDatafolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+      // remove domain if any
+      if (userName.Contains("\\"))
+      {
+        userName = userName.Split('\\')[1];
+      }
+
+      // C:\Users\username\OneDrive\Images\fond_ecran
+      var directory = Path.Combine(myPicturesFolder, "fond_ecran");
+      if (Directory.Exists(directory))
+      {
+        result.Add(directory);
+      }
+
+      // C:\Users\username\source\repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images
+      directory = Path.Combine(userNameProfile, @"source\repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images");
+      if (Directory.Exists(directory))
+      {
+        result.Add(directory);
+      }
+
+      // D:\Users\username\source\repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images
+      var oldDirectory = Path.Combine(userNameProfile, "source\\repos\\SaveWindows10WallPaper\\SaveWindows10WallPaper\\images");
+      directory = ChangeDrive(oldDirectory, 'D');
+      if (Directory.Exists(directory))
+      {
+        result.Add(directory);
+      }
+
+
+      // C:\Users\username\OneDrive - companyName\Images\fond_ecran
+      // C:\Users\username\OneDrive - companyName\Documents\OneDrive - companyName\Pictures\fond_ecran
+
+      return result;
+    }
+
+    private static string ChangeDrive(string directoryPath, char driveLetter)
+    {
+      var result = $"{driveLetter}{directoryPath.Substring(1, directoryPath.Length - 1)}";
+      return result; 
     }
   }
 }
