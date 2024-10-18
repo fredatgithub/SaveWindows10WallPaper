@@ -90,7 +90,10 @@ namespace SaveWin10Pictures
             destinationGit += ".jpg";
           }
 
-          if (!File.Exists(destinationGit) && IsPictureLandscape(source, "jpg")) // and picture is landscape
+          var destinationDirectory = Path.GetDirectoryName(destinationGit);
+
+          // Copy picture only if it is landscape
+          if (Directory.Exists(destinationDirectory) && !File.Exists(destinationGit) && IsPictureLandscape(source, "jpg")) 
           {
             File.Copy(source, destinationGit, doNotOverwrite);
           }
@@ -189,7 +192,6 @@ namespace SaveWin10Pictures
       DriveInfo[] lecteurs = DriveInfo.GetDrives();
       foreach (var drive in lecteurs)
       {
-        //if (lecteur.DriveType == DriveType.Fixed && lecteur.IsReady)
         if (drive.IsReady && drive.DriveType == DriveType.Fixed)
         {
           result.Add(drive.Name);
