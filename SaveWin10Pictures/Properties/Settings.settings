@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SaveWin10Pictures.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="OneDrivePath1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\{username}\OneDrive - {companyName}\Images\fond_ecran</Value>
+    </Setting>
+    <Setting Name="OneDrivePath2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\{username}\OneDrive - {companyName}\Documents\OneDrive - {companyName}\Pictures\fond_ecran</Value>
+    </Setting>
+    <Setting Name="CompanyName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

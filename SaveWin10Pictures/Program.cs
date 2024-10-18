@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SaveWin10Pictures.Properties;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -495,7 +496,23 @@ namespace SaveWin10Pictures
 
 
       // C:\Users\username\OneDrive - companyName\Images\fond_ecran
+      var oneDrivePath1 = Settings.Default.OneDrivePath1;
+      oneDrivePath1 = oneDrivePath1.Replace("{username}", Environment.UserName);
+      var compagnyName = Settings.Default.CompanyName;
+      oneDrivePath1 = oneDrivePath1.Replace("{companyName}", compagnyName);
+      if (Directory.Exists(oneDrivePath1))
+      {
+        result.Add(directory);
+      }
+
       // C:\Users\username\OneDrive - companyName\Documents\OneDrive - companyName\Pictures\fond_ecran
+      var oneDrivePath2 = Settings.Default.OneDrivePath2;
+      oneDrivePath2 = oneDrivePath2.Replace("{username}", Environment.UserName);
+      oneDrivePath2 = oneDrivePath2.Replace("{companyName}", compagnyName);
+      if (Directory.Exists(oneDrivePath2))
+      {
+        result.Add(directory);
+      }
 
       return result;
     }
