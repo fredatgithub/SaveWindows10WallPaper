@@ -420,12 +420,12 @@ namespace SaveWin10Pictures
       //Make sure we actually got something in our OS check
       //We don't want to just return " Service Pack 2" or " 32-bit"
       //That information is useless without the OS version.
-      if (operatingSystem != "")
+      if (operatingSystem.Length != 0)
       {
         //Got something.  Let's prepend "Windows" and get more info.
         operatingSystem = "Windows " + operatingSystem;
         //See if there's a service pack installed.
-        if (os.ServicePack != "")
+        if (os.ServicePack.Length != 0)
         {
           //Append it to the OS name.  i.e. "Windows XP Service Pack 3"
           operatingSystem += " " + os.ServicePack;
