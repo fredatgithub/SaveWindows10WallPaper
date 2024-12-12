@@ -101,7 +101,7 @@ namespace SaveWin10Pictures
       }
       catch (Exception)
       {
-        // do nothing and continue with the next file
+        // continue with the next file
       }
 
       if (counter == 0)
