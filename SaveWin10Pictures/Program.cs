@@ -68,7 +68,7 @@ namespace SaveWin10Pictures
         {
           if (file.Contains("TranscodedWallpaper"))
           {
-            Guid guid = Guid.NewGuid();
+            var guid = Guid.NewGuid();
             files.Add($"{file}-{guid}");
           }
         }
@@ -92,7 +92,7 @@ namespace SaveWin10Pictures
 
           if (!File.Exists(destination) && IsPictureLandscape(source, "jpg")) // and picture is landscape
           {
-            File.Copy(source, destination, doNotOverwrite);
+            File.Copy(FileNameWithoutGuid(source), destination, doNotOverwrite);
             counter++;
           }
 
@@ -113,7 +113,14 @@ namespace SaveWin10Pictures
           // Copy picture only if it is landscape
           if (Directory.Exists(destinationDirectory) && !File.Exists(destinationGit) && IsPictureLandscape(source, "jpg")) 
           {
-            File.Copy(source, destinationGit, doNotOverwrite);
+            if (source.Contains("TranscodedWallpaper"))
+            {
+              File.Copy(FileNameWithoutGuid(source), destinationGit, doNotOverwrite);
+            }
+            else
+            {
+              File.Copy(source, destinationGit, doNotOverwrite);
+            }
           }
         }
       }
@@ -479,15 +486,42 @@ namespace SaveWin10Pictures
       {
         if (File.Exists(fileName))
         {
-          Bitmap image = new Bitmap(fileName);
-          var width = image.Width;
-          var height = image.Height;
-          image.Dispose();
-          return width > height;
+          return IsPictureLandscape(fileName);
         }
         else if (File.Exists($"{fileName}.{pictureExtension}"))
         {
-          Bitmap image = new Bitmap($"{fileName}.{pictureExtension}");
+          return IsPictureLandscape($"{fileName}.{pictureExtension}");
+        }
+        else if (File.Exists(FileNameWithoutGuid(fileName)))
+        {
+          return IsPictureLandscape(FileNameWithoutGuid(fileName));
+        }
+
+        return false;
+      }
+      catch (Exception)
+      {
+        return false;
+      }
+    }
+
+    private static string FileNameWithoutGuid(string fileName)
+    {
+      if (fileName.Contains("TranscodedWallpaper"))
+      {
+        fileName = fileName.Substring(0, fileName.IndexOf("-"));
+      }
+
+      return fileName; 
+    }
+
+    private static bool IsPictureLandscape(string fileName)
+    {
+      try
+      {
+        if (File.Exists(fileName))
+        {
+          Bitmap image = new Bitmap(fileName);
           var width = image.Width;
           var height = image.Height;
           image.Dispose();
