@@ -111,7 +111,7 @@ namespace SaveWin10Pictures
           var destinationDirectory = Path.GetDirectoryName(destinationGit);
 
           // Copy picture only if it is landscape
-          if (Directory.Exists(destinationDirectory) && !File.Exists(destinationGit) && IsPictureLandscape(source, "jpg")) 
+          if (Directory.Exists(destinationDirectory) && !File.Exists(destinationGit) && IsPictureLandscape(FileNameWithoutGuid(source), "jpg")) 
           {
             if (source.Contains("TranscodedWallpaper"))
             {
