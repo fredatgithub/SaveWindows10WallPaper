@@ -25,9 +25,9 @@ namespace SaveWin10Pictures
       destinationDirectories = GetListOfDirectories();
       
       int counter = 0;
-      //string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
+      // string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
       string OSVersion = GetOSInfo();
-      //string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+      // string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
       string userName = Environment.UserName;
       string userNameProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
       string myPicturesFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
@@ -128,9 +128,11 @@ namespace SaveWin10Pictures
       ConsoleKeyInfo consoleKeyPressed;
       Console.ForegroundColor = ConsoleColor.Yellow;
       display("Press QQ or qq to quit or let it run forever:");
-      display("");
+      display(string.Empty);
+      display("Press O or o to open OLD Source directory:");
+      display(string.Empty);
       display("Press S or s to open Source directory:");
-      display("");
+      display(string.Empty);
       display("Press T or t to open Target directory:");
       do
       {
@@ -150,12 +152,28 @@ namespace SaveWin10Pictures
             break;
           }
 
+          if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "O")
+          {
+            display(string.Empty);
+            display($"The {consoleKeyPressed.KeyChar.ToString().ToUpper()} key has been pressed");
+            display(string.Empty);
+            string sourceDirectory = $@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+            if (!Directory.Exists(sourceDirectory))
+            {
+              sourceDirectory = appDatafolder;
+            }
+
+            StartApplication("explorer.exe", sourceDirectory, false);
+          }
+
           if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "S")
           {
-            display("");
-            display("The S key has been pressed");
-            display("");
-            string sourceDirectory = $@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+            display(string.Empty);
+            display($"The {consoleKeyPressed.KeyChar.ToString().ToUpper()} key has been pressed");
+            display(string.Empty);
+            // new location as of 2025-01-20
+            // C:\Users\userName\AppData\Roaming\Microsoft\Windows\Themes\CachedFiles
+            string sourceDirectory = $@"{appDatafolder}\Microsoft\Windows\Themes\CachedFiles";
             if (!Directory.Exists(sourceDirectory))
             {
               sourceDirectory = appDatafolder;
@@ -166,9 +184,9 @@ namespace SaveWin10Pictures
 
           if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "T")
           {
-            display("");
+            display(string.Empty);
             display("The T key has been pressed, please wait for Windows explorer.exe to be started.");
-            display("");
+            display(string.Empty);
             string targetDirectory = myPicturesFolder;
             if (Directory.Exists($@"{myPicturesFolder}\fond_ecran"))
             {

@@ -40,6 +40,8 @@ namespace SaveWin10Pic24Hours
         }
 
         // C:\Users\userName\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets
+        // new location as of 2025-01-20
+        // C:\Users\userName\AppData\Roaming\Microsoft\Windows\Themes\CachedFiles
         if (!Directory.Exists($@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"))
         {
           display($@"The directory {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets does not appear to exit, are you on a Windows 10 PC ?");
