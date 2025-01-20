@@ -173,7 +173,7 @@ namespace SaveWin10Pictures
             display(string.Empty);
             // new location as of 2025-01-20
             // C:\Users\userName\AppData\Roaming\Microsoft\Windows\Themes\CachedFiles
-            string sourceDirectory = $@"{appDatafolder}\Microsoft\Windows\Themes\CachedFiles";
+            string sourceDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft\\Windows\\Themes"); // CachedFiles
             if (!Directory.Exists(sourceDirectory))
             {
               sourceDirectory = appDatafolder;
