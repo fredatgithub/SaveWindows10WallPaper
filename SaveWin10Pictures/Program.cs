@@ -185,7 +185,7 @@ namespace SaveWin10Pictures
           if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "T")
           {
             display(string.Empty);
-            display("The T key has been pressed, please wait for Windows explorer.exe to be started.");
+            display($"The {consoleKeyPressed.KeyChar.ToString().ToUpper()} key has been pressed, please wait for Windows explorer.exe to be started.");
             display(string.Empty);
             string targetDirectory = myPicturesFolder;
             if (Directory.Exists($@"{myPicturesFolder}\fond_ecran"))
