@@ -136,10 +136,10 @@ namespace SaveWin10Pictures
       {
         while (!Console.KeyAvailable)
         {
-          //display($"hour: {DateTime.Now.Hour} minute:{DateTime.Now.Minute} seconde:{DateTime.Now.Second}");
+          // display($"hour: {DateTime.Now.Hour} minute:{DateTime.Now.Minute} seconde:{DateTime.Now.Second}");
           if (DateTime.Now.Hour == 17 && DateTime.Now.Minute == 8)//  && DateTime.Now.Second == 1
           {
-            //runThisDay = true;
+            // runThisDay = true;
             Main(new string[] { "no" });
           }
 
@@ -357,17 +357,17 @@ namespace SaveWin10Pictures
 
     public static string GetOSInfo()
     {
-      //Get Operating system information.
+      // Get Operating system information.
       OperatingSystem os = Environment.OSVersion;
-      //Get version information about the os.
+      // Get version information about the os.
       Version vs = os.Version;
 
-      //Variable to hold our return value
+      // Variable to hold our return value
       string operatingSystem = string.Empty;
 
       if (os.Platform == PlatformID.Win32Windows)
       {
-        //This is a pre-NT version of Windows
+        // This is a pre-NT version of Windows
         switch (vs.Minor)
         {
           case 0:
@@ -419,23 +419,23 @@ namespace SaveWin10Pictures
             break;
         }
       }
-      //Make sure we actually got something in our OS check
-      //We don't want to just return " Service Pack 2" or " 32-bit"
-      //That information is useless without the OS version.
+      // Make sure we actually got something in our OS check
+      // We don't want to just return " Service Pack 2" or " 32-bit"
+      // That information is useless without the OS version.
       if (operatingSystem.Length != 0)
       {
-        //Got something.  Let's prepend "Windows" and get more info.
+        // Got something.  Let's prepend "Windows" and get more info.
         operatingSystem = "Windows " + operatingSystem;
-        //See if there's a service pack installed.
+        // See if there's a service pack installed.
         if (os.ServicePack.Length != 0)
         {
           //Append it to the OS name.  i.e. "Windows XP Service Pack 3"
           operatingSystem += " " + os.ServicePack;
         }
-        //Append the OS architecture.  i.e. "Windows XP Service Pack 3 32-bit"
-        //operatingSystem += " " + getOSArchitecture().ToString() + "-bit";
+        // Append the OS architecture.  i.e. "Windows XP Service Pack 3 32-bit"
+        // operatingSystem += " " + getOSArchitecture().ToString() + "-bit";
       }
-      //Return the information we've gathered.
+      // Return the information we've gathered.
       return operatingSystem;
     }
 
@@ -446,12 +446,18 @@ namespace SaveWin10Pictures
         if (File.Exists(fileName))
         {
           Bitmap image = new Bitmap(fileName);
-          return image.Width > image.Height;
+          var width = image.Width;
+          var height = image.Height;
+          image.Dispose();
+          return width > height;
         }
         else if (File.Exists($"{fileName}.{pictureExtension}"))
         {
           Bitmap image = new Bitmap($"{fileName}.{pictureExtension}");
-          return image.Width > image.Height;
+          var width = image.Width;
+          var height = image.Height;
+          image.Dispose();
+          return width > height;
         }
 
         return false;
