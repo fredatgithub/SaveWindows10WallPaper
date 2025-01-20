@@ -58,6 +58,22 @@ namespace SaveWin10Pictures
         files.Add(file);
       }
 
+      // add new directory
+      // new location as of 2025-01-20
+      // C:\Users\userName\AppData\Roaming\Microsoft\Windows\Themes
+      var windowsThemesDirectory = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Microsoft\Windows\Themes";
+      if (Directory.Exists(windowsThemesDirectory))
+      {
+        foreach (string file in GetFilesFileteredBySize(new DirectoryInfo(windowsThemesDirectory), 100_000))
+        {
+          if (file.Contains("TranscodedWallpaper"))
+          {
+            Guid guid = Guid.NewGuid();
+            files.Add($"{file}-{guid}");
+          }
+        }
+      }
+
       try
       {
         const bool doNotOverwrite = false;
