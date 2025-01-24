@@ -25,9 +25,9 @@ namespace SaveWin10Pictures
       destinationDirectories = GetListOfDirectories();
       
       int counter = 0;
-      //string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
+      // string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
       string OSVersion = GetOSInfo();
-      //string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+      // string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
       string userName = Environment.UserName;
       string userNameProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
       string myPicturesFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
@@ -45,6 +45,8 @@ namespace SaveWin10Pictures
       }
 
       // C:\Users\userName\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets
+      // new location as of 2025-01-20
+      // C:\Users\userName\AppData\Roaming\Microsoft\Windows\Themes\CachedFiles
       if (!Directory.Exists($@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"))
       {
         display($@"The directory {appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets does not appear to exit, are you on a Windows 10 PC ?");
@@ -54,6 +56,22 @@ namespace SaveWin10Pictures
       foreach (string file in GetFilesFileteredBySize(new DirectoryInfo($@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"), 100000))
       {
         files.Add(file);
+      }
+
+      // add new directory
+      // new location as of 2025-01-20
+      // C:\Users\userName\AppData\Roaming\Microsoft\Windows\Themes
+      var windowsThemesDirectory = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Microsoft\Windows\Themes";
+      if (Directory.Exists(windowsThemesDirectory))
+      {
+        foreach (string file in GetFilesFileteredBySize(new DirectoryInfo(windowsThemesDirectory), 100_000))
+        {
+          if (file.Contains("TranscodedWallpaper"))
+          {
+            var guid = Guid.NewGuid();
+            files.Add($"{file}-{guid}");
+          }
+        }
       }
 
       try
@@ -74,7 +92,7 @@ namespace SaveWin10Pictures
 
           if (!File.Exists(destination) && IsPictureLandscape(source, "jpg")) // and picture is landscape
           {
-            File.Copy(source, destination, doNotOverwrite);
+            File.Copy(FileNameWithoutGuid(source), destination, doNotOverwrite);
             counter++;
           }
 
@@ -93,9 +111,16 @@ namespace SaveWin10Pictures
           var destinationDirectory = Path.GetDirectoryName(destinationGit);
 
           // Copy picture only if it is landscape
-          if (Directory.Exists(destinationDirectory) && !File.Exists(destinationGit) && IsPictureLandscape(source, "jpg")) 
+          if (Directory.Exists(destinationDirectory) && !File.Exists(destinationGit) && IsPictureLandscape(FileNameWithoutGuid(source), "jpg")) 
           {
-            File.Copy(source, destinationGit, doNotOverwrite);
+            if (source.Contains("TranscodedWallpaper"))
+            {
+              File.Copy(FileNameWithoutGuid(source), destinationGit, doNotOverwrite);
+            }
+            else
+            {
+              File.Copy(source, destinationGit, doNotOverwrite);
+            }
           }
         }
       }
@@ -126,18 +151,20 @@ namespace SaveWin10Pictures
       ConsoleKeyInfo consoleKeyPressed;
       Console.ForegroundColor = ConsoleColor.Yellow;
       display("Press QQ or qq to quit or let it run forever:");
-      display("");
+      display(string.Empty);
+      display("Press O or o to open OLD Source directory:");
+      display(string.Empty);
       display("Press S or s to open Source directory:");
-      display("");
+      display(string.Empty);
       display("Press T or t to open Target directory:");
       do
       {
         while (!Console.KeyAvailable)
         {
-          //display($"hour: {DateTime.Now.Hour} minute:{DateTime.Now.Minute} seconde:{DateTime.Now.Second}");
+          // display($"hour: {DateTime.Now.Hour} minute:{DateTime.Now.Minute} seconde:{DateTime.Now.Second}");
           if (DateTime.Now.Hour == 17 && DateTime.Now.Minute == 8)//  && DateTime.Now.Second == 1
           {
-            //runThisDay = true;
+            // runThisDay = true;
             Main(new string[] { "no" });
           }
 
@@ -148,12 +175,28 @@ namespace SaveWin10Pictures
             break;
           }
 
+          if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "O")
+          {
+            display(string.Empty);
+            display($"The {consoleKeyPressed.KeyChar.ToString().ToUpper()} key has been pressed");
+            display(string.Empty);
+            string sourceDirectory = $@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+            if (!Directory.Exists(sourceDirectory))
+            {
+              sourceDirectory = appDatafolder;
+            }
+
+            StartApplication("explorer.exe", sourceDirectory, false);
+          }
+
           if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "S")
           {
-            display("");
-            display("The S key has been pressed");
-            display("");
-            string sourceDirectory = $@"{appDatafolder}\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets";
+            display(string.Empty);
+            display($"The {consoleKeyPressed.KeyChar.ToString().ToUpper()} key has been pressed");
+            display(string.Empty);
+            // new location as of 2025-01-20
+            // C:\Users\userName\AppData\Roaming\Microsoft\Windows\Themes\CachedFiles
+            string sourceDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft\\Windows\\Themes"); // CachedFiles
             if (!Directory.Exists(sourceDirectory))
             {
               sourceDirectory = appDatafolder;
@@ -164,9 +207,9 @@ namespace SaveWin10Pictures
 
           if (consoleKeyPressed.KeyChar.ToString().ToUpper() == "T")
           {
-            display("");
-            display("The T key has been pressed, please wait for Windows explorer.exe to be started.");
-            display("");
+            display(string.Empty);
+            display($"The {consoleKeyPressed.KeyChar.ToString().ToUpper()} key has been pressed, please wait for Windows explorer.exe to be started.");
+            display(string.Empty);
             string targetDirectory = myPicturesFolder;
             if (Directory.Exists($@"{myPicturesFolder}\fond_ecran"))
             {
@@ -355,17 +398,17 @@ namespace SaveWin10Pictures
 
     public static string GetOSInfo()
     {
-      //Get Operating system information.
+      // Get Operating system information.
       OperatingSystem os = Environment.OSVersion;
-      //Get version information about the os.
+      // Get version information about the os.
       Version vs = os.Version;
 
-      //Variable to hold our return value
+      // Variable to hold our return value
       string operatingSystem = string.Empty;
 
       if (os.Platform == PlatformID.Win32Windows)
       {
-        //This is a pre-NT version of Windows
+        // This is a pre-NT version of Windows
         switch (vs.Minor)
         {
           case 0:
@@ -417,23 +460,23 @@ namespace SaveWin10Pictures
             break;
         }
       }
-      //Make sure we actually got something in our OS check
-      //We don't want to just return " Service Pack 2" or " 32-bit"
-      //That information is useless without the OS version.
+      // Make sure we actually got something in our OS check
+      // We don't want to just return " Service Pack 2" or " 32-bit"
+      // That information is useless without the OS version.
       if (operatingSystem.Length != 0)
       {
-        //Got something.  Let's prepend "Windows" and get more info.
+        // Got something.  Let's prepend "Windows" and get more info.
         operatingSystem = "Windows " + operatingSystem;
-        //See if there's a service pack installed.
+        // See if there's a service pack installed.
         if (os.ServicePack.Length != 0)
         {
           //Append it to the OS name.  i.e. "Windows XP Service Pack 3"
           operatingSystem += " " + os.ServicePack;
         }
-        //Append the OS architecture.  i.e. "Windows XP Service Pack 3 32-bit"
-        //operatingSystem += " " + getOSArchitecture().ToString() + "-bit";
+        // Append the OS architecture.  i.e. "Windows XP Service Pack 3 32-bit"
+        // operatingSystem += " " + getOSArchitecture().ToString() + "-bit";
       }
-      //Return the information we've gathered.
+      // Return the information we've gathered.
       return operatingSystem;
     }
 
@@ -443,13 +486,46 @@ namespace SaveWin10Pictures
       {
         if (File.Exists(fileName))
         {
-          Bitmap image = new Bitmap(fileName);
-          return image.Width > image.Height;
+          return IsPictureLandscape(fileName);
         }
         else if (File.Exists($"{fileName}.{pictureExtension}"))
         {
-          Bitmap image = new Bitmap($"{fileName}.{pictureExtension}");
-          return image.Width > image.Height;
+          return IsPictureLandscape($"{fileName}.{pictureExtension}");
+        }
+        else if (File.Exists(FileNameWithoutGuid(fileName)))
+        {
+          return IsPictureLandscape(FileNameWithoutGuid(fileName));
+        }
+
+        return false;
+      }
+      catch (Exception)
+      {
+        return false;
+      }
+    }
+
+    private static string FileNameWithoutGuid(string fileName)
+    {
+      if (fileName.Contains("TranscodedWallpaper"))
+      {
+        fileName = fileName.Substring(0, fileName.IndexOf("-"));
+      }
+
+      return fileName; 
+    }
+
+    private static bool IsPictureLandscape(string fileName)
+    {
+      try
+      {
+        if (File.Exists(fileName))
+        {
+          Bitmap image = new Bitmap(fileName);
+          var width = image.Width;
+          var height = image.Height;
+          image.Dispose();
+          return width > height;
         }
 
         return false;
