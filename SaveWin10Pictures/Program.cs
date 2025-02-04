@@ -66,10 +66,12 @@ namespace SaveWin10Pictures
       {
         foreach (string file in GetFilesFileteredBySize(new DirectoryInfo(windowsThemesDirectory), 100_000))
         {
-          if (file.Contains("TranscodedWallpaper"))
+          if (file == "TranscodedWallpaper")
           {
-            var guid = Guid.NewGuid();
-            files.Add($"{file}-{guid}");
+            string today = GetTodaysDate();
+            string newFilename = $"{file}{today}";
+            newFilename = AddJpgSuffix(newFilename);
+            files.Add(newFilename);
           }
         }
       }
@@ -227,6 +229,22 @@ namespace SaveWin10Pictures
       } while (Console.ReadKey(true).Key != ConsoleKey.Q);
 
       Console.ForegroundColor = ConsoleColor.White;
+    }
+
+    private static string GetTodaysDate()
+    {
+      string year = DateTime.Now.Year.ToString();
+      string month = DateTime.Now.Month.ToString();
+      string day = DateTime.Now.Day.ToString();
+      string hour = DateTime.Now.Hour.ToString();
+      string minute = DateTime.Now.Minute.ToString();
+      string second = DateTime.Now.Second.ToString();
+      return $"-{year}-{month}-{day}-{hour}h{minute}m{second}s";
+    }
+
+    private static string AddJpgSuffix(string filename)
+    {
+      return $"{filename}.jpg";
     }
 
     private static List<string> GetListOfDrives()
