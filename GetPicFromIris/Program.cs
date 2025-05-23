@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -62,6 +63,44 @@ namespace GetPicFromIris
 
       Console.WriteLine("Press any key to continue...");
       Console.ReadKey();
+    }
+
+    bool AreImagesVisuallySimilar(string path1, string path2)
+    {
+      const int targetWidth = 256;
+      const int targetHeight = 256;
+
+      using (Bitmap img1 = ResizeImage(new Bitmap(path1), targetWidth, targetHeight))
+      using (Bitmap img2 = ResizeImage(new Bitmap(path2), targetWidth, targetHeight))
+      {
+        return CompareBitmaps(img1, img2);
+      }
+    }
+
+    Bitmap ResizeImage(Bitmap image, int width, int height)
+    {
+      Bitmap dest = new Bitmap(width, height);
+      using (Graphics g = Graphics.FromImage(dest))
+      {
+        g.CompositingQuality = CompositingQuality.HighQuality;
+        g.SmoothingMode = SmoothingMode.HighQuality;
+        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+        g.DrawImage(image, 0, 0, width, height);
+      }
+      return dest;
+    }
+
+    bool CompareBitmaps(Bitmap bmp1, Bitmap bmp2)
+    {
+      for (int y = 0; y < bmp1.Height; y++)
+      {
+        for (int x = 0; x < bmp1.Width; x++)
+        {
+          if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+            return false;
+        }
+      }
+      return true;
     }
 
     public static string Pluralize(int number, string irregularNoun = "")
