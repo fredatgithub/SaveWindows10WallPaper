@@ -65,6 +65,66 @@ namespace GetPicFromIris
       Console.ReadKey();
     }
 
+    private static int GetPictureWidth(string file)
+    {
+      int result = 0;
+      using (Image image = Image.FromFile(file))
+      {
+        result = image.Width;
+        //result = ("Hauteur : " + image.Height);
+        //result = ("Format : " + image.RawFormat);
+        //result = ("Résolution horizontale : " + image.HorizontalResolution);
+        //result = ("Résolution verticale : " + image.VerticalResolution);
+      }
+
+      return result;
+    }
+
+    private static int GetPictureHeight(string file)
+    {
+      int result = 0;
+      using (Image image = Image.FromFile(file))
+      {
+        result = image.Height;
+      }
+
+      return result;
+    }
+
+    private static string GetPictureFormat(string file)
+    {
+      string result = string.Empty;
+      using (Image image = Image.FromFile(file))
+      {
+        result = image.RawFormat.ToString();
+      }
+
+      return result;
+    }
+
+    private static string GetPictureResolution(string file)
+    {
+      string result = string.Empty;
+      using (Image image = Image.FromFile(file))
+      {
+        result = image.HorizontalResolution.ToString() + " x " + image.VerticalResolution.ToString();
+      }
+
+      return result;
+    }
+
+    private static string GetPictureSize(string file)
+    {
+      string result = string.Empty;
+      using (Image image = Image.FromFile(file))
+      {
+        result = image.Width.ToString() + " x " + image.Height.ToString();
+      }
+      return result;
+    }
+
+
+
     bool AreImagesVisuallySimilar(string path1, string path2)
     {
       const int targetWidth = 256;
