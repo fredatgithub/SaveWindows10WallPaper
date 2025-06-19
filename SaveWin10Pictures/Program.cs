@@ -23,7 +23,7 @@ namespace SaveWin10Pictures
       ListOfDrives = GetListOfDrives();
       var destinationDirectories = new List<string>();
       destinationDirectories = GetListOfDirectories();
-      
+
       int counter = 0;
       // string OSVersion = Environment.OSVersion.ToString(); // 6.2 ON Win 10
       string OSVersion = GetOSInfo();
@@ -83,14 +83,12 @@ namespace SaveWin10Pictures
         {
           string source = files[i];
           string destination = Path.Combine(imagePath, Path.GetFileName(source));
-          if (destination.EndsWith("."))
+          if (!destination.EndsWith("."))
           {
-            destination += "jpg";
+            destination += ".";
           }
-          else
-          {
-            destination += ".jpg";
-          }
+
+          destination += "jpg";
 
           if (!File.Exists(destination) && IsPictureLandscape(source, "jpg")) // and picture is landscape
           {
@@ -113,7 +111,7 @@ namespace SaveWin10Pictures
           var destinationDirectory = Path.GetDirectoryName(destinationGit);
 
           // Copy picture only if it is landscape
-          if (Directory.Exists(destinationDirectory) && !File.Exists(destinationGit) && IsPictureLandscape(FileNameWithoutGuid(source), "jpg")) 
+          if (Directory.Exists(destinationDirectory) && !File.Exists(destinationGit) && IsPictureLandscape(FileNameWithoutGuid(source), "jpg"))
           {
             if (source.Contains("TranscodedWallpaper"))
             {
@@ -530,7 +528,7 @@ namespace SaveWin10Pictures
         fileName = fileName.Substring(0, fileName.IndexOf("-"));
       }
 
-      return fileName; 
+      return fileName;
     }
 
     private static bool IsPictureLandscape(string fileName)
@@ -616,7 +614,7 @@ namespace SaveWin10Pictures
     private static string ChangeDrive(string directoryPath, char driveLetter)
     {
       var result = $"{driveLetter}{directoryPath.Substring(1, directoryPath.Length - 1)}";
-      return result; 
+      return result;
     }
   }
 }
