@@ -99,14 +99,12 @@ namespace SaveWin10Pictures
           // copying pic to source git
           string destinationGitPath = $@"C:\Users\{userName}\Source\Repos\SaveWindows10WallPaper\SaveWindows10WallPaper\images";
           string destinationGit = Path.Combine(destinationGitPath, Path.GetFileName(source));
-          if (destinationGit.EndsWith("."))
+          if (!destinationGit.EndsWith("."))
           {
-            destinationGit += "jpg";
+            destinationGit += ".";
           }
-          else
-          {
-            destinationGit += ".jpg";
-          }
+
+          destinationGit += "jpg";
 
           var destinationDirectory = Path.GetDirectoryName(destinationGit);
 
