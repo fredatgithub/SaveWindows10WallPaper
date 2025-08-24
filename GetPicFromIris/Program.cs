@@ -123,8 +123,6 @@ namespace GetPicFromIris
       return result;
     }
 
-
-
     bool AreImagesVisuallySimilar(string path1, string path2)
     {
       const int targetWidth = 256;
@@ -137,6 +135,13 @@ namespace GetPicFromIris
       }
     }
 
+    /// <summary>
+    /// Resize an image to the specified width and height.
+    /// </summary>
+    /// <param name="image">The image as a bitmap.</param>
+    /// <param name="width">The width of the image.</param>
+    /// <param name="height"></param>
+    /// <returns></returns>
     Bitmap ResizeImage(Bitmap image, int width, int height)
     {
       Bitmap dest = new Bitmap(width, height);
