@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace CopyPictures
 {
-  internal class Program
+  internal static class Program
   {
     static void Main()
     {

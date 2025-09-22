@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace TestOnceADay
 {
-  class Program
+   static class Program
   {
     static void Main()
     {
