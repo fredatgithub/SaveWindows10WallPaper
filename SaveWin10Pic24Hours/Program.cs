@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace SaveWin10Pic24Hours
 {
-  class Program
+  static class Program
   {
     static void Main()
     {
