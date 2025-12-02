@@ -1,0 +1,85 @@
+﻿<Window x:Class="ImageduplicatefinderUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageduplicatefinderUI"
+        mc:Ignorable="d"
+        Title="Recherche d'images en doublon" Height="600" Width="1000"
+        Closing="MainWindow_Closing">
+  <DockPanel LastChildFill="True" Margin="10">
+<Grid DockPanel.Dock="Top" Margin="0,0,0,10">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <TextBox x:Name="txtDirectory" Margin="0,0,10,0" IsReadOnly="True" Grid.Column="0" MinWidth="250"/>
+    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button x:Name="btnSelectDirectory" Content="Sélectionner un répertoire" Width="150" Click="BtnSelectDirectory_Click"/>
+        <Button x:Name="btnSearch" Content="Rechercher" Width="100" Margin="10,0,0,0" Click="BtnSearch_Click"/>
+    </StackPanel>
+</Grid>
+
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="250"/>
+        <ColumnDefinition Width="5"/> <!-- Largeur du splitter -->
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <!-- Liste des groupes d'images en double -->
+      <ListBox x:Name="lstDuplicateGroups" Grid.Column="0" Margin="0,0,10,0" 
+                     SelectionChanged="LstDuplicateGroups_SelectionChanged">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <StackPanel>
+              <TextBlock Text="{Binding GroupName}" FontWeight="Bold"/>
+              <TextBlock Text="{Binding FileCount, StringFormat='{}Nombre de fichiers: {0}'}"/>
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+       <!-- Barre déplaçable -->
+  <GridSplitter Grid.Column="1"
+                Width="5"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="Gray"
+                ShowsPreview="True"/>
+
+
+      <!-- Visualisation des images du groupe sélectionné -->
+      <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto">
+        <ItemsControl x:Name="imgDuplicates">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,0,10" Padding="5">
+                <StackPanel>
+                  <Image Source="{Binding ImageSource}" Height="200" Stretch="Uniform" Margin="0,0,0,5"/>
+                  <TextBlock Text="{Binding FileName}" FontWeight="Bold"/>
+                  <TextBlock Text="{Binding FilePath}"/>
+                  <TextBlock Text="{Binding FileSize, StringFormat='{}Taille: {0:N0} octets'}"/>
+                  <TextBlock Text="{Binding CreationTime, StringFormat='{}Créé le : {0:dd/MM/yyyy HH:mm}'}"/>
+                  <TextBlock Text="{Binding LastWriteTime, StringFormat='{}Modifié le : {0:dd/MM/yyyy HH:mm}'}"/>
+                  <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Button Content="Ouvrir"
+                            Margin="0,0,5,0" Click="BtnOpenImage_Click"
+                            CommandParameter="{Binding FilePath}"
+                            Background="LightGreen"
+                            Foreground="Black"/>
+                    <Button Content="Supprimer"
+                            Click="BtnDeleteImage_Click"
+                            CommandParameter="{Binding FilePath}"
+                            Background="Tomato"
+                            Foreground="White"/>
+                  </StackPanel>
+                </StackPanel>
+              </Border>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+    </Grid>
+  </DockPanel>
+</Window>
