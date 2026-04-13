@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetPicFromIris", "GetPicFro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageduplicatefinderUI", "ImageduplicatefinderUI\ImageduplicatefinderUI.csproj", "{6C0C35EA-B216-4120-8A90-9CBB1E331737}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageduplicatefinderLib", "ImageduplicatefinderLib\ImageduplicatefinderLib.csproj", "{EC472567-BCDA-4B88-BF84-4D8BE384EA46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,18 @@ Global
 		{6C0C35EA-B216-4120-8A90-9CBB1E331737}.Release|x64.Build.0 = Release|Any CPU
 		{6C0C35EA-B216-4120-8A90-9CBB1E331737}.Release|x86.ActiveCfg = Release|Any CPU
 		{6C0C35EA-B216-4120-8A90-9CBB1E331737}.Release|x86.Build.0 = Release|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Debug|x64.Build.0 = Debug|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Release|x64.ActiveCfg = Release|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Release|x64.Build.0 = Release|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC472567-BCDA-4B88-BF84-4D8BE384EA46}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
