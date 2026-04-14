@@ -110,7 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ImageduplicatefinderLib\ImageduplicatefinderLib.csproj">
-      <Project>{736a1d74-89bc-4675-b09b-5cd474e79eef}</Project>
+      <Project>{EC472567-BCDA-4B88-BF84-4D8BE384EA46}</Project>
       <Name>ImageduplicatefinderLib</Name>
     </ProjectReference>
   </ItemGroup>
