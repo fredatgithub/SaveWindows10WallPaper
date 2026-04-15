@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Reflection;
 
@@ -317,6 +318,76 @@ namespace CopyPictures
       Assembly assembly = Assembly.GetExecutingAssembly();
       FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
       return $@"V{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}.{fvi.FilePrivatePart}";
+    }
+
+    public static int HammingDistance(ulong hash1, ulong hash2)
+    {
+      // utilisation d'une fonction de hachage d'image pour calculer la distance de Hamming entre deux images
+      // var hash1 = ImageHash.ComputeDHash(@"image1.jpg");
+      // var hash2 = ImageHash.ComputeDHash(@"image2.jpg");
+      // int distance = HammingDistance(hash1, hash2);
+      // Console.WriteLine($"Distance: {distance}");
+      //Interprétation
+      // 0 → images identiques visuellement
+      // 1–5 → très similaires
+      // 5–10 → similaires
+      // > 10 → différentes
+
+      ulong x = hash1 ^ hash2;
+      int count = 0;
+
+      while (x != 0)
+      {
+        count++;
+        x &= x - 1;
+      }
+
+      return count;
+    }
+
+    private static ulong ComputeDifferenceHash(string fileName)
+    {
+      using (var image = new Bitmap(fileName))
+      using (var resized = ResizeImage(image, 9, 8))
+      {
+        ulong hash = 0;
+        int bitIndex = 0;
+
+        for (int y = 0; y < 8; y++)
+        {
+          for (int x = 0; x < 8; x++)
+          {
+            int left = ToGray(resized.GetPixel(x, y));
+            int right = ToGray(resized.GetPixel(x + 1, y));
+            if (left > right)
+            {
+              hash |= 1UL << bitIndex;
+            }
+
+            bitIndex++;
+          }
+        }
+
+        return hash;
+      }
+    }
+
+    private static int ToGray(Color color)
+    {
+      return (int)(0.299 * color.R + 0.587 * color.G + 0.114 * color.B);
+    }
+
+    private static Bitmap ResizeImage(Bitmap image, int width, int height)
+    {
+      var dest = new Bitmap(width, height);
+
+      using (var graphic = Graphics.FromImage(dest))
+      {
+        graphic.InterpolationMode = InterpolationMode.HighQualityBilinear;
+        graphic.DrawImage(image, 0, 0, width, height);
+      }
+
+      return dest;
     }
   }
 }
