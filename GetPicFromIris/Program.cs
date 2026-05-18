@@ -271,6 +271,16 @@ namespace GetPicFromIris
     private static string GetMD5Hash(string sourcePath)
     {
       var result = string.Empty;
+      if (string.IsNullOrEmpty(sourcePath))
+      {
+        return result;
+      }
+
+      if (!File.Exists(sourcePath))
+      {
+        return result;
+      }
+
       using (var md5 = MD5.Create())
       {
         using (var stream = File.OpenRead(sourcePath))
