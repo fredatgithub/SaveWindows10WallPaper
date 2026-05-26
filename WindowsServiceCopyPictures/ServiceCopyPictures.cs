@@ -104,6 +104,9 @@ namespace WindowsServiceCopyPictures
       {
         // do nothing and continue with the next file
       }
+
+      // clean up variables
+      files = new List<string>();
     }
 
     private object Pluralize(int count)
