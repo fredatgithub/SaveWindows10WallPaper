@@ -33,20 +33,36 @@ namespace ImageduplicatefinderUI
       {
         Width = Properties.Settings.Default.MainWindowWidth;
       }
+      else
+      {
+        Width = 800; // Valeur par défaut
+      }
 
       if (Properties.Settings.Default.MainWindowHeight > 0)
       {
         Height = Properties.Settings.Default.MainWindowHeight;
+      }
+      else
+      {
+        Height = 600; // Valeur par défaut
       }
 
       if (Properties.Settings.Default.MainWindowTop >= 0)
       {
         Top = Properties.Settings.Default.MainWindowTop;
       }
+      else
+      {
+        Top = 100; // Valeur par défaut
+      }
 
       if (Properties.Settings.Default.MainWindowLeft >= 0)
       {
         Left = Properties.Settings.Default.MainWindowLeft;
+      }
+      else
+      {
+        Left = 100; // Valeur par défaut
       }
 
       // Restaurer l'état de la fenêtre (normal ou maximisé)
